@@ -1,0 +1,25 @@
+{
+  "name": "scrapp_ui",
+  "version": "1.0.0",
+  "description": "UI for scrapp final website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KartSINGH/Scrapp_Ui.git"
+  },
+  "keywords": [
+    "scrapp"
+  ],
+  "author": "kartik singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KartSINGH/Scrapp_Ui/issues"
+  },
+  "homepage": "https://github.com/KartSINGH/Scrapp_Ui#readme",
+  "dependencies": {
+    "angular": "^1.6.4"
+  }
+}

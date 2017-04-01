@@ -6,18 +6,24 @@
 .nav-item {
     margin-left: 25px;
     color: black;
-    transition: transform scale 1s;
+    transition: color 0.5s;
+}
+.nav-item > a{
+    font-family: 'Arvo', serif;
+    font-size:14px;
 }
 
 #nav {
     padding: 30px;
     background-color: white;
+    transition: padding 1s;
 }
 
 .nav-item:hover {
-    color: lawngreen;
+    color: teal;
     font-weight: bolder;
-    transform: scale(1.5);
+    
+    
 }
 .navbar-brand{
     font-size: 25px;

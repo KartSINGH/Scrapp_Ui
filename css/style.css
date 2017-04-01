@@ -1,5 +1,8 @@
 /* YOUR CUSTOM STYLES */
-
+body{
+    width:100%;
+    height:auto;
+}
 
 /* Navbar Related CSS */
 
@@ -27,6 +30,8 @@
 
 .navbar-brand {
     font-size: 25px;
+     font-family: 'Arvo', serif;
+     color:#22aa86;
 }
 
 
@@ -79,6 +84,9 @@
     font-size: 13px;
     color: #404040;
 }
+h1{
+    color:#22aa86;
+}
 
 #f_box_col2 {
     background-color: white;
@@ -114,6 +122,13 @@
         position: relative;
         margin-left: 1%;
     }
+    #phone_img{
+        transform:scale(0.2);
+        margin-top:0vh;
+    }
+    #form{
+        margin-top:1vh;
+    }
 }
 
 
@@ -126,5 +141,14 @@
     height: 500px;
     width: 280px;
     margin-top: 17vh;
-    margin-right: 20vh
+    margin-right: 20vh;
+    padding:0px;
+}
+
+#form{
+    transform:scale(0.7);
+    margin-top:17vh;
+}
+.jumbotron{
+     font-family: 'Arvo', serif;
 }

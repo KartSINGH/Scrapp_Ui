@@ -1,1 +1,24 @@
 /* YOUR CUSTOM STYLES */
+
+
+/* Navbar Related CSS */
+
+.nav-item {
+    margin-left: 25px;
+    color: black;
+    transition: transform scale 1s;
+}
+
+#nav {
+    padding: 30px;
+    background-color: white;
+}
+
+.nav-item:hover {
+    color: lawngreen;
+    font-weight: bolder;
+    transform: scale(1.5);
+}
+.navbar-brand{
+    font-size: 25px;
+}

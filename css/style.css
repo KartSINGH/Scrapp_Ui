@@ -8,9 +8,10 @@
     color: black;
     transition: color 0.5s;
 }
-.nav-item > a{
+
+.nav-item>a {
     font-family: 'Arvo', serif;
-    font-size:14px;
+    font-size: 14px;
 }
 
 #nav {
@@ -22,9 +23,102 @@
 .nav-item:hover {
     color: teal;
     font-weight: bolder;
-    
-    
 }
-.navbar-brand{
+
+.navbar-brand {
     font-size: 25px;
 }
+
+
+/* Navbar CSS End */
+
+
+/*Feature Panel CSS */
+
+#f_box {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    
+    font-family: 'Arvo', serif;
+}
+
+#f_box_col1>h1 {
+    font-size: 17px;
+    line-height: 1.5em;
+    color: antiquewhite;
+}
+
+#f_box_col1>h4 {
+    line-height: 1.5em;
+    
+}
+
+#f_box_col1>p {
+    line-height: 2em;
+    font-size: 13px;
+    color: antiquewhite;
+}
+
+#f_box_col1 {
+    background-color: teal;
+    color: white;
+    padding: 20px;
+}
+
+#f_box_col2>h1 {
+    font-size: 17px;
+    line-height: 1.5em;
+    color: #404040;
+}
+
+#f_box_col2>h4 {
+    line-height: 1.5em;
+    
+}
+
+#f_box_col2>p {
+    line-height: 2em;
+    font-size: 13px;
+    color: #404040;
+}
+
+#f_box_col2 {
+    background-color: white;
+    color: #22aa86;
+    padding: 20px;
+}
+
+#f_box_col3>h1 {
+    font-size: 17px;
+    line-height: 1.5em;
+    color: #404040;
+}
+
+#f_box_col3>h4 {
+    line-height: 1.5em;
+    
+}
+
+#f_box_col3>p {
+    line-height: 2em;
+    font-size: 13px;
+    color: #404040;
+}
+
+#f_box_col3 {
+    background-color: white;
+    color: #22aa86;
+    padding: 20px;
+}
+@media only screen and (max-width: 750px) {
+    #f_box {
+    transform:scale(1);
+    position: relative;
+    margin-left:1%;
+    }
+
+
+}
+/*Feature Box Ends */
+

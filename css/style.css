@@ -39,7 +39,6 @@
     position: absolute;
     width: 100%;
     top: 50%;
-    
     font-family: 'Arvo', serif;
 }
 
@@ -51,7 +50,6 @@
 
 #f_box_col1>h4 {
     line-height: 1.5em;
-    
 }
 
 #f_box_col1>p {
@@ -74,7 +72,6 @@
 
 #f_box_col2>h4 {
     line-height: 1.5em;
-    
 }
 
 #f_box_col2>p {
@@ -97,7 +94,6 @@
 
 #f_box_col3>h4 {
     line-height: 1.5em;
-    
 }
 
 #f_box_col3>p {
@@ -111,14 +107,24 @@
     color: #22aa86;
     padding: 20px;
 }
+
 @media only screen and (max-width: 750px) {
     #f_box {
-    transform:scale(1);
-    position: relative;
-    margin-left:1%;
+        transform: scale(1);
+        position: relative;
+        margin-left: 1%;
     }
-
-
 }
+
+
 /*Feature Box Ends */
 
+
+/*Mobile phone on landing Page */
+
+#phone_img {
+    height: 500px;
+    width: 280px;
+    margin-top: 17vh;
+    margin-right: 20vh
+}

@@ -86,6 +86,7 @@ body{
 }
 h1{
     color:#22aa86;
+    font-family: 'Arvo', serif;
 }
 
 #f_box_col2 {
@@ -151,4 +152,23 @@ h1{
 }
 .jumbotron{
      font-family: 'Arvo', serif;
+}
+
+.process_box1{
+    background-color:white;
+    padding:8px;
+    
+    color:#22aa86;
+    transition: background-color 0.7s;
+    cursor: pointer;
+    
+    
+}
+
+.process_box1:hover{
+    background-color:#22aa86;
+    padding:8px;
+    
+    color:white;
+    
 }

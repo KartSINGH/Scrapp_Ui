@@ -159,18 +159,18 @@ h1,h2{
     padding:8px;
     
     color:#22aa86;
-    transition: background-color 0.7s;
+  
     cursor: pointer;
    
     
     
 }
 
-.process_box1:hover{
-    background-color:#f2f4f4;
+.process_box2{
+    background-color:#22aa86;
     padding:8px;
-    
-    color:#22aa86;
+    cursor: pointer;
+    color:white;
     
 }
 .feature_heading{

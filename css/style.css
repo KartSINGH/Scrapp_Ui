@@ -1,8 +1,10 @@
 /* YOUR CUSTOM STYLES */
-body{
-    width:100%;
-    height:auto;
+
+body {
+    width: 100%;
+    height: auto;
 }
+
 
 /* Navbar Related CSS */
 
@@ -30,8 +32,8 @@ body{
 
 .navbar-brand {
     font-size: 25px;
-     font-family: 'Arvo', serif;
-     color:#22aa86;
+    font-family: 'Arvo', serif;
+    color: #22aa86;
 }
 
 
@@ -84,8 +86,10 @@ body{
     font-size: 13px;
     color: #404040;
 }
-h1,h2{
-    color:#22aa86;
+
+h1,
+h2 {
+    color: #22aa86;
     font-family: 'Arvo', serif;
 }
 
@@ -123,12 +127,12 @@ h1,h2{
         position: relative;
         margin-left: 1%;
     }
-    #phone_img{
-        transform:scale(0.2);
-        margin-top:0vh;
+    #phone_img {
+        transform: scale(0.2);
+        margin-top: 0vh;
     }
-    #form{
-        margin-top:1vh;
+    #form {
+        margin-top: 1vh;
     }
 }
 
@@ -143,42 +147,39 @@ h1,h2{
     width: 280px;
     margin-top: 17vh;
     margin-right: 20vh;
-    padding:0px;
+    padding: 0px;
 }
 
-#form{
-    transform:scale(0.7);
-    margin-top:17vh;
-}
-.jumbotron{
-     font-family: 'Arvo', serif;
+#form {
+    transform: scale(0.7);
+    margin-top: 17vh;
 }
 
-.process_box1{
-    background-color:#f2f4f4;
-    padding:8px;
-    
-    color:#22aa86;
-  
-    cursor: pointer;
-   
-    
-    
-}
-
-.process_box2{
-    background-color:#22aa86;
-    padding:8px;
-    cursor: pointer;
-    color:white;
-    
-}
-.feature_heading{
-    color:#404040;
-    line-height: 2em;
-    font-weight:bolder;
+.jumbotron {
     font-family: 'Arvo', serif;
 }
-#stage_content{
-    padding:90px;
+
+.process_box1 {
+    background-color: #f2f4f4;
+    padding: 8px;
+    color: #22aa86;
+    cursor: pointer;
+}
+
+.process_box2 {
+    background-color: #22aa86;
+    padding: 8px;
+    cursor: pointer;
+    color: white;
+}
+
+.feature_heading {
+    color: #404040;
+    line-height: 2em;
+    font-weight: bolder;
+    font-family: 'Arvo', serif;
+}
+
+#stage_content {
+    padding: 90px;
 }

@@ -172,3 +172,9 @@ h1{
     color:white;
     
 }
+.feature_heading{
+    color:#404040;
+    line-height: 2em;
+    font-weight:bolder;
+    font-family: 'Arvo', serif;
+}

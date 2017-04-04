@@ -140,7 +140,7 @@
             </div>
         </div>
     </div>
-    <div style="height: 100vh;background-color:#white">
+    <div style="height: 100vh;background-color:white">
         <div class="container animated fadeIn flex-center flex-column ">
             <h1 class="mb-1"><span style="color:#404040">Services & </span> Features</h1>
             <hr style="color:#404040" />
@@ -250,12 +250,12 @@
             <h5 class="mb-1" style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa ligula, aliquet euismod eleifend vitae,
                 interdum ut mi. Praesent fringilla pharetra sapien sit amet semper. Nunc id massa ut mi tempus mattis ac
                 eu lectus.</h5>
-            <div class="container" style="margin-top:8%">
+            <div class="container" style="margin-top:4%">
                 <div class="row">
-                    <div class="col-md-3 flex-center flex-column process_box1 ">
+                    <div class="col-md-3 flex-center flex-column process_box1 " id="stage_1">
                         <h5>Schedule Waste Pickup</h5>
                     </div>
-                    <div class="col-md-3 flex-center flex-column process_box1">
+                    <div class="col-md-3 flex-center flex-column process_box1" id="stage_2">
                         <h5>Secure Scrap Transportation</h5>
                     </div>
                     <div class="col-md-3 process_box1 flex-center flex-column ">
@@ -265,13 +265,29 @@
                         <h5>Scrap Inspection</h5>
                     </div>
                 </div>
-            </div>
-            <p>&nbsp</p>
-            <p>&nbsp</p>
-            <p>&nbsp</p>
 
+                <div class="container" style="background-color:white;margin-top:20px;">
+                <div class="row">
+                    <div class="col-md-6" style="padding:20px">
+                            <img src="./img/recycle.jpg" style="height:50vh;width:90vh;" class="img-thumbnail">
+                    </div>
+                    <div class="col-md-6" id="stage_content">
+                        <h2 class="s1">Stage 1</h2>
+                        <h2 class="s2">Stage 2</h2>
+                        <h4 style="line-height: 2em" class="s1">Sub Description</h4>
+                        <h4 style="line-height: 2em" class="s2">Sub Description 2</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+                        </p>
+                    </div>
+
+                </div>
+                </div>
+            </div>
+           
         </div>
     </div>
+   
 
 <!--Footer-->
 <footer class="page-footer center-on-small-only" style="background-color:#22aa86">
@@ -393,6 +409,24 @@
                 console.log("case2");
             }
         });
+    </script>
+
+    <script>
+    $('.s2').hide();
+    $('.s3').hide();
+    $('.s4').hide();
+    $('#stage_1').on("click",function(){
+        $('.s2').hide();
+    $('.s3').hide();
+    $('.s4').hide();
+        $('.s1').fadeIn(1500);
+    });
+    $('#stage_2').on("click",function(){
+        $('.s1').hide();
+         $('.s3').hide();
+          $('.s4').hide();
+        $('.s2').fadeIn(1500);
+    });
     </script>
 </body>
 

@@ -60,7 +60,7 @@
                 </div>
         </div>
     </nav>
-    <div style="height: 100vh;background-color:#22aa86;background-image: url('http://recycle.orionthemes.com/demo-1/wp-content/uploads/2016/12/cool-background.jpg');background-size:cover">
+    <div class="slide1">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8" id="form">
@@ -243,6 +243,93 @@
             </div>
         </div>
     </div>
+    <div class="flex-center flex-column overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 ">
+                    <i class="fa fa-calendar" aria-hidden="true" style="color:white;font-size:4em"></i>
+                     <p>&nbsp</p>
+                    <h1  style="color:white">5 Years of Experience</h1>
+                </div>
+                <div class="col-md-4">
+                    <i class="fa fa-user-plus" aria-hidden="true" style="color:white;font-size:4em"></i>
+                     <p>&nbsp</p>
+                     <h1  style="color:white">100+ Clients Served</h1>
+                </div>
+                <div class="col-md-4">
+                    <i class="fa fa-check-square" aria-hidden="true" style="color:white;font-size:4em"></i>
+                    <p>&nbsp</p>
+                     <h1  style="color:white">200 Tons Scrap Handled</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('#el1').on('activate.bs.scrollspy', function () {
+           var $el = $("#el1"),
+						value = 870;
+					// window.event.preventDefault();
+					$({
+						percentage: 0
+					}).stop(true).animate({
+						percentage: value
+					}, {
+						duration: 4000,
+						easing: "easeOutExpo",
+						step: function () {
+							// percentage with 1 decimal;
+							var percentageVal = Math.round(this.percentage) / 1;
+							$el.text(percentageVal);
+						}
+					}).promise().done(function () {
+						// hard set the value after animation is done to be
+						// sure the value is correct
+						$el.text(value);
+					});
+				} 
+				)
+                var $el_1 = $("#el"),
+					value_1 = 4;
+				//event.preventDefault();
+				$({
+					percentage_1: 0
+				}).stop(true).animate({
+					percentage_1: value_1
+				}, {
+					duration: 4000,
+					easing: "easeOutExpo",
+					step: function () {
+						// percentage with 1 decimal;
+						var percentageVal_1 = Math.round(this.percentage_1) / 1;
+						$el_1.text(percentageVal_1);
+					}
+				}).promise().done(function () {
+					// hard set the value after animation is done to be
+					// sure the value is correct
+					$el_1.text(value_1);
+				});
+				var $el_2 = $("#el2"),
+					value_2 = 430;
+				//event.preventDefault();
+				$({
+					percentage_2: 0
+				}).stop(true).animate({
+					percentage_2: value_2
+				}, {
+					duration: 4000,
+					easing: "easeOutExpo",
+					step: function () {
+						// percentage with 1 decimal;
+						var percentageVal_2 = Math.round(this.percentage_2) / 1;
+						$el_2.text(percentageVal_2);
+					}
+				}).promise().done(function () {
+					// hard set the value after animation is done to be
+					// sure the value is correct
+					$el_2.text(value_2);
+				});
+    
+    </script>
     <div style="height: 100vh;background-color:#f2f4f4">
         <div class="container animated fadeIn flex-center flex-column ">
             <h1 class="mb-1"><span style="color:#404040">How We</span> Work</h1>
@@ -384,12 +471,10 @@
     </div>
     <div style="height: 100vh;background-color:#f2f4f4;font-family:'Arvo', serif;padding:90px" class="flex-center">
         <div class="container-fluid">
-
             <div class="container">
-                <h1 class="flex-center"><span style="color:#404040">Meet Our</span>  Experts</h1>
-            <p>&nbsp</p>
+                <h1 class="flex-center"><span style="color:#404040">Meet Our</span> Experts</h1>
+                <p>&nbsp</p>
                 <div class="row">
-                                
                     <div class="col-md-4">
                         <div class="card" style="transform:scale(0.8)">
                             <!--Card image-->

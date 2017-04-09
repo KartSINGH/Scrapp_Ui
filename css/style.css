@@ -125,8 +125,10 @@ h2 {
         margin-left: 1%;
     }
     #phone_img {
-        transform: scale(0.2);
-        margin-top: 0vh;
+        transform: scale(1);
+        margin-left: 40px;
+
+
     }
    
 }

@@ -76,7 +76,10 @@
                                 This is a simple hero unit, a simple jumbotron-style component for calling extra attention
                                 to featured content or information.</p>
                             <p class="lead">
-                                <a class="btn btn-success btn-lg" role="button">Learn more</a>
+                                <a class="btn btn-success btn-lg" role="button" data-toggle="modal" data-target="#modal-register">Login</a>
+                                
+                                
+
                             </p>
                         </div>
                         <!--/.Jumbotron-->
@@ -130,7 +133,8 @@
                         mattis ac eu lectus.</p>
                     <p>&nbsp</p>
                     <p class="lead">
-                        <a class="btn btn-success btn-lg" role="button">Learn more</a>
+                        <a class="btn btn-success btn-lg" role="button">Learn More</a>
+                        
                     </p>
                 </div>
                 <div class="col-md-6 flex-center" style="transform: scale(0.6);display: block;margin:0 auto">
@@ -299,266 +303,325 @@
         <div class="container animated fadeIn flex-center flex-column ">
             <div class="row">
                 <div class="col-md-6">
-                   <!--Naked Form-->
-<div class="card-block">
-
-    <!--Header-->
-    <div class="text-left">
-        <h3 style="color:#22aa86"><i class="fa fa-envelope"></i> <span style="color:#404040">Contact</span> Us </h3>
-        <hr style="margin-right:88%">
-    </div>
-
-    <!--Body-->
-  
-    <br>
-
-    <!--Body-->
-    <div class="md-form">
-        <i class="fa fa-user prefix"></i>
-        <input type="text" id="form3" class="form-control">
-        <label for="form3">Your name</label>
-    </div>
-
-    <div class="md-form">
-        <i class="fa fa-envelope prefix"></i>
-        <input type="text" id="form2" class="form-control">
-        <label for="form2">Your email</label>
-    </div>
-
-    <div class="md-form">
-        <i class="fa fa-tag prefix"></i>
-        <input type="text" id="form32" class="form-control">
-        <label for="form34">Subject</label>
-    </div>
-
-    <div class="md-form">
-        <i class="fa fa-pencil prefix"></i>
-        <textarea type="text" id="form8" class="md-textarea"></textarea>
-        <label for="form8">Icon Prefix</label>
-    </div>
-
-    <div class="text-center">
-        <button class="btn btn-default">Submit</button>
-
-        <div class="call">
-            <br>
-            <p>Or would you prefer to call?
-                <br>
-                <span><i class="fa fa-phone"> </i></span> + 01 234 565 280</p>
-        </div>
-    </div>
-
-</div>
-<!--Naked Form-->
-</div>
-                    <div class="col-md-6">
-                        <h2><span style="color:#404040">Client</span> Testimonials</h2>
-                        <hr style="margin-right:88%"/>
-                        <div class="testimonials">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</p>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="image">
-                                        <img src="http://recycle.orionthemes.com/demo-1/wp-content/uploads/2016/12/teammember3-150x150.jpg" id="testi_image">
-                                        <p style="padding:10px;">John Doe</p>
-                                    </div>
-                                    <div class="client"></div>
-                                </div>
-                            </div>
-                            <p>&nbsp</p>
-                            <p>&nbsp</p>
-                             <div class="row">
-                                <div class="col-md-12">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</p>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="image">
-                                        <img src="http://recycle.orionthemes.com/demo-1/wp-content/uploads/2016/12/teammember3-150x150.jpg" id="testi_image">
-                                        <p style="padding:10px;">John Doe</p>
-                                    </div>
-                                    <div class="client"></div>
-                                </div>
+                    <!--Naked Form-->
+                    <div class="card-block">
+                        <!--Header-->
+                        <div class="text-left">
+                            <h3 style="color:#22aa86"><i class="fa fa-envelope"></i> <span style="color:#404040">Contact</span> Us </h3>
+                            <hr style="margin-right:88%">
+                        </div>
+                        <!--Body-->
+                        <br>
+                        <!--Body-->
+                        <div class="md-form">
+                            <i class="fa fa-user prefix"></i>
+                            <input type="text" id="form3" class="form-control">
+                            <label for="form3">Your name</label>
+                        </div>
+                        <div class="md-form">
+                            <i class="fa fa-envelope prefix"></i>
+                            <input type="text" id="form2" class="form-control">
+                            <label for="form2">Your email</label>
+                        </div>
+                        <div class="md-form">
+                            <i class="fa fa-tag prefix"></i>
+                            <input type="text" id="form32" class="form-control">
+                            <label for="form34">Subject</label>
+                        </div>
+                        <div class="md-form">
+                            <i class="fa fa-pencil prefix"></i>
+                            <textarea type="text" id="form8" class="md-textarea"></textarea>
+                            <label for="form8">Icon Prefix</label>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-default">Submit</button>
+                            <div class="call">
+                                <br>
+                                <p>Or would you prefer to call?
+                                    <br>
+                                    <span><i class="fa fa-phone"> </i></span> + 01 234 565 280</p>
                             </div>
                         </div>
                     </div>
-                
+                    <!--Naked Form-->
+                </div>
+                <div class="col-md-6">
+                    <h2><span style="color:#404040">Client</span> Testimonials</h2>
+                    <hr style="margin-right:88%" />
+                    <div class="testimonials">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Lorem ipsum dolor sit amet, consectetuer. Proin gravida nibh vel velit auctor aliquet. Aenean
+                                    sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+                                    nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Quisque
+                                    rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</p>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="image">
+                                    <img src="http://recycle.orionthemes.com/demo-1/wp-content/uploads/2016/12/teammember3-150x150.jpg" id="testi_image">
+                                    <p style="padding:10px;">John Doe</p>
+                                </div>
+                                <div class="client"></div>
+                            </div>
+                        </div>
+                        <p>&nbsp</p>
+                        <p>&nbsp</p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Lorem ipsum dolor sit amet, consectetuer. Proin gravida nibh vel velit auctor aliquet. Aenean
+                                    sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+                                    nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Quisque
+                                    rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</p>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="image">
+                                    <img src="http://recycle.orionthemes.com/demo-1/wp-content/uploads/2016/12/teammember3-150x150.jpg" id="testi_image">
+                                    <p style="padding:10px;">John Doe</p>
+                                </div>
+                                <div class="client"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-        <!--Footer-->
-        <footer class="page-footer center-on-small-only" style="background-color:#22aa86">
-            <!--Footer Links-->
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only" style="background-color:#22aa86">
+        <!--Footer Links-->
+        <div class="container-fluid">
+            <div class="row">
+                <!--First column-->
+                <div class="col-md-3 offset-md-1">
+                    <h5 class="title">Footer Content</h5>
+                    <p>Here you can use rows and columns here to organize your footer content.</p>
+                </div>
+                <!--/.First column-->
+                <hr class="hidden-md-up">
+                <!--Second column-->
+                <div class="col-md-2 offset-md-1">
+                    <h5 class="title">Links</h5>
+                    <ul>
+                        <li><a href="#!">Link 1</a></li>
+                        <li><a href="#!">Link 2</a></li>
+                        <li><a href="#!">Link 3</a></li>
+                        <li><a href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+                <!--/.Second column-->
+                <hr class="hidden-md-up">
+                <!--Third column-->
+                <div class="col-md-2">
+                    <h5 class="title">Links</h5>
+                    <ul>
+                        <li><a href="#!">Link 1</a></li>
+                        <li><a href="#!">Link 2</a></li>
+                        <li><a href="#!">Link 3</a></li>
+                        <li><a href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+                <!--/.Third column-->
+                <hr class="hidden-md-up">
+                <!--Fourth column-->
+                <div class="col-md-2">
+                    <h5 class="title">Links</h5>
+                    <ul>
+                        <li><a href="#!">Link 1</a></li>
+                        <li><a href="#!">Link 2</a></li>
+                        <li><a href="#!">Link 3</a></li>
+                        <li><a href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+                <!--/.Fourth column-->
+            </div>
+        </div>
+        <!--/.Footer Links-->
+        <hr>
+        <!--Call to action-->
+        <div class="call-to-action">
+            <ul>
+                <li>
+                    <h5>Register for free</h5>
+                </li>
+                <li><a href="" class="btn btn-danger">Sign up!</a></li>
+            </ul>
+        </div>
+        <!--/.Call to action-->
+        <hr>
+        <!--Social buttons-->
+        <div class="social-section">
+            <ul>
+                <li><a class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"> </i></a></li>
+                <li><a class="btn-floating btn-small btn-tw"><i class="fa fa-twitter"> </i></a></li>
+                <li><a class="btn-floating btn-small btn-gplus"><i class="fa fa-google-plus"> </i></a></li>
+                <li><a class="btn-floating btn-small btn-li"><i class="fa fa-linkedin"> </i></a></li>
+                <li><a class="btn-floating btn-small btn-git"><i class="fa fa-github"> </i></a></li>
+                <li><a class="btn-floating btn-small btn-pin"><i class="fa fa-pinterest"> </i></a></li>
+                <li><a class="btn-floating btn-small btn-ins"><i class="fa fa-instagram"> </i></a></li>
+            </ul>
+        </div>
+        <!--/.Social buttons-->
+        <!--Copyright-->
+        <div class="footer-copyright">
             <div class="container-fluid">
-                <div class="row">
-                    <!--First column-->
-                    <div class="col-md-3 offset-md-1">
-                        <h5 class="title">Footer Content</h5>
-                        <p>Here you can use rows and columns here to organize your footer content.</p>
-                    </div>
-                    <!--/.First column-->
-                    <hr class="hidden-md-up">
-                    <!--Second column-->
-                    <div class="col-md-2 offset-md-1">
-                        <h5 class="title">Links</h5>
-                        <ul>
-                            <li><a href="#!">Link 1</a></li>
-                            <li><a href="#!">Link 2</a></li>
-                            <li><a href="#!">Link 3</a></li>
-                            <li><a href="#!">Link 4</a></li>
-                        </ul>
-                    </div>
-                    <!--/.Second column-->
-                    <hr class="hidden-md-up">
-                    <!--Third column-->
-                    <div class="col-md-2">
-                        <h5 class="title">Links</h5>
-                        <ul>
-                            <li><a href="#!">Link 1</a></li>
-                            <li><a href="#!">Link 2</a></li>
-                            <li><a href="#!">Link 3</a></li>
-                            <li><a href="#!">Link 4</a></li>
-                        </ul>
-                    </div>
-                    <!--/.Third column-->
-                    <hr class="hidden-md-up">
-                    <!--Fourth column-->
-                    <div class="col-md-2">
-                        <h5 class="title">Links</h5>
-                        <ul>
-                            <li><a href="#!">Link 1</a></li>
-                            <li><a href="#!">Link 2</a></li>
-                            <li><a href="#!">Link 3</a></li>
-                            <li><a href="#!">Link 4</a></li>
-                        </ul>
-                    </div>
-                    <!--/.Fourth column-->
+                © 2017 Copyright: <a href="https://scrapp.in"> Scrapp.in </a>
+            </div>
+        </div>
+        <!--/.Copyright-->
+    </footer>
+    <!-- Modal Register -->
+<div class="modal fade modal-ext" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header flex-column">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="w-100"><i class="fa fa-user"></i> Register with:</h3>
+                <div class="flex-row">
+                    <a href="" class="btn-floating btn-fb btn-small"><i class="fa fa-facebook"></i></a>
+                    <a href="" class="btn-floating btn-tw btn-small"><i class="fa fa-twitter"></i></a>
+                    <a href="" class="btn-floating btn-gplus btn-small"><i class="fa fa-google-plus"></i></a>
+                    <a href="" class="btn-floating btn-li btn-small"><i class="fa fa-linkedin"></i></a>
+                    <a href="" class="btn-floating btn-git btn-small"><i class="fa fa-github"></i></a>
                 </div>
             </div>
-            <!--/.Footer Links-->
-            <hr>
-            <!--Call to action-->
-            <div class="call-to-action">
-                <ul>
-                    <li>
-                        <h5>Register for free</h5>
-                    </li>
-                    <li><a href="" class="btn btn-danger">Sign up!</a></li>
-                </ul>
-            </div>
-            <!--/.Call to action-->
-            <hr>
-            <!--Social buttons-->
-            <div class="social-section">
-                <ul>
-                    <li><a class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"> </i></a></li>
-                    <li><a class="btn-floating btn-small btn-tw"><i class="fa fa-twitter"> </i></a></li>
-                    <li><a class="btn-floating btn-small btn-gplus"><i class="fa fa-google-plus"> </i></a></li>
-                    <li><a class="btn-floating btn-small btn-li"><i class="fa fa-linkedin"> </i></a></li>
-                    <li><a class="btn-floating btn-small btn-git"><i class="fa fa-github"> </i></a></li>
-                    <li><a class="btn-floating btn-small btn-pin"><i class="fa fa-pinterest"> </i></a></li>
-                    <li><a class="btn-floating btn-small btn-ins"><i class="fa fa-instagram"> </i></a></li>
-                </ul>
-            </div>
-            <!--/.Social buttons-->
-            <!--Copyright-->
-            <div class="footer-copyright">
-                <div class="container-fluid">
-                    © 2017 Copyright: <a href="https://scrapp.in"> Scrapp.in </a>
+            <!--Body-->
+            <div class="modal-body">
+                <div class="md-form">
+                    <i class="fa fa-envelope prefix"></i>
+                    <input type="text" id="form2" class="form-control">
+                    <label for="form2">Your email</label>
+                </div>
+
+                <div class="md-form">
+                    <i class="fa fa-lock prefix"></i>
+                    <input type="password" id="form3" class="form-control">
+                    <label for="form3">Your password</label>
+                </div>
+
+                <div class="md-form">
+                    <i class="fa fa-lock prefix"></i>
+                    <input type="password" id="form4" class="form-control">
+                    <label for="form4">Repeat password</label>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-primary btn-lg">Sign up</button>
+
+                    <fieldset class="form-group">
+                        <input type="checkbox" id="checkbox1">
+                        <label for="checkbox1">Subscribe me to the newsletter</label>
+                    </fieldset>
                 </div>
             </div>
-            <!--/.Copyright-->
-        </footer>
-        <!--/.Footer-->
-        <!-- /Start your project here-->
-        <!-- SCRIPTS -->
-        <!-- JQuery -->
-        <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-        <!-- Bootstrap tooltips -->
-        <script type="text/javascript" src="js/tether.min.js"></script>
-        <!-- Bootstrap core JavaScript -->
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <!-- MDB core JavaScript -->
-        <script type="text/javascript" src="js/mdb.min.js"></script>
-        <script>
-            $(document).on("scroll", function () {
-                if ($(document).scrollTop() < 100) {
-                    $('#nav').css('padding', '30px');
-                    console.log("case1");
-                } else {
-                    $('#nav').css('padding', '10px');
-                    console.log("case2");
-                }
-            });
-        </script>
-        <script>
+            <!--Footer-->
+            <div class="modal-footer">
+                <div class="options">
+                    <p>Already have an account? <a href="#">Log in</a></p>
+                </div>
+                <button type="button" class="btn btn-default ml-auto" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+
+    <!--/.Footer-->
+    <!-- /Start your project here-->
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script>
+        $(document).on("scroll", function () {
+            if ($(document).scrollTop() < 100) {
+                $('#nav').css('padding', '30px');
+                console.log("case1");
+            } else {
+                $('#nav').css('padding', '10px');
+                console.log("case2");
+            }
+        });
+    </script>
+    <script>
+        $('.s2').hide();
+        $('.s3').hide();
+        $('.s4').hide();
+        $('#stage_1').removeClass("process_box1");
+        $('#stage_1').addClass("process_box2");
+        $('#stage_1').on("click", function () {
             $('.s2').hide();
             $('.s3').hide();
             $('.s4').hide();
+            $('.s1').fadeIn(1500);
             $('#stage_1').removeClass("process_box1");
+            $('#stage_2').removeClass("process_box2");
+            $('#stage_3').removeClass("process_box2");
+            $('#stage_4').removeClass("process_box2");
+            $('#stage_2').addClass("process_box1");
+            $('#stage_3').addClass("process_box1");
+            $('#stage_4').addClass("process_box1");
             $('#stage_1').addClass("process_box2");
-            $('#stage_1').on("click", function () {
-                $('.s2').hide();
-                $('.s3').hide();
-                $('.s4').hide();
-                $('.s1').fadeIn(1500);
-                $('#stage_1').removeClass("process_box1");
-                $('#stage_2').removeClass("process_box2");
-                $('#stage_3').removeClass("process_box2");
-                $('#stage_4').removeClass("process_box2");
-                $('#stage_2').addClass("process_box1");
-                $('#stage_3').addClass("process_box1");
-                $('#stage_4').addClass("process_box1");
-                $('#stage_1').addClass("process_box2");
 
 
-            });
+        });
 
-            $('#stage_2').on("click", function () {
-                $('.s1').hide();
-                $('.s3').hide();
-                $('.s4').hide();
-                $('.s2').fadeIn(1500);
-                $('#stage_2').removeClass("process_box1");
-                $('#stage_1').removeClass("process_box2");
-                $('#stage_3').removeClass("process_box2");
-                $('#stage_4').removeClass("process_box2");
-                $('#stage_2').addClass("process_box2");
-                $('#stage_1').addClass("process_box1");
-                $('#stage_3').addClass("process_box1");
-                $('#stage_4').addClass("process_box1");
-            });
-            $('#stage_3').on("click", function () {
-                $('.s1').hide();
-                $('.s2').hide();
-                $('.s4').hide();
-                $('.s3').fadeIn(1500);
-                $('#stage_3').removeClass("process_box1");
-                $('#stage_2').removeClass("process_box2");
-                $('#stage_1').removeClass("process_box2");
-                $('#stage_4').removeClass("process_box2");
-                $('#stage_3').addClass("process_box2");
-                $('#stage_2').addClass("process_box1");
-                $('#stage_1').addClass("process_box1");
-                $('#stage_4').addClass("process_box1");
-            });
-            $('#stage_4').on("click", function () {
-                $('.s1').hide();
-                $('.s3').hide();
-                $('.s2').hide();
-                $('.s4').fadeIn(1500);
-                $('#stage_4').removeClass("process_box1");
-                $('#stage_2').removeClass("process_box2");
-                $('#stage_3').removeClass("process_box2");
-                $('#stage_1').removeClass("process_box2");
-                $('#stage_4').addClass("process_box2");
-                $('#stage_2').addClass("process_box1");
-                $('#stage_3').addClass("process_box1");
-                $('#stage_1').addClass("process_box1");
-            });
-        </script>
+        $('#stage_2').on("click", function () {
+            $('.s1').hide();
+            $('.s3').hide();
+            $('.s4').hide();
+            $('.s2').fadeIn(1500);
+            $('#stage_2').removeClass("process_box1");
+            $('#stage_1').removeClass("process_box2");
+            $('#stage_3').removeClass("process_box2");
+            $('#stage_4').removeClass("process_box2");
+            $('#stage_2').addClass("process_box2");
+            $('#stage_1').addClass("process_box1");
+            $('#stage_3').addClass("process_box1");
+            $('#stage_4').addClass("process_box1");
+        });
+        $('#stage_3').on("click", function () {
+            $('.s1').hide();
+            $('.s2').hide();
+            $('.s4').hide();
+            $('.s3').fadeIn(1500);
+            $('#stage_3').removeClass("process_box1");
+            $('#stage_2').removeClass("process_box2");
+            $('#stage_1').removeClass("process_box2");
+            $('#stage_4').removeClass("process_box2");
+            $('#stage_3').addClass("process_box2");
+            $('#stage_2').addClass("process_box1");
+            $('#stage_1').addClass("process_box1");
+            $('#stage_4').addClass("process_box1");
+        });
+        $('#stage_4').on("click", function () {
+            $('.s1').hide();
+            $('.s3').hide();
+            $('.s2').hide();
+            $('.s4').fadeIn(1500);
+            $('#stage_4').removeClass("process_box1");
+            $('#stage_2').removeClass("process_box2");
+            $('#stage_3').removeClass("process_box2");
+            $('#stage_1').removeClass("process_box2");
+            $('#stage_4').addClass("process_box2");
+            $('#stage_2').addClass("process_box1");
+            $('#stage_3').addClass("process_box1");
+            $('#stage_1').addClass("process_box1");
+        });
+    </script>
+    <script>
+    $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+})
+</script>
 </body>
 
 </html>

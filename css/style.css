@@ -1,8 +1,6 @@
 /* YOUR CUSTOM STYLES */
 
 
-
-
 /* Navbar Related CSS */
 
 .nav-item {
@@ -127,10 +125,7 @@ h2 {
     #phone_img {
         transform: scale(1);
         margin-left: 40px;
-
-
     }
-   
 }
 
 
@@ -180,48 +175,52 @@ h2 {
 #stage_content {
     padding: 90px;
 }
-.contact_box{
-    float:right;
-    padding:30%;
-    background-color:#f2f4f4;
-    height:70vh;
-    width:80vh;
-   margin-left:50px;
 
+.contact_box {
+    float: right;
+    padding: 30%;
+    background-color: #f2f4f4;
+    height: 70vh;
+    width: 80vh;
+    margin-left: 50px;
 }
-.card-block{
-  
+
+.card-block {
     border-radius: 0px;
     padding: 40px;
-   
-   
-    
-    margin-right:10px;
-
+    margin-right: 10px;
 }
 
-#testi_image{
-    height:60px;
-    width:60px;
-    float:left;
-    border-radius:50px;
-    margin-right:10px;
-    
+#testi_image {
+    height: 60px;
+    width: 60px;
+    float: left;
+    border-radius: 50px;
+    margin-right: 10px;
 }
-.image{
-    margin-top:30px;
+
+.image {
+    margin-top: 30px;
 }
+
 .overlay {
-   background:linear-gradient(rgba(0, 200, 81, 0.95), rgba(0, 200, 81, 0.4)),
-    url('https://countryhomesdelhi.files.wordpress.com/2013/05/greenery.jpg');
-   background-size:cover;
-   background-repeat: no-repeat;
-   height:45vh
+    background: linear-gradient(rgba(0, 200, 81, 0.95), rgba(0, 200, 81, 0.4)), url('https://countryhomesdelhi.files.wordpress.com/2013/05/greenery.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 45vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.slide1{
+
+.slide1 {
     height: 100vh;
-    background-repeat:no-repeat;
-    background: linear-gradient(rgba(0, 200, 81, 0.9), rgba(0, 200, 81, 0.4))
-     ,url('http://recycle.orionthemes.com/demo-1/wp-content/uploads/2016/12/cool-background.jpg');
-    background-size:cover
+    background-repeat: no-repeat;
+    background: linear-gradient(rgba(0, 200, 81, 0.9), rgba(0, 200, 81, 0.4)), url('http://recycle.orionthemes.com/demo-1/wp-content/uploads/2016/12/cool-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

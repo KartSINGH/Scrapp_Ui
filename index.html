@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <title>Welcome To ShuttleScrapp</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
@@ -16,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="icon" href="img/icon.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="./node_modules/owl.carousel/dist/assets/owl.carousel.css" />
 </head>
 
 <body>
@@ -60,7 +62,7 @@
                 </div>
         </div>
     </nav>
-    <div class="slide1">
+    <div class="slide1 slides">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8" id="form">
@@ -111,7 +113,7 @@
             </div>
         </div>
     </div>
-    <div style="height: 100vh;background-color:white;font-family:'Arvo', serif;padding:90px" class="flex-center">
+    <div style="background-color:white;font-family:'Arvo', serif;padding:90px" class="flex-center slides">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6 flex-column">
@@ -140,7 +142,7 @@
             </div>
         </div>
     </div>
-    <div style="height: 100vh;background-color:#f2f4f4">
+    <div style="background-color:#f2f4f4" class="slides">
         <div class="container animated fadeIn flex-center flex-column ">
             <h1 class="mb-1"><span style="color:#404040">Services & </span> Features</h1>
             <hr style="color:#404040" />
@@ -243,35 +245,33 @@
             </div>
         </div>
     </div>
-    <div style="background-color:white">
+    <div style="background-color:white" class="slides">
         <div class="container animated fadeIn flex-center flex-column ">
             <section class="section feature-box">
                 <!--Section heading-->
                 <!--First row-->
-                 <p>&nbsp</p>
-                        <p>&nbsp</p> <p>&nbsp</p>
-                        <p>&nbsp</p>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
                 <div class="row">
-                        <div class="col-md-3">
-                            <p>&nbsp</p>
-                        </div>
-                        <div class="col-md-6">
-                            <h1 style="text-align: center"><span style="color:#404040">Why</span> ShuttleScrapp</h1>
-                            <!--Section sescription-->
-                            <!--First column-->
-                            
-                           
-                        </div>
-                        <div class="col-md-3">
-                            <p>&nbsp</p>
-                        </div>
+                    <div class="col-md-3">
+                        <p>&nbsp</p>
                     </div>
-                    <p>&nbsp</p>
-                            <p>&nbsp</p><p>&nbsp</p>
-                            <p>&nbsp</p>
+                    <div class="col-md-6">
+                        <h1 style="text-align: center"><span style="color:#404040">Why</span> ShuttleScrapp</h1>
+                        <!--Section sescription-->
+                        <!--First column-->
+                    </div>
+                    <div class="col-md-3">
+                        <p>&nbsp</p>
+                    </div>
+                </div>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
                 <div class="row features-small">
-                    
-
                     <div class="col-md-4">
                         <!--First row-->
                         <div class="row">
@@ -389,71 +389,8 @@
             </div>
         </div>
     </div>
-    <script>
-        $('#el1').on('activate.bs.scrollspy', function () {
-            var $el = $("#el1"),
-                value = 870;
-            // window.event.preventDefault();
-            $({
-                percentage: 0
-            }).stop(true).animate({
-                percentage: value
-            }, {
-                duration: 4000,
-                easing: "easeOutExpo",
-                step: function () {
-                    // percentage with 1 decimal;
-                    var percentageVal = Math.round(this.percentage) / 1;
-                    $el.text(percentageVal);
-                }
-            }).promise().done(function () {
-                // hard set the value after animation is done to be
-                // sure the value is correct
-                $el.text(value);
-            });
-        })
-        var $el_1 = $("#el"),
-            value_1 = 4;
-        //event.preventDefault();
-        $({
-            percentage_1: 0
-        }).stop(true).animate({
-            percentage_1: value_1
-        }, {
-            duration: 4000,
-            easing: "easeOutExpo",
-            step: function () {
-                // percentage with 1 decimal;
-                var percentageVal_1 = Math.round(this.percentage_1) / 1;
-                $el_1.text(percentageVal_1);
-            }
-        }).promise().done(function () {
-            // hard set the value after animation is done to be
-            // sure the value is correct
-            $el_1.text(value_1);
-        });
-        var $el_2 = $("#el2"),
-            value_2 = 430;
-        //event.preventDefault();
-        $({
-            percentage_2: 0
-        }).stop(true).animate({
-            percentage_2: value_2
-        }, {
-            duration: 4000,
-            easing: "easeOutExpo",
-            step: function () {
-                // percentage with 1 decimal;
-                var percentageVal_2 = Math.round(this.percentage_2) / 1;
-                $el_2.text(percentageVal_2);
-            }
-        }).promise().done(function () {
-            // hard set the value after animation is done to be
-            // sure the value is correct
-            $el_2.text(value_2);
-        });
-    </script>
-    <div style="height: 100vh;background-color:#f2f4f4">
+   
+    <div style="background-color:#f2f4f4" class="slides">
         <div class="container animated fadeIn flex-center flex-column ">
             <h1 class="mb-1"><span style="color:#404040">How We</span> Work</h1>
             <hr />
@@ -505,7 +442,7 @@
             </div>
         </div>
     </div>
-    <div style="height: 100vh;background-color:white">
+    <div style="background-color:white" class="slides">
         <div class="container animated fadeIn flex-center flex-column ">
             <div class="row">
                 <div class="col-md-6">
@@ -592,7 +529,220 @@
             </div>
         </div>
     </div>
-    <div style="height: 100vh;background-color:#f2f4f4;font-family:'Arvo', serif;padding:90px" class="flex-center">
+    <div style="height:100vh;background-color:#f2f4f4;overflow:hidden" class="flex-center flex-column slide6" class="slides">
+        <div class="container animated fadeIn ">
+            <h1 style="text-align: center"><span style="color:#404040">What We</span>  Buy</h1>
+            <p>&nbsp</p>
+             <p>&nbsp</p>
+            <div class="owl-carousel owl-theme" style="transform: scale(1)">
+                <div class="item">
+                    <div class="card">
+                        <!--Card image-->
+                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <!--Title-->
+                            <h4 class="card-title">Card title</h4>
+                            <!--Text-->
+                         
+                            <a href="#" class="btn btn-primary">Button</a>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <div class="item">
+                    <div class="card">
+                        <!--Card image-->
+                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <!--Title-->
+                            <h4 class="card-title">Card title</h4>
+                            <!--Text-->
+                         
+                            <a href="#" class="btn btn-primary">Button</a>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <div class="item">
+                    <div class="card">
+                        <!--Card image-->
+                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <!--Title-->
+                            <h4 class="card-title">Card title</h4>
+                            <!--Text-->
+                         
+                            <a href="#" class="btn btn-primary">Button</a>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <div class="item">
+                    <div class="card">
+                        <!--Card image-->
+                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <!--Title-->
+                            <h4 class="card-title">Card title</h4>
+                            <!--Text-->
+                         
+                            <a href="#" class="btn btn-primary">Button</a>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <div class="item">
+                    <div class="card">
+                        <!--Card image-->
+                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <!--Title-->
+                            <h4 class="card-title">Card title</h4>
+                            <!--Text-->
+                         
+                            <a href="#" class="btn btn-primary">Button</a>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <div class="item">
+                    <div class="card">
+                        <!--Card image-->
+                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <!--Title-->
+                            <h4 class="card-title">Card title</h4>
+                            <!--Text-->
+                         
+                            <a href="#" class="btn btn-primary">Button</a>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <div class="item">
+                    <div class="card">
+                        <!--Card image-->
+                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <!--Title-->
+                            <h4 class="card-title">Card title</h4>
+                            <!--Text-->
+                         
+                            <a href="#" class="btn btn-primary">Button</a>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <div class="item">
+                    <div class="card">
+                        <!--Card image-->
+                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <!--Title-->
+                            <h4 class="card-title">Card title</h4>
+                            <!--Text-->
+                         
+                            <a href="#" class="btn btn-primary">Button</a>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <div class="item">
+                    <div class="card">
+                        <!--Card image-->
+                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <!--Title-->
+                            <h4 class="card-title">Card title</h4>
+                            <!--Text-->
+                         
+                            <a href="#" class="btn btn-primary">Button</a>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <div class="item">
+                    <div class="card">
+                        <!--Card image-->
+                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <!--Title-->
+                            <h4 class="card-title">Card title</h4>
+                            <!--Text-->
+                         
+                            <a href="#" class="btn btn-primary">Button</a>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <div class="item">
+                    <div class="card">
+                        <!--Card image-->
+                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <!--Title-->
+                            <h4 class="card-title">Card title</h4>
+                            <!--Text-->
+                         
+                            <a href="#" class="btn btn-primary">Button</a>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <div class="item">
+                    <div class="card">
+                        <!--Card image-->
+                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <!--Title-->
+                            <h4 class="card-title">Card title</h4>
+                            <!--Text-->
+                         
+                            <a href="#" class="btn btn-primary">Button</a>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="background-color:white;font-family:'Arvo', serif;padding:90px" class="flex-center slides ">
         <div class="container-fluid">
             <div class="container">
                 <h1 class="flex-center"><span style="color:#404040">Meet Our</span> Experts</h1>
@@ -662,8 +812,6 @@
                         <button class="btn btn-success">Meet Our Full Team</button>
                     </div>
                 </div>
-
-                
             </div>
         </div>
     </div>
@@ -681,6 +829,7 @@
                             type and scrambled it to make a type specimen book. It has survived not only five centuries,
                             but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                     </div>
+                    <div class="col-md-1"><p>&nbsp</p></div>
                     <!--/.First column-->
                     <hr class="hidden-md-up">
                     <!--Second column-->
@@ -801,13 +950,13 @@
     <!-- /Start your project here-->
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/tether.min.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script src="./node_modules/owl.carousel/dist/owl.carousel.js"></script>
     <script>
         $(document).on("scroll", function () {
             if ($(document).scrollTop() < 100) {
@@ -889,6 +1038,35 @@
         $('#myModal').on('shown.bs.modal', function () {
             $('#myInput').focus()
         })
+    </script>
+    <script>
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 3
+                }
+            },
+            autoplayTimeout: 1000,
+            autoplayHoverPause: true
+        });
+        
+    </script>
+    <script>
+    if (screen.width <= 1000) {
+        console.log("window size reduced");
+	$('div').removeClass('slides');
+}
     </script>
 </body>
 

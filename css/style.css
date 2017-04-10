@@ -126,6 +126,7 @@ h2 {
         transform: scale(1);
         margin-left: 40px;
     }
+    
 }
 
 
@@ -215,7 +216,7 @@ h2 {
 }
 
 .slide1 {
-    height: 100vh;
+   
     background-repeat: no-repeat;
     background: linear-gradient(rgba(0, 200, 81, 0.9), rgba(0, 200, 81, 0.4)), url('http://recycle.orionthemes.com/demo-1/wp-content/uploads/2016/12/cool-background.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -224,3 +225,18 @@ h2 {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.slide6 {
+    
+    background-repeat: no-repeat;
+    background: linear-gradient(rgba(0, 200, 81, 0.1), rgba(0, 200, 81, 0.9)),url('http://images.all-free-download.com/images/graphicthumb/green_leaf_background_04_hd_picture_169228.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+}
+.slides{
+    font-family:'Arvo', serif;
+    height:100vh;
+    
+} 

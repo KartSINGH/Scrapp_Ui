@@ -218,7 +218,7 @@ h2 {
 .slide1 {
    
     background-repeat: no-repeat;
-    background: linear-gradient(rgba(0, 200, 81, 0.9), rgba(0, 200, 81, 0.4)), url('http://recycle.orionthemes.com/demo-1/wp-content/uploads/2016/12/cool-background.jpg') no-repeat center center fixed;
+    background: linear-gradient(rgba(0, 200, 81, 0.7), rgba(0, 200, 81, 0.7)), url('http://www.ecowise.net.in/wp-content/themes/function/images/cms-container-bg.jpg') no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -240,3 +240,28 @@ h2 {
     height:100vh;
     
 } 
+.feature1{
+    margin:0px;
+    border:0px;
+   padding:10px;
+   align-content: center;
+   background-color:white;
+
+}
+.feature{
+    margin:0px;
+    border:0px;
+   padding:10px;
+   align-content: center;
+   
+
+}
+
+.yellow{
+    background-color:yellow;
+}
+.feature1:hover{
+    background-color:#22aa86;
+    color:white;
+   
+}

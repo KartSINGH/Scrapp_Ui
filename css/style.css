@@ -126,7 +126,6 @@ h2 {
         transform: scale(1);
         margin-left: 40px;
     }
-    
 }
 
 
@@ -216,7 +215,6 @@ h2 {
 }
 
 .slide1 {
-   
     background-repeat: no-repeat;
     background: linear-gradient(rgba(0, 200, 81, 0.7), rgba(0, 200, 81, 0.7)), url('http://www.ecowise.net.in/wp-content/themes/function/images/cms-container-bg.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -225,43 +223,114 @@ h2 {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .slide6 {
-    
     background-repeat: no-repeat;
-    background: linear-gradient(rgba(0, 200, 81, 0.2), rgba(0, 200, 81, 0.4)),url('http://content.wallpapers-room.com/resolutions/1280x800/R/Wallpapers-room_com___Recycle_Wallpaper_by_cloud-no9_1280x800.jpg');
+    background: linear-gradient(rgba(0, 200, 81, 0.2), rgba(0, 200, 81, 0.4)), url('http://content.wallpapers-room.com/resolutions/1280x800/R/Wallpapers-room_com___Recycle_Wallpaper_by_cloud-no9_1280x800.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
 }
-.slides{
-    font-family:'Arvo', serif;
-    height:100vh;
+
+.slides {
+    font-family: 'Arvo', serif;
+    height: 100vh;
+}
+
+.feature1 {
+    margin: 0px;
+    border: 0px;
+    padding: 10px;
+    align-content: center;
+    background-color: white;
+}
+
+.feature {
+    margin: 0px;
+    border: 0px;
+    padding: 10px;
+    align-content: center;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.feature1:hover {
+    background-color: #22aa86;
+    color: white;
+}
+
+
+/* flip card */
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+	transform-style: preserve-3d;
+}
+	/*  UPDATED! flip the pane when hovered */
+	.flip-container:hover .back {
+		transform: rotateY(0deg);
+	}
+	.flip-container:hover .front {
+	    transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width:100%;
+    height:auto;
     
-} 
-.feature1{
-    margin:0px;
-    border:0px;
-   padding:10px;
-   align-content: center;
-   background-color:white;
-
-}
-.feature{
-    margin:0px;
-    border:0px;
-   padding:10px;
-   align-content: center;
-   
-
 }
 
-.yellow{
-    background-color:yellow;
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
 }
-.feature1:hover{
-    background-color:#22aa86;
-    color:white;
-   
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: absolute;
+	top: 0;
+	left: 0;
 }
+
+/*  UPDATED! front pane, placed above back */
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(-180deg);
+}
+
+/* 
+	Some vertical flip updates 
+*/
+.vertical.flip-container {
+	position: relative;
+}
+
+	.vertical .back {
+		transform: rotateX(180deg);
+	}
+
+	.vertical.flip-container:hover .back {
+	    transform: rotateX(0deg);
+	}
+
+	.vertical.flip-container:hover .front {
+	    transform: rotateX(180deg);
+	}
+/* flip card */

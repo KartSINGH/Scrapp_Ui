@@ -204,7 +204,7 @@ h2 {
 }
 
 .overlay {
-    background: linear-gradient(rgba(0, 200, 81, 0.95), rgba(0, 200, 81, 0.4)), url('https://countryhomesdelhi.files.wordpress.com/2013/05/greenery.jpg');
+    background: linear-gradient(rgba(255, 255, 0, 0.5), rgba(0, 200, 81, 0.5)), url('https://countryhomesdelhi.files.wordpress.com/2013/05/greenery.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 45vh;
@@ -216,7 +216,7 @@ h2 {
 
 .slide1 {
     background-repeat: no-repeat;
-    background: linear-gradient(rgba(0, 200, 81, 0.7), rgba(0, 200, 81, 0.7)), url('http://www.ecowise.net.in/wp-content/themes/function/images/cms-container-bg.jpg') no-repeat center center fixed;
+    background: linear-gradient(rgba(255, 255, 0, 0.4), rgba(0, 200, 81, 0.4)), url('http://www.ecowise.net.in/wp-content/themes/function/images/cms-container-bg.jpg') no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -305,3 +305,4 @@ h2 {
     text-align: center;
     background-color: #aaa;
 }
+

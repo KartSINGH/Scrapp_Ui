@@ -215,7 +215,6 @@ h2 {
 }
 
 .slide1 {
-   
     background: linear-gradient(rgba(255, 255, 0, 0.4), rgba(0, 200, 81, 0.4)), url('https://image.freepik.com/free-vector/green-environmental-icons-collection_1152-14.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -264,12 +263,12 @@ h2 {
 }
 
 #f1_container {
-    height:30vh;
-    width:100%;
+    height: 30vh;
+    width: 100%;
     position: relative;
     margin: 10px auto;
     z-index: 1;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 #f1_container {
@@ -296,7 +295,6 @@ h2 {
 }
 
 .face.back {
-    
     display: block;
     transform: rotateY(180deg);
     box-sizing: border-box;
@@ -305,4 +303,3 @@ h2 {
     text-align: center;
     background-color: #aaa;
 }
-

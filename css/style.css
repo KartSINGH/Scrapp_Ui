@@ -215,13 +215,13 @@ h2 {
 }
 
 .slide1 {
-    background-repeat: no-repeat;
-    background: linear-gradient(rgba(255, 255, 0, 0.4), rgba(0, 200, 81, 0.4)), url('http://www.ecowise.net.in/wp-content/themes/function/images/cms-container-bg.jpg') no-repeat center center fixed;
+   
+    background: linear-gradient(rgba(255, 255, 0, 0.4), rgba(0, 200, 81, 0.4)), url('https://image.freepik.com/free-vector/green-environmental-icons-collection_1152-14.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat;
+    background-size: contain;
 }
 
 .slide6 {

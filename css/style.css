@@ -116,17 +116,7 @@ h2 {
     padding: 20px;
 }
 
-@media only screen and (max-width: 750px) {
-    #f_box {
-        transform: scale(1);
-        position: relative;
-        margin-left: 1%;
-    }
-    #phone_img {
-        transform: scale(1);
-        margin-left: 40px;
-    }
-}
+
 
 
 /*Feature Box Ends */
@@ -296,4 +286,22 @@ h2 {
     color: white;
     text-align: center;
     background-color: #aaa;
+}
+@media screen and (max-width: 900px) {
+   
+   #form{
+       transform:scale(1);
+       padding-bottom:0px;
+       
+   }
+   .stats{
+       transform:scale(0.5);
+   }
+
+    #f_box {
+        transform: scale(1);
+        position: relative;
+        margin-left: 1%;
+    }
+    
 }

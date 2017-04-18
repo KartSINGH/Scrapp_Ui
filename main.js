@@ -7,6 +7,6 @@ app.get('/', (request, response) => {
     response.sendFile(path.join(__dirname, 'index.html'));
 })
 
-app.listen(8887,() => {
+app.listen(8887, () => {
     console.log('Server running on port 8887')
 })

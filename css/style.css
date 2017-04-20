@@ -2,7 +2,9 @@
 
 
 /* Navbar Related CSS */
-
+body{
+    font-family: 'Arvo', serif;
+}
 .nav-item {
     margin-left: 25px;
     color: black;
@@ -204,6 +206,18 @@ h2 {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.hiring {
+    background-color: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1));
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:#404040;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:100px;
+    
+}
 
 .slide1 {
     background: linear-gradient(rgba(255, 255, 0, 0.4), rgba(0, 200, 81, 0.4)), url('https://image.freepik.com/free-vector/green-environmental-icons-collection_1152-14.jpg');
@@ -289,6 +303,19 @@ h2 {
     text-align: center;
     background-color: #aaa;
 }
+.openings{
+    margin-top:50px;
+    padding:20px;
+    text-align: center;
+
+}
+ h3{
+    color:#404040;
+}
+.hoverable:hover{
+    background-color:white;
+}
+
 @media screen and (max-width: 900px) {
    
    #form{

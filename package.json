@@ -21,6 +21,7 @@
   "homepage": "https://github.com/KartSINGH/Scrapp_Ui#readme",
   "dependencies": {
     "angular": "^1.6.4",
+    "angular-ui-router": "^0.4.2",
     "owl.carousel": "^2.2.0"
   }
 }

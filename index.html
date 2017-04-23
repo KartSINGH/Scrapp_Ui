@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="shuttlescrap">
 
 <head>
     <meta charset="utf-8">
@@ -1008,7 +1008,7 @@
     <!--/.Copyright-->
 </footer>
     <!-- Modal Register -->
-    <div class="modal fade modal-ext" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade modal-ext" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="loginCtrl">
         <div class="modal-dialog" role="document">
             <!--Content-->
             <div class="modal-content">
@@ -1031,21 +1031,21 @@
                 <div class="modal-body">
                     <div class="md-form">
                         <i class="fa fa-envelope prefix"></i>
-                        <input type="text" id="form2" class="form-control">
+                        <input type="text" id="form2" class="form-control" ng-model="email1">
                         <label for="form2">Your email</label>
                     </div>
                     <div class="md-form">
                         <i class="fa fa-lock prefix"></i>
-                        <input type="password" id="form3" class="form-control">
-                        <label for="form3">Your password</label>
+                        <input type="password" id="form3" class="form-control" ng-model="password">
+                        <label for="form3" >Your password</label>
                     </div>
                     <div class="md-form">
                         <i class="fa fa-lock prefix"></i>
-                        <input type="password" id="form4" class="form-control">
-                        <label for="form4">Repeat password</label>
+                        <input type="password" id="form4" class="form-control" ng-model="re_password">
+                        <label for="form4" >Repeat password</label>
                     </div>
                     <div class="text-center">
-                        <button class="btn btn-primary btn-lg">Sign up</button>
+                        <button class="btn btn-primary btn-lg" ng-click="signup()">Sign up</button>
                         <fieldset class="form-group">
                             <input type="checkbox" id="checkbox1">
                             <label for="checkbox1">Subscribe me to the newsletter</label>
@@ -1074,6 +1074,11 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script src="./node_modules/owl.carousel/dist/owl.carousel.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script> 
+    <script src="./js/app.js"></script>
+     
     <script>
         $(document).on("scroll", function () {
             if ($(document).scrollTop() < 100) {

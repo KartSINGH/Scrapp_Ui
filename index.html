@@ -32,37 +32,37 @@
                 aria-expanded="false" aria-label="Toggle navigation" style="background-color:#22aa86">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="#">
-                    <strong>ShuttleScrapp</strong>
-                </a>
-                <div class="collapse navbar-collapse" id="navbarNav1">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Features</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link">Process</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link">Stats</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">What We Buy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Testimonials</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">About us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animated fadeIn" style="background-color:#22aa86;color:white;cursor: pointer;">Request Scrap Pickup</a>
-                        </li>
-                    </ul>
-                </div>
+            <a class="navbar-brand" href="#">
+                <strong>ShuttleScrapp</strong>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav1">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Features</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link">Process</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link">Stats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">What We Buy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animated fadeIn" style="background-color:#22aa86;color:white;cursor: pointer;">Request Scrap Pickup</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
     <div class="slide1 slides ">
@@ -82,6 +82,12 @@
                             extra attention to featured content or information. This is a simple hero unit, a simple jumbotron-style
                             component for calling extra attention to featured content or information. This is a simple hero
                             unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                        <div class="md-form" ng-controller="loginCtrl123">
+                            <i class="fa fa-envelope prefix"></i>
+                            <input type="text" class="form-control" ng-model="user.email">
+                            <label for="form2">Your email</label>
+                            <button class="btn btn-primary btn-lg" ng-click="signup()">Sign up</button>
+                        </div>
                         <p class="lead">
                             <a class="btn btn-success btn-lg " role="button" data-toggle="modal" data-target="#modal-register">Login</a>
                         </p>
@@ -480,195 +486,7 @@
             </div>
         </div>
     </div>
-    <div style="background-color:#f2f4f4;overflow:hidden" class="flex-center flex-column slide6">
-        <div class="container ">
-            <h1 style="text-align: center"><span style="color:#404040">What We</span> Buy</h1>
-            <p>&nbsp</p>
-            <p>&nbsp</p>
-            <div class="owl-carousel owl-theme" style="transform: scale(1)">
-                <div class="item">
-                    <div class="card">
-                        <!--Card image-->
-                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
-                        <!--/.Card image-->
-                        <!--Card content-->
-                        <div class="card-block">
-                            <!--Title-->
-                            <h4 class="card-title">Newspapers</h4>
-                            <!--Text-->
-                        </div>
-                        <!--/.Card content-->
-                    </div>
-                    <!--/.Card-->
-                </div>
-                <div class="item">
-                    <div class="card">
-                        <!--Card image-->
-                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
-                        <!--/.Card image-->
-                        <!--Card content-->
-                        <div class="card-block">
-                            <!--Title-->
-                            <h4 class="card-title">Glass</h4>
-                            <!--Text-->
-                        </div>
-                        <!--/.Card content-->
-                    </div>
-                    <!--/.Card-->
-                </div>
-                <div class="item">
-                    <div class="card">
-                        <!--Card image-->
-                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
-                        <!--/.Card image-->
-                        <!--Card content-->
-                        <div class="card-block">
-                            <!--Title-->
-                            <h4 class="card-title">Plastic</h4>
-                            <!--Text-->
-                        </div>
-                        <!--/.Card content-->
-                    </div>
-                    <!--/.Card-->
-                </div>
-                <div class="item">
-                    <div class="card">
-                        <!--Card image-->
-                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
-                        <!--/.Card image-->
-                        <!--Card content-->
-                        <div class="card-block">
-                            <!--Title-->
-                            <h4 class="card-title">Electronics</h4>
-                            <!--Text-->
-                        </div>
-                        <!--/.Card content-->
-                    </div>
-                    <!--/.Card-->
-                </div>
-                <div class="item">
-                    <div class="card">
-                        <!--Card image-->
-                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
-                        <!--/.Card image-->
-                        <!--Card content-->
-                        <div class="card-block">
-                            <!--Title-->
-                            <h4 class="card-title">Metal</h4>
-                            <!--Text-->
-                        </div>
-                        <!--/.Card content-->
-                    </div>
-                    <!--/.Card-->
-                </div>
-                <div class="item">
-                    <div class="card">
-                        <!--Card image-->
-                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
-                        <!--/.Card image-->
-                        <!--Card content-->
-                        <div class="card-block">
-                            <!--Title-->
-                            <h4 class="card-title">Cardboard</h4>
-                            <!--Text-->
-                        </div>
-                        <!--/.Card content-->
-                    </div>
-                    <!--/.Card-->
-                </div>
-                <div class="item">
-                    <div class="card">
-                        <!--Card image-->
-                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
-                        <!--/.Card image-->
-                        <!--Card content-->
-                        <div class="card-block">
-                            <!--Title-->
-                            <h4 class="card-title">Furniture</h4>
-                            <!--Text-->
-                        </div>
-                        <!--/.Card content-->
-                    </div>
-                    <!--/.Card-->
-                </div>
-                <div class="item">
-                    <div class="card">
-                        <!--Card image-->
-                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
-                        <!--/.Card image-->
-                        <!--Card content-->
-                        <div class="card-block">
-                            <!--Title-->
-                            <h4 class="card-title">Others</h4>
-                            <!--Text-->
-                        </div>
-                        <!--/.Card content-->
-                    </div>
-                    <!--/.Card-->
-                </div>
-                <div class="item">
-                    <div class="card">
-                        <!--Card image-->
-                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
-                        <!--/.Card image-->
-                        <!--Card content-->
-                        <div class="card-block">
-                            <!--Title-->
-                            <h4 class="card-title">Card title</h4>
-                            <!--Text-->
-                        </div>
-                        <!--/.Card content-->
-                    </div>
-                    <!--/.Card-->
-                </div>
-                <div class="item">
-                    <div class="card">
-                        <!--Card image-->
-                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
-                        <!--/.Card image-->
-                        <!--Card content-->
-                        <div class="card-block">
-                            <!--Title-->
-                            <h4 class="card-title">Card title</h4>
-                            <!--Text-->
-                        </div>
-                        <!--/.Card content-->
-                    </div>
-                    <!--/.Card-->
-                </div>
-                <div class="item">
-                    <div class="card">
-                        <!--Card image-->
-                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
-                        <!--/.Card image-->
-                        <!--Card content-->
-                        <div class="card-block">
-                            <!--Title-->
-                            <h4 class="card-title">Card title</h4>
-                            <!--Text-->
-                        </div>
-                        <!--/.Card content-->
-                    </div>
-                    <!--/.Card-->
-                </div>
-                <div class="item">
-                    <div class="card">
-                        <!--Card image-->
-                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
-                        <!--/.Card image-->
-                        <!--Card content-->
-                        <div class="card-block">
-                            <!--Title-->
-                            <h4 class="card-title">Card title</h4>
-                            <!--Text-->
-                        </div>
-                        <!--/.Card content-->
-                    </div>
-                    <!--/.Card-->
-                </div>
-            </div>
-        </div>
-    </div>
+   
     <div style="background-color:white;font-family:'Arvo', serif;padding:90px" class="flex-center slides ">
         <div class="container-fluid">
             <div class="container">
@@ -832,183 +650,188 @@
     <div class="flex-center flex-column hiring" style="background-color: #f2f4f4">
         <div class="container">
             <h1 style="text-align: center"><span style="color:#404040">We are</span> HIRING</h1>
-            <p>&nbsp</p> 
+            <p>&nbsp</p>
             <div class="row">
-                 <div class="col-md-4 hoverable">
-                        <div class="openings">
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <i class="fa fa-code" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
-                               
-                            </div>
-                             
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <h3> TECHNICAL LEAD</h3>
-                            </div>
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <p>If you think you can crunch numbers, analyse models, perform market research all in a single
-                                    day and come up with the next action plan. We need you.</p>
-                            </div>
+                <div class="col-md-4 hoverable">
+                    <div class="openings">
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <i class="fa fa-code" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
+
                         </div>
-                    </div>
-                    <div class="col-md-4 hoverable">
-                        <div class="openings">
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <i class="fa fa-sign-language" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
-                                <p>&nbsp</p>
-                            </div>
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <h3> BUSINESS DEVELOPMENT </h3>
-                            </div>
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <p>If you think you can crunch numbers, analyse models, perform market research all in a single
-                                    day and come up with the next action plan. We need you.</p>
-                            </div>
+
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <h3> TECHNICAL LEAD</h3>
                         </div>
-                    </div>
-                     <div class="col-md-4 hoverable">
-                        <div class="openings">
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <i class="fa fa-envira" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
-                                 <p>&nbsp</p>
-                            </div>
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <h3> DESIGN </h3>
-                            </div>
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <p>If you like to play with colors, fanatic about kerning, line heights and love Deiter Rams. You should join us.</p>
-                            </div>
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <p>If you think you can crunch numbers, analyse models, perform market research all in a single
+                                day and come up with the next action plan. We need you.</p>
                         </div>
-                    </div>
-                     <div class="col-md-4 hoverable">
-                        <div class="openings">
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <i class="fa fa-cubes" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
-                                 <p>&nbsp</p>
-                            </div>
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <h3> MARKETING </h3>
-                            </div>
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <p>Content marketing, SEO, SEM, Facebook ads, Organic marketing, Offline marketing, emails. We do them all and you would do them too if you join.</p>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="col-md-4 hoverable">
-                        <div class="openings">
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <i class="fa fa-desktop" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
-                                 <p>&nbsp</p>
-                            </div>
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <h3> THE HUSTLER / HACKER </h3>
-                            </div>
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <p>If you think you know stuff and can get anything done one way or the other. If you are the Godfather of this world and a unicorn in the making. We need you.</p>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="col-md-4 hoverable">
-                        <div class="openings">
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <i class="fa fa-pie-chart" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
-                                 <p>&nbsp</p>
-                            </div>
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <h3> SALES </h3>
-                            </div>
-                            <div class="row flex-center" style="margin-bottom:10px">
-                                <p>We need people who can be smart, understand the consumer, and come from a background in real estate.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 flex-center flex-column">
-                        <p>&nbsp</p>
-                        <p>&nbsp</p>
-                        <button type="button" class="btn btn-outline-default waves-effect">Apply Now</button>
                     </div>
                 </div>
-           
+                <div class="col-md-4 hoverable">
+                    <div class="openings">
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <i class="fa fa-sign-language" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
+                            <p>&nbsp</p>
+                        </div>
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <h3> BUSINESS DEVELOPMENT </h3>
+                        </div>
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <p>If you think you can crunch numbers, analyse models, perform market research all in a single
+                                day and come up with the next action plan. We need you.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 hoverable">
+                    <div class="openings">
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <i class="fa fa-envira" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
+                            <p>&nbsp</p>
+                        </div>
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <h3> DESIGN </h3>
+                        </div>
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <p>If you like to play with colors, fanatic about kerning, line heights and love Deiter Rams. You
+                                should join us.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 hoverable">
+                    <div class="openings">
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <i class="fa fa-cubes" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
+                            <p>&nbsp</p>
+                        </div>
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <h3> MARKETING </h3>
+                        </div>
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <p>Content marketing, SEO, SEM, Facebook ads, Organic marketing, Offline marketing, emails. We do
+                                them all and you would do them too if you join.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 hoverable">
+                    <div class="openings">
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <i class="fa fa-desktop" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
+                            <p>&nbsp</p>
+                        </div>
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <h3> THE HUSTLER / HACKER </h3>
+                        </div>
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <p>If you think you know stuff and can get anything done one way or the other. If you are the Godfather
+                                of this world and a unicorn in the making. We need you.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 hoverable">
+                    <div class="openings">
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <i class="fa fa-pie-chart" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
+                            <p>&nbsp</p>
+                        </div>
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <h3> SALES </h3>
+                        </div>
+                        <div class="row flex-center" style="margin-bottom:10px">
+                            <p>We need people who can be smart, understand the consumer, and come from a background in real
+                                estate.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 flex-center flex-column">
+                    <p>&nbsp</p>
+                    <p>&nbsp</p>
+                    <button type="button" class="btn btn-outline-default waves-effect">Apply Now</button>
+                </div>
+            </div>
+
         </div>
     </div>
     <!--Footer-->
-<footer class="page-footer center-on-small-only" style="background-color:#22aa86">
-    <!--Footer Links-->
-    <div class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <!--First column-->
-                <div class="col-md-4 ">
-                    <h5 class="title">ShuttleScrap India</h5>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
-                        it to make a type specimen book. It has survived not only five centuries, but also the leap into
-                        electronic typesetting, remaining essentially unchanged.</p>
+    <footer class="page-footer center-on-small-only" style="background-color:#22aa86">
+        <!--Footer Links-->
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <!--First column-->
+                    <div class="col-md-4 ">
+                        <h5 class="title">ShuttleScrap India</h5>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                            type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                            but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    </div>
+                    <div class="col-md-1">
+                        <p>&nbsp</p>
+                    </div>
+                    <!--/.First column-->
+                    <hr class="hidden-md-up">
+                    <!--Second column-->
+                    <div class="col-md-3 ">
+                        <h5 class="title">Compnay Profile</h5>
+                        <ul>
+                            <li><a href="#!">595 Commonwealth Avenue Boston, Massachusetts 02215</a></li>
+                            <li><a href="#!">info@scrapp.in</a></li>
+                        </ul>
+                    </div>
+                    <!--/.Second column-->
+                    <hr class="hidden-md-up">
+                    <!--Third column-->
+                    <div class="col-md-4">
+                        <h5 class="title">Latest News</h5>
+                        <ul>
+                            <li><a href="#!">How to Recycle Paper</a></li>
+                            <li><a href="#!">The Evolution of Recycling</a></li>
+                            <li><a href="#!">Global Warming Facts</a></li>
+                            <li><a href="#!">Quote Post</a></li>
+                        </ul>
+                    </div>
+                    <!--/.Third column-->
+                    <hr class="hidden-md-up">
+                    <!--Fourth column-->
+                    <!--/.Fourth column-->
                 </div>
-                <div class="col-md-1">
-                    <p>&nbsp</p>
-                </div>
-                <!--/.First column-->
-                <hr class="hidden-md-up">
-                <!--Second column-->
-                <div class="col-md-3 ">
-                    <h5 class="title">Compnay Profile</h5>
-                    <ul>
-                        <li><a href="#!">595 Commonwealth Avenue Boston, Massachusetts 02215</a></li>
-                        <li><a href="#!">info@scrapp.in</a></li>
-                    </ul>
-                </div>
-                <!--/.Second column-->
-                <hr class="hidden-md-up">
-                <!--Third column-->
-                <div class="col-md-4">
-                    <h5 class="title">Latest News</h5>
-                    <ul>
-                        <li><a href="#!">How to Recycle Paper</a></li>
-                        <li><a href="#!">The Evolution of Recycling</a></li>
-                        <li><a href="#!">Global Warming Facts</a></li>
-                        <li><a href="#!">Quote Post</a></li>
-                    </ul>
-                </div>
-                <!--/.Third column-->
-                <hr class="hidden-md-up">
-                <!--Fourth column-->
-                <!--/.Fourth column-->
             </div>
         </div>
-    </div>
-    <!--/.Footer Links-->
-    <hr>
-    <!--Call to action-->
-    <div class="call-to-action">
-        <ul>
-            <li>
-                <h5>Raise Scrap Pick up Request</h5>
-            </li>
-            <li><a href="" class="btn btn-teal">Schedule a Pickup</a></li>
-        </ul>
-    </div>
-    <!--/.Call to action-->
-    <hr>
-    <!--Social buttons-->
-    <div class="social-section">
-        <ul>
-            <button type="button" class="btn btn-lg btn-fb" style="background-color:rgb(59, 89, 182)"><i class="fa fa-facebook"></i></button>
-            <button type="button" class="btn btn-lg btn-tw" style="background-color:rgb(85, 172, 238)"><i class="fa fa-twitter"></i></button>
-            <button type="button" class="btn btn-lg btn-ins" style="background-color:rgb(63, 114, 155)"><i class="fa fa-instagram"></i></button>
-            <button type="button" class="btn btn-lg btn-gplus" style="background-color:rgb(221, 75, 57)"><i class="fa fa-google-plus"></i></button>
-        </ul>
-    </div>
-    <!--/.Social buttons-->
-    <!--Copyright-->
-    <div class="footer-copyright">
-        <div class="container-fluid">
-            © 2017 Copyright: <a href="https://scrapp.in"> Scrapp.in </a>
+        <!--/.Footer Links-->
+        <hr>
+        <!--Call to action-->
+        <div class="call-to-action">
+            <ul>
+                <li>
+                    <h5>Raise Scrap Pick up Request</h5>
+                </li>
+                <li><a href="" class="btn btn-teal">Schedule a Pickup</a></li>
+            </ul>
         </div>
-    </div>
-    <!--/.Copyright-->
-</footer>
+        <!--/.Call to action-->
+        <hr>
+        <!--Social buttons-->
+        <div class="social-section">
+            <ul>
+                <button type="button" class="btn btn-lg btn-fb" style="background-color:rgb(59, 89, 182)"><i class="fa fa-facebook"></i></button>
+                <button type="button" class="btn btn-lg btn-tw" style="background-color:rgb(85, 172, 238)"><i class="fa fa-twitter"></i></button>
+                <button type="button" class="btn btn-lg btn-ins" style="background-color:rgb(63, 114, 155)"><i class="fa fa-instagram"></i></button>
+                <button type="button" class="btn btn-lg btn-gplus" style="background-color:rgb(221, 75, 57)"><i class="fa fa-google-plus"></i></button>
+            </ul>
+        </div>
+        <!--/.Social buttons-->
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="container-fluid">
+                © 2017 Copyright: <a href="https://scrapp.in"> Scrapp.in </a>
+            </div>
+        </div>
+        <!--/.Copyright-->
+    </footer>
     <!-- Modal Register -->
-    <div class="modal fade modal-ext" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="loginCtrl">
+    <div class="modal fade modal-ext" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+        ng-controller="">
         <div class="modal-dialog" role="document">
             <!--Content-->
             <div class="modal-content">
@@ -1031,18 +854,18 @@
                 <div class="modal-body">
                     <div class="md-form">
                         <i class="fa fa-envelope prefix"></i>
-                        <input type="text" id="form2" class="form-control" ng-model="email1">
+                        <input type="text" id="form2" class="form-control" ng-model="user.email">
                         <label for="form2">Your email</label>
                     </div>
                     <div class="md-form">
                         <i class="fa fa-lock prefix"></i>
-                        <input type="password" id="form3" class="form-control" ng-model="password">
-                        <label for="form3" >Your password</label>
+                        <input type="password" id="form3" class="form-control" ng-model="user.password">
+                        <label for="form3">Your password</label>
                     </div>
                     <div class="md-form">
                         <i class="fa fa-lock prefix"></i>
-                        <input type="password" id="form4" class="form-control" ng-model="re_password">
-                        <label for="form4" >Repeat password</label>
+                        <input type="password" id="form4" class="form-control" ng-model="user.re_password">
+                        <label for="form4">Repeat password</label>
                     </div>
                     <div class="text-center">
                         <button class="btn btn-primary btn-lg" ng-click="signup()">Sign up</button>
@@ -1076,9 +899,9 @@
     <script src="./node_modules/owl.carousel/dist/owl.carousel.js"></script>
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script src="./node_modules/angular/angular.js"></script>
-    <script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script> 
+    <script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="./js/app.js"></script>
-     
+
     <script>
         $(document).on("scroll", function () {
             if ($(document).scrollTop() < 100) {

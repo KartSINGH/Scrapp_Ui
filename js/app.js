@@ -6,24 +6,28 @@ app.config(function ($httpProvider) {
 /*app.config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
     cfpLoadingBarProvider.spinnerTemplate = '<div class="se-pre-con" ></div>';
 }])*/
-app.config(function ($locationProvider, $httpProvider,$stateProvider) {
+app.config(function ($locationProvider, $httpProvider,$stateProvider,$urlRouterProvider) {
 
 
     $locationProvider.hashPrefix('');
 
-    /*$stateProvider
+   /* $stateProvider
     .state('login', {
-            url: "/login",
-            templateUrl: "./reqForm.html",
-            controller: "step2Control"
+            url: "/",
+            
+            controller: "loginCtrl"
         })*/
         
 });
-app.controller('loginCtrl',function($scope,$state,$http){
-console.log("logincontroller called");
-$scope.signup = function($scope){
-  $scope.email1="kartik"
-    console.log($scope.email1);
+
+
+//login Controller
+app.controller('loginCtrl123',function($scope,$state,$http){
+$scope.user = {};
+$scope.signup = function($scope,$state){
+    
+  console.log("logincontroller called");
+    console.log($scope.user.email);
     
 }
 });

@@ -44,7 +44,7 @@ body {
 #f_box {
     position: absolute;
     width: 100%;
-    top: 50%;
+    top: 40%;
     font-family: 'Arvo', serif;
 }
 
@@ -129,8 +129,8 @@ h2 {
 #phone_img {
     height: 500px;
     width: 280px;
-    margin-top: 17vh;
-    margin-right: 20vh;
+    margin-top:25vh;
+     margin-right: 20vh;
     padding: 0px;
     float: left;
 }

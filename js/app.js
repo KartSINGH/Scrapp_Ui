@@ -6,28 +6,14 @@ app.config(function ($httpProvider) {
 /*app.config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
     cfpLoadingBarProvider.spinnerTemplate = '<div class="se-pre-con" ></div>';
 }])*/
-app.config(function ($locationProvider, $httpProvider,$stateProvider,$urlRouterProvider) {
-
-
-    $locationProvider.hashPrefix('');
-
-   /* $stateProvider
-    .state('login', {
-            url: "/",
-            
-            controller: "loginCtrl"
-        })*/
-        
-});
-
 
 //login Controller
-app.controller('loginCtrl123',function($scope,$state,$http){
+app.controller('otpCtrl',function($scope){
 $scope.user = {};
-$scope.signup = function($scope,$state){
+$scope.signup = function(){
     
   console.log("logincontroller called");
-    console.log($scope.user.email);
-    
+    console.log($scope.user);
+    var user_number = $scope.user_number;
 }
 });

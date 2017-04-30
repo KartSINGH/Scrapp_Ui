@@ -1,4 +1,4 @@
-var app = angular.module('shuttlescrap', ['ui.router']);
+var app = angular.module('shuttlescrap', ['ui.router', 'ngStorage']);
 
 app.config(function ($httpProvider) {
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
@@ -6,37 +6,56 @@ app.config(function ($httpProvider) {
 /*app.config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
     cfpLoadingBarProvider.spinnerTemplate = '<div class="se-pre-con" ></div>';
 }])*/
-app.config(function ( $stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
-     $locationProvider.html5Mode(true);
+
+app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $localStorageProvider) {
+    $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix('');
     $stateProvider
 
         .state('landingPage', {
             url: "/",
             templateUrl: "../templates/welcome.html",
-            
+
         })
-        .state('register',{
-            url:'/register',
+        .state('register', {
+            url: '/register',
             templateUrl: "../templates/register.html",
-            controller: "registerCtrl"
+            controller: "registerCtrl",
+            authenticate: true
         })
-         .state('userMain',{
-            url:'/user',
+        .state('userMain', {
+            url: '/user',
             templateUrl: "../templates/user.html",
-            controller: "userCtrl"
+            controller: "userCtrl",
+            authenticate: true
         })
-        
+
 });
+
+
+app.run(function ($rootScope, $state, $timeout) {
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+        if (toState.authenticate == true) {
+            if ($rootScope.user.loggedIn == false) {
+                $timeout(function () {
+                    console.log("app.run")
+                    $state.go('register')
+                })
+
+            }
+        }
+    })
+});
+
 //login Controller
-app.controller('otpCtrl', function ($scope,$http,$rootScope,$state) {
-    $scope.user = {};
+app.controller('otpCtrl', function ($scope, $http, $rootScope, $state) {
+    $rootScope.user = {};
     $state.go('register');
     $scope.signup = function () {
 
-        console.log("logincontroller called");
-        console.log($scope.user);
-        var user_number = $scope.user.user_number;
+        console.log("otp controller called");
+        console.log($rootScope.user);
+        var user_number = $rootScope.user.user_number;
 
         $http({
             method: 'POST',
@@ -54,7 +73,7 @@ app.controller('otpCtrl', function ($scope,$http,$rootScope,$state) {
             $rootScope.s_otp = data.data.response.oneTimePassword;
             console.log($rootScope.s_otp);
 
-           // $state.go("otp-enter");
+            // $state.go("otp-enter");
 
 
         }, function (error) {
@@ -62,76 +81,107 @@ app.controller('otpCtrl', function ($scope,$http,$rootScope,$state) {
             alert("error occured");
         })
     }
-    $scope.verify_otp=function(){
+    $scope.verify_otp = function () {
         console.log("Your Otp is getting under verification");
         console.log($scope.user_otp);
-        
-        if($scope.user_otp==$rootScope.s_otp){
+
+        if ($scope.user_otp == $rootScope.s_otp) {
             console.log("OTP has been verified");
             $state.go('register');
-            
-        }else{
-           alert("Wrong OTP.Please try again")
-           
+
+        } else {
+            alert("Wrong OTP.Please try again")
+
         }
     }
-    
+
 });
 
 //register Controller
 
-app.controller('registerCtrl',function($scope,$http,$rootScope,$state){
+app.controller('registerCtrl', function ($scope, $http, $rootScope, $state) {
     console.log("register controller called")
-    $scope.signup=function(){
-        console.log($scope.register);
-           $http({
+    $rootScope.user.loggedIn = "false";
+    $scope.signup = function () {
+        console.log("before sign up  " + $rootScope.user);
+        $http({
             method: 'POST',
             url: 'http://localhost:8886/register/submit_user',
             data: {
-                phone_number: $scope.register.phone_number,
-                user_name: $scope.register.name,
-                user_password: $scope.register.password,
-                user_email:$scope.register.email,
-                user_totalcredits:'0'
+                phone_number: $rootScope.user.phone_number,
+                user_name: $rootScope.user.user_name,
+                user_password: $rootScope.user.user_password,
+                user_email: $rootScope.user.user_email,
+                user_totalcredits: '0'
             }
         }).then(function (res) {
             console.log("User has been registered!");
             console.log(res);
+            $rootScope.user_data = res.config.data;
+            console.log("user_data " + $rootScope.user_data);
+            $rootScope.user.loggedIn = "true";
+
             $state.go('userMain');
-
-
-
         }, function (error) {
             console.log("error");
+            $rootScope.user.loggedIn = "false";
+            console.log("After failed sign up user rootscope " + $rootScope.user);
             alert("error occured");
+
         })
     }
 
-    $scope.login=function(){
+    $scope.login = function () {
         console.log('login function called');
-            $http({
+        $http({
             method: 'POST',
             url: 'http://localhost:8886/register/user',
-            data:{
+            data: {
                 user_email: $scope.userlogin_email
             }
         }).then(function (res) {
-           
-            console.log(res.data.user_password);
-            console.log("input password"+$scope.userlogin_password);
-            if($scope.userlogin_password==res.data.user_password){
+
+            console.log(res);
+            $rootScope.user_data = res.data;
+            console.log($rootScope.user_data);
+            console.log("input password" + $scope.userlogin_password);
+            if ($scope.userlogin_password == res.data.user_password) {
+                $rootScope.user.loggedIn = "true";
+                console.log($rootScope.user.loggedIn);
+
                 $state.go('userMain');
-            }else{
+            } else {
+                $rootScope.user.loggedIn = "false";
                 alert('Invalid Password');
             }
-            
+
         }, function (error) {
             console.log(error);
             alert("error occured");
+            $rootScope.user.loggedIn = "false";
         })
     }
 });
 //UserMAIN CONtroller
-app.controller('userCtrl',function($scope){
+app.controller('userCtrl', function ($scope, $rootScope, $state, $http, $window) {
+if($rootScope.user.loggedIn=="true"){
     console.log("user Main controller called")
+    $scope.logout = function () {
+        $rootScope.user.loggedIn = false;
+        //  $window.localStorage.clear();
+        $state.go('register');
+    }
+
+    $scope.check = function () {
+        console.log($rootScope.user);
+        if ($rootScope.user.loggedIn=="true") {
+            console.log("will remain here")
+        } else {
+            $state.go('register');
+            console.log('mai agaya wapas');
+        }
+    }
+}else{
+    $state.go('register')
+}
 });

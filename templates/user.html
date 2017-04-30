@@ -34,7 +34,7 @@
                         <!--Author box-->
                         <div class="author-box" style="margin-top:30px">
                             <!--Name-->
-                            <h1 class="h3-responsive text-center">Welcome kartik to ShuttleScrap</h1>
+                            <h1 class="h3-responsive text-center">Welcome {{user_data.user_name}} to ShuttleScrap</h1>
                             <hr>
                             <div class="row">
                                 <!--Avatar-->
@@ -43,12 +43,16 @@
                                 </div>
                                 <!--Author Data-->
                                 <div class=" col-12 col-sm-10">
-                                    <p><strong>Kartik Singh</strong></p>
-                                    <p style="color:deeppink">86 Credit Poinnts</p>
+                                    <p><strong>Email : {{user_data.user_email}}</strong></p>
+                                     <p>Phone Number : {{user_data.phone_number}}</p>
+                                     <p>Status : {{user.loggedIn}}</p>
+                                    <p style="color:deeppink">Credit Points : {{user_data.user_totalcredits}}</p>
                                     <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint esse nulla quia quam veniam
                                         commodi dicta, iusto inventore. Voluptatum pariatur eveniet ea, officiis vitae praesentium
                                         beatae quas libero, esse facere.
                                     </p>
+                                    <button type="button" class="btn btn-indigo" ng-click="logout()">Logout</button>
+                                    <button type="button" class="btn btn-indigo" ng-click="check()">check</button>
                                 </div>
                             </div>
                         </div>

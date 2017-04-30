@@ -61,7 +61,7 @@
                     <li class="nav-item">
                         <a class="nav-link animated fadeIn" style="background-color:#22aa86;color:white;cursor: pointer;">Request Scrap Pickup</a>
                     </li>
-                    
+
                 </ul>
             </div>
         </div>
@@ -84,25 +84,40 @@
                             component for calling extra attention to featured content or information. This is a simple hero
                             unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
                         <div class="md-form" ng-controller="otpCtrl">
-                            <i class="fa fa-phone prefix"></i>
-                            <input type="text" class="form-control" ng-model="user.email">
-                            <label for="form2">Your Phone Number</label>
-                            <button class="btn btn-primary btn-lg" ng-click="signup()">Request OTP</button>
+                            <div class="r_otp">
+                                <i class="fa fa-phone prefix"></i>
+
+                                <input type="text" class="form-control" ng-model="user.user_number">
+                                <label for="form2">Your Phone Number</label>
+                                <button class="btn btn-primary btn-lg" ng-click="signup()" id="r_otp1">Request OTP</button>
+                            </div>
+                            <div class="v_otp">
+                                <input type="text" class="form-control" ng-model="user_otp">
+                                <label for="form3">Enter Your Otp</label>
+                                <button class="btn btn-primary btn-lg" ng-click="verify_otp()" id="v_otp1">Verify OTP</button>
+                            </div>
+                            <div class="signup">
+                                <p class="lead">
+                                    <p>Your mobile number has been verified</p>
+                                    <a class="btn btn-success btn-lg " role="button" data-toggle="modal" data-target="#modal-register">Sign Up to Continue</a>
+                                </p>
+                            </div>
                         </div>
-                        
+
                     </div>
                     <!--/.Jumbotron-->
                 </div>
                 <div class="col-md-4 animated wow slideInRight flex-center flex-column" style="padding:0px">
                     <div class="row flex-center flex-coloumn">
                         <div class="md-col-12">
-                    <img src="http://www.pompom.in/img/device-slider/phone.png" id="phone_img" style="margin-left:auto;margin-right:auto;display:block">
-                    </div>
+                            <img src="http://www.pompom.in/img/device-slider/phone.png" id="phone_img" style="margin-left:auto;margin-right:auto;display:block">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="container">
         <div class="row flex-center flex-coloumn" id="f_box">
             <div class="col-sm-4" id="f_box_col1">
@@ -489,7 +504,7 @@
             </div>
         </div>
     </div>
-   
+
     <div style="background-color:white;font-family:'Arvo', serif;padding:90px" class="flex-center slides ">
         <div class="container-fluid">
             <div class="container">
@@ -742,7 +757,8 @@
                         </div>
                         <div class="row flex-center" style="margin-bottom:10px">
                             <p>We need people who can be smart, understand the consumer, and come from a background in real
-                                estate.</p>
+                                estate.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -833,8 +849,7 @@
         <!--/.Copyright-->
     </footer>
     <!-- Modal Register -->
-    <div class="modal fade modal-ext" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-        >
+    <div class="modal fade modal-ext" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <!--Content-->
             <div class="modal-content">
@@ -1085,6 +1100,18 @@
 
         })
         wow.init();
+    </script>
+    <script>
+        $('.v_otp').hide();
+        $('.signup').hide();
+        $('#r_otp1').on('click', function () {
+            $('.r_otp').hide();
+            $('.v_otp').fadeIn(1000);
+        })
+        $('#v_otp1').on('click', function(){
+            $('.v_otp').hide();
+            $('.signup').fadeIn(1000);
+        })
     </script>
 </body>
 

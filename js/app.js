@@ -6,10 +6,32 @@ app.config(function ($httpProvider) {
 /*app.config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
     cfpLoadingBarProvider.spinnerTemplate = '<div class="se-pre-con" ></div>';
 }])*/
+app.config(function ( $stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+     $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('');
+    $stateProvider
 
+        .state('landingPage', {
+            url: "/",
+            templateUrl: "../templates/welcome.html",
+            
+        })
+        .state('register',{
+            url:'/register',
+            templateUrl: "../templates/register.html",
+            controller: "registerCtrl"
+        })
+         .state('userMain',{
+            url:'/user',
+            templateUrl: "../templates/user.html",
+            controller: "userCtrl"
+        })
+        
+});
 //login Controller
-app.controller('otpCtrl', function ($scope,$http,$rootScope) {
+app.controller('otpCtrl', function ($scope,$http,$rootScope,$state) {
     $scope.user = {};
+    $state.go('register');
     $scope.signup = function () {
 
         console.log("logincontroller called");
@@ -43,9 +65,10 @@ app.controller('otpCtrl', function ($scope,$http,$rootScope) {
     $scope.verify_otp=function(){
         console.log("Your Otp is getting under verification");
         console.log($scope.user_otp);
-        var isVerified;
+        
         if($scope.user_otp==$rootScope.s_otp){
-            console.log("OTP has been verified")
+            console.log("OTP has been verified");
+            $state.go('register');
             
         }else{
            alert("Wrong OTP.Please try again")
@@ -53,4 +76,38 @@ app.controller('otpCtrl', function ($scope,$http,$rootScope) {
         }
     }
     
+});
+
+//register Controller
+
+app.controller('registerCtrl',function($scope,$http,$rootScope,$state){
+    console.log("register controller called")
+    $scope.signup=function(){
+        console.log($scope.register);
+           $http({
+            method: 'POST',
+            url: 'http://localhost:8886/register/submit_user',
+            data: {
+                phone_number: $scope.register.phone_number,
+                user_name: $scope.register.name,
+                user_password: $scope.register.password,
+                user_email:$scope.register.email,
+                user_totalcredits:'0'
+            }
+        }).then(function (res) {
+            console.log("User has been registered!");
+            console.log(res);
+            $state.go('userMain');
+
+
+
+        }, function (error) {
+            console.log("error");
+            alert("error occured");
+        })
+    }
+});
+//UserMAIN CONtroller
+app.controller('userCtrl',function($scope){
+    console.log("user Main controller called")
 });

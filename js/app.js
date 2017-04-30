@@ -1,11 +1,11 @@
-var app = angular.module('shuttlescrap', ['ui.router', 'ngStorage']);
+var app = angular.module('shuttlescrap', ['ui.router', 'ngStorage','angular-loading-bar']);
 
 app.config(function ($httpProvider) {
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 });
-/*app.config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
-    cfpLoadingBarProvider.spinnerTemplate = '<div class="se-pre-con" ></div>';
-}])*/
+app.config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
+    cfpLoadingBarProvider.includeSpinner = false;
+}])
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $localStorageProvider) {
     $locationProvider.html5Mode(true);
@@ -108,10 +108,10 @@ app.controller('registerCtrl', function ($scope, $http, $rootScope, $state) {
             method: 'POST',
             url: 'http://localhost:8886/register/submit_user',
             data: {
-                phone_number: $rootScope.user.phone_number,
-                user_name: $rootScope.user.user_name,
-                user_password: $rootScope.user.user_password,
-                user_email: $rootScope.user.user_email,
+                phone_number: $scope.phone_number,
+                user_name: $scope.user_name,
+                user_password: $scope.user_password,
+                user_email: $scope.user_email,
                 user_totalcredits: '0'
             }
         }).then(function (res) {
@@ -168,7 +168,7 @@ if($rootScope.user.loggedIn=="true"){
     console.log("user Main controller called")
     $scope.logout = function () {
         $rootScope.user.loggedIn = false;
-        //  $window.localStorage.clear();
+        $window.localStorage.clear();
         $state.go('register');
     }
 

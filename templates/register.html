@@ -12,18 +12,18 @@
         <!--Body-->
         <div class="md-form">
             <i class="fa fa-envelope prefix" style="color:#22aa86"></i>
-            <input type="text" id="form2" class="form-control">
+            <input type="text" id="form2" class="form-control" ng-model="userlogin_email">
             <label for="form2">Your email</label>
         </div>
 
         <div class="md-form">
             <i class="fa fa-lock prefix" style="color:#22aa86"></i>
-            <input type="password" id="form4" class="form-control">
+            <input type="password" id="form4" class="form-control" ng-model="userlogin_password">
             <label for="form4">Your password</label>
         </div>
 
         <div class="text-center">
-            <button class="btn btn-purple darken-4">Login</button>
+            <button class="btn btn-purple darken-4" ng-click="login()">Login</button>
         </div>
 
     </div>

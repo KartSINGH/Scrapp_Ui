@@ -106,6 +106,30 @@ app.controller('registerCtrl',function($scope,$http,$rootScope,$state){
             alert("error occured");
         })
     }
+
+    $scope.login=function(){
+        console.log('login function called');
+            $http({
+            method: 'POST',
+            url: 'http://localhost:8886/register/user',
+            data:{
+                user_email: $scope.userlogin_email
+            }
+        }).then(function (res) {
+           
+            console.log(res.data.user_password);
+            console.log("input password"+$scope.userlogin_password);
+            if($scope.userlogin_password==res.data.user_password){
+                $state.go('userMain');
+            }else{
+                alert('Invalid Password');
+            }
+            
+        }, function (error) {
+            console.log(error);
+            alert("error occured");
+        })
+    }
 });
 //UserMAIN CONtroller
 app.controller('userCtrl',function($scope){

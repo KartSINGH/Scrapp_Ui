@@ -1,0 +1,97 @@
+
+<!--Naked Form-->
+<div class="card" style="padding:20px">
+
+    <!--Header-->
+    <div class="text-center">
+        <h3><i class="fa fa-envelope"></i> Scrap Pickup Request Form</h3>
+        <hr class="mt-2 mb-2">
+    </div>
+
+    <!--Body-->
+    <p>Fill the below form to book your scrap pick up request</p>
+    <br>
+
+    <!--Body-->
+    <div class="md-form">
+        <i class="fa fa-user prefix"></i>
+        <input type="text" id="form3" class="form-control" placeholder="{{user.user_name}}" ng-model="newbook.user_name">
+        <label for="form3">Your name</label>
+    </div>
+
+    <div class="md-form">
+        <i class="fa fa-envelope prefix"></i>
+        <input type="text" id="form2" class="form-control" placeholder={{user.user_email}} ng-model="newbook.user_email">
+        <label for="form2">Your email</label>
+    </div>
+
+    <div class="md-form">
+        <i class="fa fa-tag prefix"></i>
+        <input type="text" id="form32" class="form-control" ng-model="newbook.res_address">
+        <label for="form34">Pickup Address</label>
+    </div>
+    
+
+
+<form class="form-inline">
+<p>Select Payment Method</p>
+<p>&nbsp</p>
+    <fieldset class="form-group">
+        <input name="group1" type="radio" id="radio11" checked="checked" class="other" ng-model="newbook.cash">
+        <label for="radio11">Cash</label>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <input name="group1" type="radio" id="radio21" class="other" ng-model="newbook.paytm">
+        <label for="radio21">PayTm</label>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <input name="group1" type="radio" id="bank_transfer" ng-model="newbook.bank">
+        <label for="radio31">Bank Transfer</label>
+    </fieldset>
+    <div class="bank_det">
+        <div class="md-form">
+        <i class="fa fa-tag prefix"></i>
+        <input type="text" id="form32" class="form-control" ng-model="newbook.accntno">
+        <label for="form34">Enter Account Number</label>
+    </div>
+    <div class="md-form">
+        <i class="fa fa-tag prefix"></i>
+        <input type="text" id="form32" class="form-control" ng-model="newbook.isfc">
+        <label for="form34">Enter IFSC code</label>
+    </div>
+    </div>
+
+</form>
+
+    <div class="md-form">
+        <i class="fa fa-pencil prefix"></i>
+        <textarea type="text" id="form8" class="md-textarea"></textarea>
+        <label for="form8">Icon Prefix</label>
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-default" ng-click="book()">Submit</button>
+
+        <div class="call">
+            <br>
+            <p>Or would you prefer to call?
+                <br>
+                <span><i class="fa fa-phone"> </i></span> + 01 234 565 280</p>
+        </div>
+    </div>
+
+</div>
+</div>
+<!--Naked Form-->
+<script>
+
+   $('.bank_det').hide();
+    $('#bank_transfer').on('click',function(){
+        $('.bank_det').fadeIn(1000);
+    })
+    $('.other').on('click',function(){
+         $('.bank_det').hide();
+    })
+</script>

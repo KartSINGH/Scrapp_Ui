@@ -1,4 +1,4 @@
-var app = angular.module('shuttlescrap', ['ui.router', 'ngStorage','angular-loading-bar']);
+var app = angular.module('shuttlescrap', ['ui.router', 'ngStorage', 'angular-loading-bar']);
 
 app.config(function ($httpProvider) {
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
@@ -23,12 +23,32 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
             controller: "registerCtrl",
             authenticate: true
         })
+        .state('userMain.credits', {
+            url: '/credits',
+            templateUrl: "../templates/credits.html",
+            controller: "creditsCtrl",
+            authenticate: true
+        })
         .state('userMain', {
             url: '/user',
             templateUrl: "../templates/user.html",
             controller: "userCtrl",
             authenticate: true
         })
+          .state('userMain.booking', {
+            url: '/mybookings',
+            templateUrl: "../templates/booking.html",
+            controller: "bookingCtrl",
+            
+        })
+        .state('userMain.newbooking', {
+            url: '/newBooking',
+            templateUrl: "../templates/newbooking.html",
+            controller: "newbookingCtrl",
+            
+        })
+        
+        
 
 });
 
@@ -50,7 +70,7 @@ app.run(function ($rootScope, $state, $timeout) {
 //login Controller
 app.controller('otpCtrl', function ($scope, $http, $rootScope, $state) {
     $rootScope.user = {};
-    $state.go('register');
+  $state.go('register');
     $scope.signup = function () {
 
         console.log("otp controller called");
@@ -164,24 +184,92 @@ app.controller('registerCtrl', function ($scope, $http, $rootScope, $state) {
 });
 //UserMAIN CONtroller
 app.controller('userCtrl', function ($scope, $rootScope, $state, $http, $window) {
-if($rootScope.user.loggedIn=="true"){
-    console.log("user Main controller called")
-    $scope.logout = function () {
-        $rootScope.user.loggedIn = false;
-        $window.localStorage.clear();
-        $state.go('register');
-    }
-
-    $scope.check = function () {
-        console.log($rootScope.user);
-        if ($rootScope.user.loggedIn=="true") {
-            console.log("will remain here")
-        } else {
+    if ($rootScope.user.loggedIn == "true") {
+        console.log("user Main controller called")
+        $scope.logout = function () {
+            $rootScope.user.loggedIn = false;
+            $window.localStorage.clear();
             $state.go('register');
-            console.log('mai agaya wapas');
+        }
+
+        $scope.check = function () {
+            console.log($rootScope.user);
+            if ($rootScope.user.loggedIn == "true") {
+                console.log("will remain here")
+            } else {
+                $state.go('register');
+                console.log('mai agaya wapas');
+            }
         }
     }
-}else{
-    $state.go('register')
-}
+           
+    else {
+        $state.go('register')
+    }
 });
+
+app.controller('bookingCtrl',function($scope,$http,$rootScope,$state){
+    console.log("Booking Controller called !")
+     console.log("get booking function called");
+            $http({
+                method: 'POST',
+                url: 'http://localhost:8886/register/booking_history',
+                data: {
+                    user_email: $rootScope.user_data.user_email
+                }
+            }).then(function (res) {
+
+                console.log(res);
+                $scope.booking_data = res.data;
+                console.log($scope.booking_data);
+                console.log($rootScope.user_data)
+
+            }, function (error) {
+                console.log(error);
+                alert("error occured");
+                
+            })
+        
+});
+
+app.controller('newbookingCtrl',function($scope,$http,$rootScope,$state){
+    console.log("new Booking Controller called !");
+    $scope.newbook={};
+
+    /*$scope.book_pickup=function(){
+     $http({
+            method: 'POST',
+            url: 'http://localhost:8886/register/submit_user',
+            data: {
+                phone_number: $scope.phone_number,
+                user_name: $scope.user_name,
+                user_password: $scope.user_password,
+                user_email: $scope.user_email,
+                user_totalcredits: '0'
+            }
+        }).then(function (res) {
+            console.log("User has been registered!");
+            console.log(res);
+            $rootScope.user_data = res.config.data;
+            console.log("user_data " + $rootScope.user_data);
+            $rootScope.user.loggedIn = "true";
+
+            $state.go('userMain');
+        }, function (error) {
+            console.log("error");
+            $rootScope.user.loggedIn = "false";
+            console.log("After failed sign up user rootscope " + $rootScope.user);
+            alert("error occured");
+
+        })
+    }*/
+$scope.book=function(){
+    console.log($scope.newbook)
+}
+        
+});
+
+app.controller('creditsCtrl',function($scope){
+    console.log("credit controller called");
+    
+})

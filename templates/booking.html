@@ -1,0 +1,27 @@
+ <div class="col-md-12" style="margin-top:100px">
+                        <table class="table">
+                            <h1>Your Previous Bookings</h1>
+                            <thead>
+                                <tr>
+                                    <th>Booking ID</th>
+                                    <th>Booking Address</th>
+                                    <th>Scrap Amount</th>
+                                    <th>Time Scheduled</th>
+                                    <th>Booking Status</th>
+                                    <th>Date of Request</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-active" ng-repeat="data in booking_data">
+                                    
+                                    <td>{{data.booking_id}}</td>
+                                    <td>{{data.res_address}}</td>
+                                    <td>{{data.scrap_amount}}</td>
+                                    <td>{{data.time}}</td>
+                                    <td>{{data.booking_status}}</td>
+                                    <td>{{data.createdAt}}</td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>

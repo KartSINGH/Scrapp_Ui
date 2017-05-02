@@ -358,6 +358,11 @@ h3 {
     color: white;
 }
 
+.pred{
+    font-size:90px;
+    line-height: 1.5em;
+    
+}
 
 @media (min-width:600px) {
     .sidebar {

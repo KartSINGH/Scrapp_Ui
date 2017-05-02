@@ -1,5 +1,5 @@
 <!--Naked Form-->
-<div class="card" style="padding:20px">
+<div class="card" style="padding:40px;margin-top:30px;border:1px solid grey">
 
     <!--Header-->
     <div class="text-center">
@@ -14,20 +14,25 @@
     <!--Body-->
     <div class="md-form">
         <i class="fa fa-user prefix"></i>
-        <input type="text" id="form3" class="form-control" placeholder="{{user.user_name}}" ng-model="newbook.user_name">
-        <label for="form3">Your name</label>
+      <input type="text" id="form3" class="form-control" placeholder='{{user_data.user_name}}' value='{{user_data.user_name}}' disabled>
+        
     </div>
 
     <div class="md-form">
         <i class="fa fa-envelope prefix"></i>
-        <input type="text" id="form2" class="form-control" placeholder={{user.user_email}} ng-model="newbook.user_email">
-        <label for="form2">Your email</label>
+       <input type="text" id="form2" class="form-control" placeholder='{{user_data.user_email}}' value='{{user_data.user_email}}' disabled>
+       
     </div>
 
     <div class="md-form">
         <i class="fa fa-tag prefix"></i>
         <input type="text" id="form32" class="form-control" ng-model="newbook.res_address">
         <label for="form34">Pickup Address</label>
+    </div>
+    <div class="md-form">
+        <i class="fa fa-tag prefix"></i>
+        <input type="datetime-local"  class="form-control" ng-model="newbook.date">
+        
     </div>
 
 
@@ -36,42 +41,38 @@
         <p>Select Payment Method</p>
         <p>&nbsp</p>
         <fieldset class="form-group">
-            <input name="group1" type="radio" id="radio11" checked="checked" class="other" ng-model="newbook.cash">
+            <input name="group1" type="radio" id="radio11" checked="checked" class="other" ng-model="newbook.payment_method" value="cash">
             <label for="radio11">Cash</label>
         </fieldset>
 
         <fieldset class="form-group">
-            <input name="group1" type="radio" id="radio21" class="other" ng-model="newbook.paytm">
+            <input name="group1" type="radio" id="radio21" class="other" ng-model="newbook.payment_method" value="paytm">
             <label for="radio21">PayTm</label>
         </fieldset>
 
         <fieldset class="form-group">
-            <input name="group1" type="radio" id="bank_transfer" ng-model="newbook.bank">
+            <input name="group1" type="radio" id="bank_transfer" ng-model="newbook.payment_method" value="account transfer">
             <label for="radio31">Bank Transfer</label>
         </fieldset>
         <div class="bank_det">
             <div class="md-form">
                 <i class="fa fa-tag prefix"></i>
                 <input type="text" id="form32" class="form-control" ng-model="newbook.accntno">
-                <label for="form34">Enter Account Number</label>
+                <label for="form34">Account Number</label>
             </div>
             <div class="md-form">
                 <i class="fa fa-tag prefix"></i>
-                <input type="text" id="form32" class="form-control" ng-model="newbook.isfc">
+                <input type="text" id="form32" class="form-control" ng-model="newbook.ifsc">
                 <label for="form34">Enter IFSC code</label>
             </div>
         </div>
 
     </form>
 
-    <div class="md-form">
-        <i class="fa fa-pencil prefix"></i>
-        <textarea type="text" id="form8" class="md-textarea"></textarea>
-        <label for="form8">Icon Prefix</label>
-    </div>
+   
 
     <div class="text-center">
-        <button class="btn btn-default" ng-click="book()">Submit</button>
+        <button class="btn btn-default" ng-click="book_pickup()">Submit</button>
 
         <div class="call">
             <br>

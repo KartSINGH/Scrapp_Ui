@@ -23,10 +23,10 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
             controller: "registerCtrl",
             authenticate: true
         })
-        .state('userMain.credits', {
-            url: '/credits',
-            templateUrl: "../templates/credits.html",
-            controller: "creditsCtrl",
+        .state('userMain.predictor', {
+            url: '/predictor_tool',
+            templateUrl: "../templates/predictor.html",
+            controller: "predictCtrl",
             authenticate: true
         })
         .state('userMain', {
@@ -236,40 +236,61 @@ app.controller('newbookingCtrl',function($scope,$http,$rootScope,$state){
     console.log("new Booking Controller called !");
     $scope.newbook={};
 
-    /*$scope.book_pickup=function(){
+    $scope.book_pickup=function(){
      $http({
             method: 'POST',
-            url: 'http://localhost:8886/register/submit_user',
+            url: 'http://localhost:8886/register/submit_pickup',
             data: {
-                phone_number: $scope.phone_number,
-                user_name: $scope.user_name,
-                user_password: $scope.user_password,
-                user_email: $scope.user_email,
-                user_totalcredits: '0'
+                user_email:$rootScope.user_data.user_email,
+                user_name:$rootScope.user_data.user_email,
+                res_address:$scope.newbook.res_address,
+                time:$scope.newbook.date,
+                booking_credits:'Processing',
+                payment_method:$scope.newbook.payment_method,
+                bankaccount_details:$scope.newbook.bankaccount_details,
+                ifsc_details:$scope.newbook.ifsc_details,
+                booking_status:'Initiated',
+                scrap_amount:'50kg'
             }
         }).then(function (res) {
-            console.log("User has been registered!");
+            console.log("Request has been raised");
             console.log(res);
-            $rootScope.user_data = res.config.data;
-            console.log("user_data " + $rootScope.user_data);
-            $rootScope.user.loggedIn = "true";
+           
 
-            $state.go('userMain');
+            $state.go('userMain.booking');
         }, function (error) {
             console.log("error");
-            $rootScope.user.loggedIn = "false";
-            console.log("After failed sign up user rootscope " + $rootScope.user);
-            alert("error occured");
+            
 
         })
-    }*/
+    }
 $scope.book=function(){
     console.log($scope.newbook)
 }
         
 });
 
-app.controller('creditsCtrl',function($scope){
-    console.log("credit controller called");
-    
+app.controller('predictCtrl',function($scope){
+    console.log("value predictor controller called");
+    $scope.predictor={}
+    $scope.predictor.price="10";
+    $scope.predict=function(){
+        console.log($scope.predictor);
+    }
+    $scope.check_electronic=function(){
+        console.log($scope.predictor);
+        if($scope.predictor.prod_type=="electronics"){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    $scope.check_dry=function(){
+        console.log($scope.predictor);
+        if($scope.predictor.prod_type=="dry_waste"){
+            return true;
+        }else{
+            return false;
+        }
+    }
 })

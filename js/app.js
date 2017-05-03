@@ -279,7 +279,7 @@ app.controller('predictCtrl',function($scope){
     }
     $scope.check_electronic=function(){
         console.log($scope.predictor);
-        if($scope.predictor.prod_type=="electronics"){
+        if($scope.predictor.prod_type=="Electronics"){
             return true;
         }else{
             return false;
@@ -287,7 +287,7 @@ app.controller('predictCtrl',function($scope){
     }
     $scope.check_dry=function(){
         console.log($scope.predictor);
-        if($scope.predictor.prod_type=="dry_waste"){
+        if($scope.predictor.prod_type=="DryWaste"){
             return true;
         }else{
             return false;

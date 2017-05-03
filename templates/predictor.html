@@ -5,7 +5,7 @@
     <div class="row">
 
         <!--Author Data-->
-        <div class=" col-12 col-sm-10">
+        <div class=" col-9 col-sm-9">
             <p>Select type of the product</p>
             <div class="item_categ">
                 <div class="card" style="padding:40px">
@@ -17,7 +17,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                   <fieldset class="form-group">
-                                <input name="group1" type="radio"  ng-model="predictor.prod_type" value="dry_waste" ng-click="unit=false;weight=false;main_question=false">
+                                <input name="group1" type="radio"  ng-model="predictor.prod_type" value="DryWaste" ng-click="unit=false;weight=false;main_question=false;question1=false;predictor.amount=1;predictor.price='';predictor.name='';q1_yes=true;q1_no=true">
                                 <label for="radio11">Select</label>
                             </fieldset>
                                 </div>
@@ -30,8 +30,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.prod_type" value="electronics">
-                                        <label for="radio11" ng-click="unit=false;weight=false;main_question=false">Select</label>
+                                        <input name="group1" type="radio" id="radio11" ng-click="unit=false;weight=false;main_question=false;question1=false;predictor.amount=1;predictor.price=0;predictor.name='';q1_yes=true;q1_no=true" ng-model="predictor.prod_type" value="Electronics">
+                                        <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="smartphone">
+                                        <input name="group1" type="radio" id="radio11" ng-click="predictor.price=20" ng-model="predictor.name" value="smartphone">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -71,7 +71,7 @@
                              <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="tablet">
+                                        <input name="group1" type="radio" id="radio11"  ng-click="predictor.price=30" ng-model="predictor.name" value="tablet">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -86,7 +86,7 @@
                              <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="iphone">
+                                        <input name="group1" type="radio" id="radio11" ng-click="predictor.price=40" ng-model="predictor.name" value="iphone">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -101,7 +101,7 @@
                              <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="laptop">
+                                        <input name="group1" type="radio" id="radio11" ng-click="predictor.price=50" ng-model="predictor.name" value="laptop">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -114,7 +114,7 @@
                              <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="desktop">
+                                        <input name="group1" type="radio" id="radio11" ng-click="predictor.price=60" ng-model="predictor.name" value="desktop">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -129,7 +129,7 @@
                              <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="gaming_console">
+                                        <input name="group1" type="radio" id="radio11" ng-click="predictor.price=70" ng-model="predictor.name" value="gaming_console">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -149,7 +149,7 @@
                              <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="tv">
+                                        <input name="group1" type="radio" id="radio11" ng-click="predictor.price=80" ng-model="predictor.name" value="tv">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -164,7 +164,7 @@
                              <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="fridge">
+                                        <input name="group1" type="radio" id="radio11" ng-click="predictor.price=90" ng-model="predictor.name" value="fridge">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -179,7 +179,7 @@
                              <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="washing_machine">
+                                        <input name="group1" type="radio" id="radio11" ng-click="predictor.price=100" ng-model="predictor.name" value="washing_machine">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -205,7 +205,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="smartphone">
+                                        <input name="group1" type="radio" id="radio11" ng-click="predictor.price=110" ng-model="predictor.name" value="smartphone">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -220,7 +220,7 @@
                              <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="tablet">
+                                        <input name="group1" type="radio" id="radio11" ng-click="predictor.price=120" ng-model="predictor.name" value="tablet">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -235,7 +235,7 @@
                              <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="iphone">
+                                        <input name="group1" type="radio" id="radio11" ng-click="predictor.price=130" ng-model="predictor.name" value="iphone">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -250,7 +250,7 @@
                              <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="laptop">
+                                        <input name="group1" type="radio" id="radio11"  ng-click="predictor.price=140" ng-model="predictor.name" value="laptop">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -263,7 +263,7 @@
                              <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="desktop">
+                                        <input name="group1" type="radio" id="radio11" ng-click="predictor.price=140" ng-model="predictor.name" value="desktop">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -278,7 +278,7 @@
                              <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="gaming_console">
+                                        <input name="group1" type="radio" id="radio11" ng-click="predictor.price=150" ng-model="predictor.name" value="gaming_console">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -298,7 +298,7 @@
                              <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="tv">
+                                        <input name="group1" type="radio" id="radio11" ng-click="predictor.price=160" ng-model="predictor.name" value="tv">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -313,7 +313,7 @@
                              <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="fridge">
+                                        <input name="group1" type="radio" id="radio11" ng-click="predictor.price=170" ng-model="predictor.name" value="fridge">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -328,7 +328,7 @@
                              <div class="row">
                                 <div class="col-md-12">
                                     <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11"  ng-model="predictor.name" value="washing_machine">
+                                        <input name="group1" type="radio" id="radio11" ng-click="predictor.price=180" ng-model="predictor.name" value="washing_machine">
                                         <label for="radio11">Select</label>
                                     </fieldset>
                                 </div>
@@ -342,41 +342,44 @@
                 </div>
             </div>
             <p>&nbsp</p>
-             <div class="main_question" ng-show="main_question">
+             <div class="main_question card" ng-show="main_question" style="padding:40px">
                 <div class="md-form">
                     <h3>Does device start ?</h3>
                     <button type="button" class="btn btn-default" ng-click="unit=true;weight=false">Yes</button>
                     <button type="button" class="btn btn-danger" ng-click="weight=true;unit=false">No</button>
                 </div>
             </div>
-
+<p>&nbsp</p>
             <div class="peices" ng-show="unit">
                 <div class="md-form">
                     <i class="fa fa-user prefix" style="color:#22aa86"></i>
-                    <input type="text" id="form2" class="form-control" ng-model="predictor.amount_unit">
+                    <input type="text" id="form2" ng-click="question1=true;" class="form-control" ng-model="predictor.amount">
                     <label for="form2">Quantity(no of units)</label>
                 </div>
             </div>
             <div class="weight" ng-show="weight">
                 <div class="md-form">
                     <i class="fa fa-user prefix" style="color:#22aa86"></i>
-                    <input type="text" id="form3" class="form-control" ng-model="predictor.amount_kg">
+                    <input type="text" id="form3" ng-click="question1=false;" class="form-control" ng-model="predictor.amount">
                     <label for="form3">Quantity(in kg)</label>
                 </div>
             </div>
             <p>&nbsp</p>
-            <p>&nbsp</p>
-
-           
-            <div class="questions">
+            <div class="questions card" ng-show="question1" style="padding:40px">
                 <div class="md-form">
                     <h3>Does device have any damage ? (screen damage,body damage)</h3>
-                    <button type="button" class="btn btn-default">Yes</button>
-                    <button type="button" class="btn btn-danger">No</button>
+                    <button type="button" ng-show="q1_yes" ng-click="temp_price=predictor.price;predictor.price=predictor.price - predictor.price/2;q1_yes=false;q1_no=true" class="btn btn-default">Yes</button>
+                    <button type="button" ng-show="q1_no" ng-click="predictor.price=temp_price;q1_yes=true;q1_no=false" class="btn btn-danger">No</button>
                 </div>
             </div>
-            <button class="btn btn-deep-green">{{predictor.price * predictor.amount }}</button>
-            <button class="btn btn-deep-purple" ng-click="predict()">Analyse</button>
+            
+           
+        </div>
+        <div class="col-md-3 flex-coloumn" style="position:fixed;top:30vh;margin:0 auto;right:1%;background-color:rgba(199,21,133,0.7);color:white;padding:40px;">
+            <p>Item Name : {{predictor.name}}</p>
+            <p>Item Product Type : {{predictor.prod_type}}</p>
+            <button class="btn btn-warning">Item Price:{{predictor.price*predictor.amount}}</button>
+             <button class="btn btn-deep-purple">Book Pickup Request</button>
         </div>
     </div>
 </div>

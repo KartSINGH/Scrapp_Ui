@@ -1,0 +1,60 @@
+
+<div class="card" style="padding:40px;margin-top:30px;border:1px solid grey">
+    <!--Name-->
+    <h1 class="h3-responsive text-center">Estimate value of your scrapp</h1>
+    <hr>
+    <div class="row">
+
+        <!--Author Data-->
+        <div class=" col-9 col-sm-9">
+          <ui-view>
+
+          </ui-view>
+            
+            <p>&nbsp</p>
+           
+            
+             <div class="main_question card" ng-show="main_question" style="padding:40px">
+                <div class="md-form">
+                    <h3>Does device start ?</h3>
+                    <button type="button" class="btn btn-default" ng-click="unit=true;weight=false">Yes</button>
+                    <button type="button" class="btn btn-danger" ng-click="weight=true;unit=false">No</button>
+                </div>
+            </div>
+<p>&nbsp</p>
+            <div class="peices" ng-show="unit">
+                <div class="md-form">
+                    <i class="fa fa-user prefix" style="color:#22aa86"></i>
+                    <input type="text" id="form2" ng-click="question1=true;" class="form-control" ng-model="predictor.amount">
+                    <label for="form2">Quantity(no of units)</label>
+                </div>
+            </div>
+            <div class="weight" ng-show="weight">
+                <div class="md-form">
+                    <i class="fa fa-user prefix" style="color:#22aa86"></i>
+                    <input type="text" id="form3" ng-click="question1=false;" class="form-control" ng-model="predictor.amount">
+                    <label for="form3">Quantity(in kg)</label>
+                </div>
+            </div>
+            <p>&nbsp</p>
+            <div class="questions card" ng-show="question1" style="padding:40px">
+                <div class="md-form">
+                    <h3>Does device have any damage ? (screen damage,body damage)</h3>
+                    <button type="button" ng-show="q1_yes" ng-click="temp_price=predictor.price;predictor.price=predictor.price - predictor.price/2;q1_yes=false;q1_no=true" class="btn btn-default">Yes</button>
+                    <button type="button" ng-show="q1_no" ng-click="predictor.price=temp_price;q1_yes=true;q1_no=false" class="btn btn-danger">No</button>
+                </div>
+            </div>
+            
+           
+        </div>
+        <div class="col-md-3 flex-coloumn" style="position:fixed;top:30vh;margin:0 auto;right:1%;background-color:rgba(34,170,134,0.7);color:white;padding:40px;z-index:2">
+            <p>Item Name : {{predictor.name}}</p>
+            <p>Item Product Type : {{predictor.prod_type}}</p>
+            <button class="btn btn-warning">Item Price:{{predictor.price*predictor.amount}}</button>
+             <button class="btn btn-deep-purple">Book Pickup Request</button>
+        </div>
+    </div>
+</div>
+<script>
+    
+</script>

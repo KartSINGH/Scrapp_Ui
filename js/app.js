@@ -29,30 +29,43 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
             controller: "predictCtrl",
             authenticate: true
         })
+        .state('userMain.predictor.pre_1', {
+            url: '/pre1',
+            templateUrl: "../templates/select_prodtype.html",
+            controller: "pre_1Ctrl",
+            authenticate: true
+        })
         .state('userMain', {
             url: '/user',
             templateUrl: "../templates/user.html",
             controller: "userCtrl",
             authenticate: true
         })
-          .state('userMain.booking', {
+        .state('userMain.booking', {
             url: '/mybookings',
             templateUrl: "../templates/booking.html",
             controller: "bookingCtrl",
-            
+
         })
         .state('userMain.newbooking', {
             url: '/newBooking',
             templateUrl: "../templates/newbooking.html",
             controller: "newbookingCtrl",
-            
+
         })
-        
-        
+        .state('userMain.predictor.pre_dryitems', {
+            url: '/dry_items',
+            templateUrl: "../templates/select_dryitems.html",
+            controller: "pre_dryitemsCtrl",
 
+        })
+        .state('userMain.predictor.pre_electitems', {
+            url: '/elect_items',
+            templateUrl: "../templates/select_electitems.html",
+            controller: "pre_electitemsCtrl",
+
+        })
 });
-
-
 app.run(function ($rootScope, $state, $timeout) {
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
         if (toState.authenticate == true) {
@@ -66,13 +79,11 @@ app.run(function ($rootScope, $state, $timeout) {
         }
     })
 });
-
 //login Controller
 app.controller('otpCtrl', function ($scope, $http, $rootScope, $state) {
     $rootScope.user = {};
-  $state.go('register');
+    $state.go('register');
     $scope.signup = function () {
-
         console.log("otp controller called");
         console.log($rootScope.user);
         var user_number = $rootScope.user.user_number;
@@ -201,96 +212,202 @@ app.controller('userCtrl', function ($scope, $rootScope, $state, $http, $window)
                 console.log('mai agaya wapas');
             }
         }
-    }
-           
-    else {
+    } else {
         $state.go('register')
     }
 });
 
-app.controller('bookingCtrl',function($scope,$http,$rootScope,$state){
+app.controller('bookingCtrl', function ($scope, $http, $rootScope, $state) {
     console.log("Booking Controller called !")
-     console.log("get booking function called");
-            $http({
-                method: 'POST',
-                url: 'http://localhost:8886/register/booking_history',
-                data: {
-                    user_email: $rootScope.user_data.user_email
-                }
-            }).then(function (res) {
+    console.log("get booking function called");
+    $http({
+        method: 'POST',
+        url: 'http://localhost:8886/register/booking_history',
+        data: {
+            user_email: $rootScope.user_data.user_email
+        }
+    }).then(function (res) {
 
-                console.log(res);
-                $scope.booking_data = res.data;
-                console.log($scope.booking_data);
-                console.log($rootScope.user_data)
+        console.log(res);
+        $scope.booking_data = res.data;
+        console.log($scope.booking_data);
+        console.log($rootScope.user_data)
 
-            }, function (error) {
-                console.log(error);
-                alert("error occured");
-                
-            })
-        
+    }, function (error) {
+        console.log(error);
+        alert("error occured");
+
+    })
+
 });
 
-app.controller('newbookingCtrl',function($scope,$http,$rootScope,$state){
+app.controller('newbookingCtrl', function ($scope, $http, $rootScope, $state) {
     console.log("new Booking Controller called !");
-    $scope.newbook={};
+    $scope.newbook = {};
 
-    $scope.book_pickup=function(){
-     $http({
+    $scope.book_pickup = function () {
+        $http({
             method: 'POST',
             url: 'http://localhost:8886/register/submit_pickup',
             data: {
-                user_email:$rootScope.user_data.user_email,
-                user_name:$rootScope.user_data.user_email,
-                res_address:$scope.newbook.res_address,
-                time:$scope.newbook.date,
-                booking_credits:'Processing',
-                payment_method:$scope.newbook.payment_method,
-                bankaccount_details:$scope.newbook.bankaccount_details,
-                ifsc_details:$scope.newbook.ifsc_details,
-                booking_status:'Initiated',
-                scrap_amount:'50kg'
+                user_email: $rootScope.user_data.user_email,
+                user_name: $rootScope.user_data.user_email,
+                res_address: $scope.newbook.res_address,
+                time: $scope.newbook.date,
+                booking_credits: 'Processing',
+                payment_method: $scope.newbook.payment_method,
+                bankaccount_details: $scope.newbook.bankaccount_details,
+                ifsc_details: $scope.newbook.ifsc_details,
+                booking_status: 'Initiated',
+                scrap_amount: '50kg'
             }
         }).then(function (res) {
             console.log("Request has been raised");
             console.log(res);
-           
+
 
             $state.go('userMain.booking');
         }, function (error) {
             console.log("error");
-            
+
 
         })
     }
-$scope.book=function(){
-    console.log($scope.newbook)
-}
-        
+    $scope.book = function () {
+        console.log($scope.newbook)
+    }
+
 });
 
-app.controller('predictCtrl',function($scope){
+app.controller('predictCtrl', function ($scope, $rootScope, $state) {
     console.log("value predictor controller called");
-    $scope.predictor={}
-    $scope.predictor.price="10";
-    $scope.predict=function(){
+    $rootScope.predictor = {}
+    $rootScope.predictor.price = "10";
+    $scope.predict = function () {
         console.log($scope.predictor);
     }
-    $scope.check_electronic=function(){
+    $scope.check_electronic = function () {
         console.log($scope.predictor);
-        if($scope.predictor.prod_type=="Electronics"){
+        if ($scope.predictor.prod_type == "Electronics") {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
-    $scope.check_dry=function(){
+    $scope.check_dry = function () {
         console.log($scope.predictor);
-        if($scope.predictor.prod_type=="DryWaste"){
+        if ($scope.predictor.prod_type == "DryWaste") {
             return true;
-        }else{
+        } else {
             return false;
         }
+    }
+    $scope.start = function () {
+        $state.go('userMain.predictor.pre_1')
+    }
+});
+
+app.controller('pre_1Ctrl', function ($scope, $state, $rootScope) {
+    console.log('pre1 controller called');
+    $scope.start_dry = function () {
+        console.log("away");
+        $rootScope.predictor.prod_type = "Dry Waste";
+        console.log($rootScope.predictor);
+        $state.go('userMain.predictor.pre_dryitems');
+    }
+    $scope.start_elect = function () {
+        console.log("away");
+        $rootScope.predictor.prod_type = "Electronics";
+        console.log($rootScope.predictor);
+        $state.go('userMain.predictor.pre_electitems');
+    }
+
+})
+app.controller('pre_electitemsCtrl', function ($scope, $state, $rootScope) {
+    console.log('electitem controller called');
+    $scope.back = function () {
+        console.log("Going Backwards");
+        console.log($rootScope.predictor);
+        $state.go('userMain.predictor.pre_1');
+    }
+    $scope.elect_1=function(){
+        $rootScope.predictor.prod_name="";
+        $state.go();
+    }
+    $scope.elect_2=function(){
+        $rootScope.predictor.prod_name="";
+         $state.go();
+    }
+    $scope.elect_3=function(){
+        $rootScope.predictor.prod_name="";
+         $state.go();
+    }
+    $scope.elect_4=function(){
+        $rootScope.predictor.prod_name="";
+         $state.go();
+    }
+    $scope.elect_5=function(){
+        $rootScope.predictor.prod_name="";
+         $state.go();
+    }
+    $scope.elect_6=function(){
+        $rootScope.predictor.prod_name="";
+         $state.go();
+    }
+    $scope.elect_7=function(){
+        $rootScope.predictor.prod_name="";
+         $state.go();
+    }
+    $scope.elect_8=function(){
+        $rootScope.predictor.prod_name="";
+         $state.go();
+    }
+    $scope.elect_9=function(){
+        $rootScope.predictor.prod_name="";
+         $state.go();
+    }
+})
+app.controller('pre_dryitemsCtrl', function ($scope, $state, $rootScope) {
+    console.log('dry controller called');
+    $scope.back = function () {
+        console.log("Going Backwards");
+        console.log($rootScope.predictor);
+        $state.go('userMain.predictor.pre_1');
+    }
+     $scope.dry_1=function(){
+        $rootScope.predictor.prod_name="";
+        $state.go();
+    }
+    $scope.dry_2=function(){
+        $rootScope.predictor.prod_name="";
+         $state.go();
+    }
+    $scope.dry_3=function(){
+        $rootScope.predictor.prod_name="";
+         $state.go();
+    }
+    $scope.dry_4=function(){
+        $rootScope.predictor.prod_name="";
+         $state.go();
+    }
+    $scope.dry_5=function(){
+        $rootScope.predictor.prod_name="";
+         $state.go();
+    }
+    $scope.dry_6=function(){
+        $rootScope.predictor.prod_name="";
+         $state.go();
+    }
+    $scope.dry_7=function(){
+        $rootScope.predictor.prod_name="";
+         $state.go();
+    }
+    $scope.dry_8=function(){
+        $rootScope.predictor.prod_name="";
+         $state.go();
+    }
+    $scope.dry_9=function(){
+        $rootScope.predictor.prod_name="";
+         $state.go();
     }
 })

@@ -63,7 +63,16 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
             url: '/elect_items',
             templateUrl: "../templates/select_electitems.html",
             controller: "pre_electitemsCtrl",
-
+        })
+        .state('userMain.predictor.amount_kg', {
+            url: '/dry_kg',
+            templateUrl: "../templates/dry_kg.html",
+            controller: "pre_electitemsCtrl",
+        })
+        .state('userMain.predictor.elect_questions', {
+            url: '/elect_questions',
+            templateUrl: "../templates/elect_questions.html",
+            controller: "pre_electitemsCtrl",
         })
 });
 app.run(function ($rootScope, $state, $timeout) {
@@ -330,41 +339,41 @@ app.controller('pre_electitemsCtrl', function ($scope, $state, $rootScope) {
         console.log($rootScope.predictor);
         $state.go('userMain.predictor.pre_1');
     }
-    $scope.elect_1=function(){
-        $rootScope.predictor.prod_name="";
-        $state.go();
+    $scope.elect_1 = function () {
+        $rootScope.predictor.prod_name = "";
+        $state.go("userMain.predictor.elect_questions");
     }
-    $scope.elect_2=function(){
-        $rootScope.predictor.prod_name="";
-         $state.go();
+    $scope.elect_2 = function () {
+        $rootScope.predictor.prod_name = "";
+        $state.go("userMain.predictor.elect_questions");
     }
-    $scope.elect_3=function(){
-        $rootScope.predictor.prod_name="";
-         $state.go();
+    $scope.elect_3 = function () {
+        $rootScope.predictor.prod_name = "";
+        $state.go("userMain.predictor.elect_questions");
     }
-    $scope.elect_4=function(){
-        $rootScope.predictor.prod_name="";
-         $state.go();
+    $scope.elect_4 = function () {
+        $rootScope.predictor.prod_name = "";
+        $state.go("userMain.predictor.elect_questions");
     }
-    $scope.elect_5=function(){
-        $rootScope.predictor.prod_name="";
-         $state.go();
+    $scope.elect_5 = function () {
+        $rootScope.predictor.prod_name = "";
+        $state.go("userMain.predictor.elect_questions");
     }
-    $scope.elect_6=function(){
-        $rootScope.predictor.prod_name="";
-         $state.go();
+    $scope.elect_6 = function () {
+        $rootScope.predictor.prod_name = "";
+       $state.go("userMain.predictor.elect_questions");
     }
-    $scope.elect_7=function(){
-        $rootScope.predictor.prod_name="";
-         $state.go();
+    $scope.elect_7 = function () {
+        $rootScope.predictor.prod_name = "";
+        $state.go("userMain.predictor.elect_questions");
     }
-    $scope.elect_8=function(){
-        $rootScope.predictor.prod_name="";
-         $state.go();
+    $scope.elect_8 = function () {
+        $rootScope.predictor.prod_name = "";
+        $state.go("userMain.predictor.elect_questions");
     }
-    $scope.elect_9=function(){
-        $rootScope.predictor.prod_name="";
-         $state.go();
+    $scope.elect_9 = function () {
+        $rootScope.predictor.prod_name = "";
+        $state.go("userMain.predictor.elect_questions");
     }
 })
 app.controller('pre_dryitemsCtrl', function ($scope, $state, $rootScope) {
@@ -374,40 +383,58 @@ app.controller('pre_dryitemsCtrl', function ($scope, $state, $rootScope) {
         console.log($rootScope.predictor);
         $state.go('userMain.predictor.pre_1');
     }
-     $scope.dry_1=function(){
-        $rootScope.predictor.prod_name="";
-        $state.go();
+    $scope.dry_1 = function () {
+        $rootScope.predictor.prod_name = "Glass";
+        $rootScope.predictor.price = "100";
+        console.log($rootScope.predictor);
+        $state.go("userMain.predictor.amount_kg");
     }
-    $scope.dry_2=function(){
-        $rootScope.predictor.prod_name="";
-         $state.go();
+    $scope.dry_2 = function () {
+        $rootScope.predictor.prod_name = "Metal";
+        $rootScope.predictor.price = "200";
+        console.log($rootScope.predictor);
+         $state.go("userMain.predictor.amount_kg");
     }
-    $scope.dry_3=function(){
-        $rootScope.predictor.prod_name="";
-         $state.go();
+    $scope.dry_3 = function () {
+        $rootScope.predictor.prod_name = "Plastic";
+        $rootScope.predictor.price = "300";
+        console.log($rootScope.predictor);
+         $state.go("userMain.predictor.amount_kg");
     }
-    $scope.dry_4=function(){
-        $rootScope.predictor.prod_name="";
-         $state.go();
+    $scope.dry_4 = function () {
+        $rootScope.predictor.prod_name = "Tincans";
+        $rootScope.predictor.price = "400";
+        console.log($rootScope.predictor);
+         $state.go("userMain.predictor.amount_kg");
     }
-    $scope.dry_5=function(){
-        $rootScope.predictor.prod_name="";
-         $state.go();
+    $scope.dry_5 = function () {
+        $rootScope.predictor.prod_name = "Cardboard";
+        $rootScope.predictor.price = "500";
+        console.log($rootScope.predictor);
+         $state.go("userMain.predictor.amount_kg");
     }
-    $scope.dry_6=function(){
-        $rootScope.predictor.prod_name="";
-         $state.go();
+    $scope.dry_6 = function () {
+        $rootScope.predictor.prod_name = "GamingConsole";
+        $rootScope.predictor.price = "600";
+        console.log($rootScope.predictor);
+         $state.go("userMain.predictor.amount_kg");
     }
-    $scope.dry_7=function(){
-        $rootScope.predictor.prod_name="";
-         $state.go();
+    $scope.dry_7 = function () {
+        $rootScope.predictor.prod_name = "Furniture";
+        $rootScope.predictor.price = "700";
+        console.log($rootScope.predictor);
+         $state.go("userMain.predictor.amount_kg");
     }
-    $scope.dry_8=function(){
-        $rootScope.predictor.prod_name="";
-         $state.go();
+    $scope.dry_8 = function () {
+        $rootScope.predictor.prod_name = "Books";
+        $rootScope.predictor.price = "800";
+        console.log($rootScope.predictor);
+         $state.go("userMain.predictor.amount_kg");
     }
-    $scope.dry_9=function(){
-        $rootScope.predictor.prod_name="";
-         $state.go();
+    $scope.dry_9 = function () {
+        $rootScope.predictor.prod_name = "Paper";
+        $rootScope.predictor.price = "900";
+        console.log($rootScope.predictor);
+         $state.go("userMain.predictor.amount_kg");
     }
 })

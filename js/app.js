@@ -72,7 +72,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
         .state('userMain.predictor.elect_questions', {
             url: '/elect_questions',
             templateUrl: "../templates/elect_questions.html",
-            controller: "pre_electitemsCtrl",
+            controller: "pre_electquesCtrl",
         })
 });
 app.run(function ($rootScope, $state, $timeout) {
@@ -91,7 +91,7 @@ app.run(function ($rootScope, $state, $timeout) {
 //login Controller
 app.controller('otpCtrl', function ($scope, $http, $rootScope, $state) {
     $rootScope.user = {};
-    $state.go('register');
+     $state.go('register')
     $scope.signup = function () {
         console.log("otp controller called");
         console.log($rootScope.user);
@@ -340,39 +340,53 @@ app.controller('pre_electitemsCtrl', function ($scope, $state, $rootScope) {
         $state.go('userMain.predictor.pre_1');
     }
     $scope.elect_1 = function () {
-        $rootScope.predictor.prod_name = "";
+        $rootScope.predictor.prod_name = "smartphone";
+        $rootScope.predictor.price = 10;
+        console.log($rootScope.predictor);
         $state.go("userMain.predictor.elect_questions");
     }
     $scope.elect_2 = function () {
-        $rootScope.predictor.prod_name = "";
+         $rootScope.predictor.prod_name = "tablet";
+        $rootScope.predictor.price = 20;
+        console.log($rootScope.predictor);
         $state.go("userMain.predictor.elect_questions");
     }
     $scope.elect_3 = function () {
-        $rootScope.predictor.prod_name = "";
+       $rootScope.predictor.prod_name = "iphone";
+        $rootScope.predictor.price = 30;
+        console.log($rootScope.predictor);
         $state.go("userMain.predictor.elect_questions");
     }
     $scope.elect_4 = function () {
-        $rootScope.predictor.prod_name = "";
+        $rootScope.predictor.prod_name = "laptop";
+        $rootScope.predictor.price = 40;
+        console.log($rootScope.predictor);
         $state.go("userMain.predictor.elect_questions");
     }
     $scope.elect_5 = function () {
-        $rootScope.predictor.prod_name = "";
+        $rootScope.predictor.prod_name = "desktop";
+        $rootScope.predictor.price = 50;
+        console.log($rootScope.predictor);
         $state.go("userMain.predictor.elect_questions");
     }
     $scope.elect_6 = function () {
-        $rootScope.predictor.prod_name = "";
+        $rootScope.predictor.prod_name = "gaming_console";
+        $rootScope.predictor.price = 60;
+        console.log($rootScope.predictor);
        $state.go("userMain.predictor.elect_questions");
     }
     $scope.elect_7 = function () {
-        $rootScope.predictor.prod_name = "";
+        $rootScope.predictor.prod_name = "tv";
+        $rootScope.predictor.price = 20;
+        console.log($rootScope.predictor);
         $state.go("userMain.predictor.elect_questions");
     }
     $scope.elect_8 = function () {
-        $rootScope.predictor.prod_name = "";
+        $rootScope.predictor.prod_name = "fridge";
         $state.go("userMain.predictor.elect_questions");
     }
     $scope.elect_9 = function () {
-        $rootScope.predictor.prod_name = "";
+        $rootScope.predictor.prod_name = "washing_machine";
         $state.go("userMain.predictor.elect_questions");
     }
 })
@@ -436,5 +450,10 @@ app.controller('pre_dryitemsCtrl', function ($scope, $state, $rootScope) {
         $rootScope.predictor.price = "900";
         console.log($rootScope.predictor);
          $state.go("userMain.predictor.amount_kg");
+    }
+})
+app.controller('pre_electquesCtrl',function($scope,$state,$rootScope){
+    $scope.back=function(){
+        $state.go('userMain.predictor.pre_electitems')
     }
 })

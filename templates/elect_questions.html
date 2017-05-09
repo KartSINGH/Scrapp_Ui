@@ -1,29 +1,37 @@
+<button type="button" class="btn btn-success" ng-click="back()">Back</button>
 <div class="main_question card" style="padding:40px">
     <div class="md-form">
         <h3>Does device start ?</h3>
-        <button type="button" class="btn btn-default" ng-click="unit=true;weight=false">Yes</button>
-        <button type="button" class="btn btn-danger" ng-click="weight=true;unit=false">No</button>
+        <button type="button" class="btn btn-default" ng-click="peices=true;weight=false;q1_yes=true;q1_no=true">Yes</button>
+        <button type="button" class="btn btn-danger" ng-click="weight=true;peices=false;q1_yes=true;q1_no=true">No</button>
     </div>
 </div>
 <p>&nbsp</p>
-<div class="peices">
+<div class="peices" ng-show="peices">
     <div class="md-form">
         <i class="fa fa-user prefix" style="color:#22aa86"></i>
-        <input type="text" id="form2" ng-click="question1=true;" class="form-control" ng-model="predictor.amount">
+        <input type="text" id="form2" ng-click="q1=true;" class="form-control" ng-model="predictor.amount">
         <label for="form2">Quantity(no of units)</label>
     </div>
 </div>
 <p>&nbsp</p>
-<div class="questions card" style="padding:40px">
+<div class="weight" ng-show="weight">
+    <div class="md-form">
+        <i class="fa fa-user prefix" style="color:#22aa86"></i>
+        <input type="text" id="form3" class="form-control" ng-model="predictor.amount">
+        <label for="form3">Quantity(in kg)</label>
+    </div>
+</div>
+<div class="questions card" style="padding:40px" ng-show="q1">
     <div class="md-form">
         <h3>Does device have any damage ? (screen damage,body damage)</h3>
-        <button type="button" ng-show="q1_yes" ng-click="temp_price=predictor.price;predictor.price=predictor.price - predictor.price/2;q1_yes=false;q1_no=true"
+        <button type="button" ng-disabled="!q1_yes" ng-click="temp_price=predictor.price;predictor.price=predictor.price - predictor.price/2;q1_yes=false;q1_no=true"
             class="btn btn-default">Yes</button>
-        <button type="button" ng-show="q1_no" ng-click="predictor.price=temp_price;q1_yes=true;q1_no=false" class="btn btn-danger">No</button>
+        <button type="button" ng-disabled="!q1_no" ng-click="predictor.price=temp_price;q1_yes=true;q1_no=false" class="btn btn-danger">No</button>
     </div>
 </div>
 <div class="col-md-3 flex-coloumn" style="position:fixed;top:30vh;margin:0 auto;right:1%;background-color:rgba(34,170,134,0.7);color:white;padding:40px;z-index:2">
-    <p>Item Name : {{predictor.name}}</p>
+    <p>Item Name : {{predictor.prod_name}}</p>
     <p>Item Product Type : {{predictor.prod_type}}</p>
     <button class="btn btn-warning">Item Price:{{predictor.price*predictor.amount}}</button>
     <button class="btn btn-deep-purple">Book Pickup Request</button>

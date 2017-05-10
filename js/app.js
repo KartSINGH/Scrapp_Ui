@@ -7,6 +7,71 @@ app.config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
     cfpLoadingBarProvider.includeSpinner = false;
 }])
 
+app.service('googleService', ['$http', '$rootScope', '$q', function ($http, $rootScope, $q) {
+    var clientId = '252254374353-5tolseqkeou96a31n293rlc3v9kkerbs.apps.googleusercontent.com',
+        apiKey = 'AIzaSyDaIMGUUN9CO0UvkX13nH3lj6nTNB7qUhM',
+        scopes = 'profile',
+
+        deferred = $q.defer();
+
+    this.login = function () {
+        gapi.auth.authorize({
+            client_id: clientId,
+            scope: scopes,
+            immediate: false,
+
+        }, this.handleAuthResult);
+
+        return deferred.promise;
+    }
+
+    this.handleClientLoad = function () {
+        gapi.client.setApiKey(apiKey);
+        gapi.auth.init(function () {});
+        window.setTimeout(checkAuth, 1);
+    };
+
+    this.checkAuth = function () {
+        gapi.auth.authorize({
+            client_id: clientId,
+            scope: scopes,
+            immediate: true,
+
+        }, this.handleAuthResult);
+    };
+
+    this.handleAuthResult = function (authResult) {
+        if (authResult && !authResult.error) {
+            var data = {};
+            gapi.client.load('oauth2', 'v2', function () {
+                var request = gapi.client.oauth2.userinfo.get();
+                request.execute(function (resp) {
+                    console.log(resp);
+                    data.email = resp.email;
+                    data.name=resp.name;
+                    data.image=resp.picture;
+                    
+                    deferred.resolve(data);
+                });
+            });
+
+        } else {
+            deferred.reject('error');
+        }
+    };
+
+    this.handleAuthClick = function (event) {
+        gapi.auth.authorize({
+            client_id: clientId,
+            scope: scopes,
+            immediate: false,
+
+        }, this.handleAuthResult);
+        return false;
+    };
+
+}]);
+
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $localStorageProvider) {
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix('');
@@ -22,6 +87,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
             templateUrl: "../templates/register.html",
             controller: "registerCtrl",
             authenticate: true
+        })
+        .state('login', {
+            url: '/login',
+            templateUrl: "../templates/login.html",
+            controller: "loginCtrl"
         })
         .state('userMain.predictor', {
             url: '/predictor_tool',
@@ -88,10 +158,10 @@ app.run(function ($rootScope, $state, $timeout) {
         }
     })
 });
-//login Controller
+//otp Controller
 app.controller('otpCtrl', function ($scope, $http, $rootScope, $state) {
     $rootScope.user = {};
-     
+    $state.go('login');
     $scope.signup = function () {
         console.log("otp controller called");
         console.log($rootScope.user);
@@ -136,6 +206,67 @@ app.controller('otpCtrl', function ($scope, $http, $rootScope, $state) {
     }
 
 });
+//login Controller
+app.controller('loginCtrl', function ($scope, $state, $http, $rootScope, googleService) {
+    console.log('loginController called');
+    $rootScope.user_data = {
+        email: ''
+    };
+    $scope.go_signup = function () {
+        console.log("going to register page");
+        $state.go('register');
+    };
+
+    $scope.g_login = function () {
+        googleService.login().then(function (data) {
+            // do something with returned data
+           
+            $rootScope.user.loggedIn = "true";
+            $rootScope.user_data.user_email = data.email;
+            $rootScope.user_data.user_name = data.name;
+            $rootScope.user_data.user_image = data.image;
+            console.log($rootScope.user_data);
+            $state.go('userMain');
+        }, function (err) {
+            console.log('Failed: ' + err);
+        });
+    };
+
+
+    $scope.login = function () {
+        console.log('login function called');
+        $http({
+            method: 'POST',
+            url: 'http://localhost:8886/register/user',
+            data: {
+                user_email: $scope.userlogin_email
+            }
+        }).then(function (res) {
+
+            console.log(res);
+            $rootScope.user_data = res.data;
+            console.log($rootScope.user_data);
+            console.log("input password" + $scope.userlogin_password);
+            if ($scope.userlogin_password == res.data.user_password) {
+                $rootScope.user.loggedIn = "true";
+                console.log($rootScope.user.loggedIn);
+
+                $state.go('userMain');
+            } else {
+                $rootScope.user.loggedIn = "false";
+                alert('Invalid Password');
+            }
+
+        }, function (error) {
+            console.log(error);
+            alert("error occured");
+            $rootScope.user.loggedIn = "false";
+        })
+    }
+
+
+
+})
 
 //register Controller
 
@@ -171,36 +302,6 @@ app.controller('registerCtrl', function ($scope, $http, $rootScope, $state) {
         })
     }
 
-    $scope.login = function () {
-        console.log('login function called');
-        $http({
-            method: 'POST',
-            url: 'http://localhost:8886/register/user',
-            data: {
-                user_email: $scope.userlogin_email
-            }
-        }).then(function (res) {
-
-            console.log(res);
-            $rootScope.user_data = res.data;
-            console.log($rootScope.user_data);
-            console.log("input password" + $scope.userlogin_password);
-            if ($scope.userlogin_password == res.data.user_password) {
-                $rootScope.user.loggedIn = "true";
-                console.log($rootScope.user.loggedIn);
-
-                $state.go('userMain');
-            } else {
-                $rootScope.user.loggedIn = "false";
-                alert('Invalid Password');
-            }
-
-        }, function (error) {
-            console.log(error);
-            alert("error occured");
-            $rootScope.user.loggedIn = "false";
-        })
-    }
 });
 //UserMAIN CONtroller
 app.controller('userCtrl', function ($scope, $rootScope, $state, $http, $window) {
@@ -346,13 +447,13 @@ app.controller('pre_electitemsCtrl', function ($scope, $state, $rootScope) {
         $state.go("userMain.predictor.elect_questions");
     }
     $scope.elect_2 = function () {
-         $rootScope.predictor.prod_name = "tablet";
+        $rootScope.predictor.prod_name = "tablet";
         $rootScope.predictor.price = 20;
         console.log($rootScope.predictor);
         $state.go("userMain.predictor.elect_questions");
     }
     $scope.elect_3 = function () {
-       $rootScope.predictor.prod_name = "iphone";
+        $rootScope.predictor.prod_name = "iphone";
         $rootScope.predictor.price = 30;
         console.log($rootScope.predictor);
         $state.go("userMain.predictor.elect_questions");
@@ -373,7 +474,7 @@ app.controller('pre_electitemsCtrl', function ($scope, $state, $rootScope) {
         $rootScope.predictor.prod_name = "gaming_console";
         $rootScope.predictor.price = 60;
         console.log($rootScope.predictor);
-       $state.go("userMain.predictor.elect_questions");
+        $state.go("userMain.predictor.elect_questions");
     }
     $scope.elect_7 = function () {
         $rootScope.predictor.prod_name = "tv";
@@ -407,53 +508,53 @@ app.controller('pre_dryitemsCtrl', function ($scope, $state, $rootScope) {
         $rootScope.predictor.prod_name = "Metal";
         $rootScope.predictor.price = "200";
         console.log($rootScope.predictor);
-         $state.go("userMain.predictor.amount_kg");
+        $state.go("userMain.predictor.amount_kg");
     }
     $scope.dry_3 = function () {
         $rootScope.predictor.prod_name = "Plastic";
         $rootScope.predictor.price = "300";
         console.log($rootScope.predictor);
-         $state.go("userMain.predictor.amount_kg");
+        $state.go("userMain.predictor.amount_kg");
     }
     $scope.dry_4 = function () {
         $rootScope.predictor.prod_name = "Tincans";
         $rootScope.predictor.price = "400";
         console.log($rootScope.predictor);
-         $state.go("userMain.predictor.amount_kg");
+        $state.go("userMain.predictor.amount_kg");
     }
     $scope.dry_5 = function () {
         $rootScope.predictor.prod_name = "Cardboard";
         $rootScope.predictor.price = "500";
         console.log($rootScope.predictor);
-         $state.go("userMain.predictor.amount_kg");
+        $state.go("userMain.predictor.amount_kg");
     }
     $scope.dry_6 = function () {
         $rootScope.predictor.prod_name = "GamingConsole";
         $rootScope.predictor.price = "600";
         console.log($rootScope.predictor);
-         $state.go("userMain.predictor.amount_kg");
+        $state.go("userMain.predictor.amount_kg");
     }
     $scope.dry_7 = function () {
         $rootScope.predictor.prod_name = "Furniture";
         $rootScope.predictor.price = "700";
         console.log($rootScope.predictor);
-         $state.go("userMain.predictor.amount_kg");
+        $state.go("userMain.predictor.amount_kg");
     }
     $scope.dry_8 = function () {
         $rootScope.predictor.prod_name = "Books";
         $rootScope.predictor.price = "800";
         console.log($rootScope.predictor);
-         $state.go("userMain.predictor.amount_kg");
+        $state.go("userMain.predictor.amount_kg");
     }
     $scope.dry_9 = function () {
         $rootScope.predictor.prod_name = "Paper";
         $rootScope.predictor.price = "900";
         console.log($rootScope.predictor);
-         $state.go("userMain.predictor.amount_kg");
+        $state.go("userMain.predictor.amount_kg");
     }
 })
-app.controller('pre_electquesCtrl',function($scope,$state,$rootScope){
-    $scope.back=function(){
+app.controller('pre_electquesCtrl', function ($scope, $state, $rootScope) {
+    $scope.back = function () {
         $state.go('userMain.predictor.pre_electitems')
     }
 })

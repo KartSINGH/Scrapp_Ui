@@ -363,6 +363,14 @@ h3 {
     line-height: 1.5em;
     
 }
+.btn-fb{
+    background-color: rgb(59,89,152);
+    color:white;
+}
+.btn-gplus{
+    background-color:rgb(225, 95, 79) ;
+    color:white;
+}
 
 @media (min-width:600px) {
     .sidebar {

@@ -126,13 +126,21 @@ h2 {
 
 /*Mobile phone on landing Page */
 
-#phone_img {
+.phone_img {
     height: 500px;
     width: 280px;
-    margin-top:25vh;
-     margin-right: 20vh;
+    
+    
     padding: 0px;
-    float: left;
+    
+}
+.phone_img1 {
+    height: 345px;
+    width: 210px;
+    
+    
+    padding: 0px;
+    
 }
 
 #form {

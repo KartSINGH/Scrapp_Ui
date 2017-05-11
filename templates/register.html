@@ -27,7 +27,7 @@
                             <div class="col-md-6">
                                 <div class="md-form">
                                     <i class="fa fa-mobile prefix" style="color:#22aa86"></i>
-                                    <input type="text" id="form2" class="form-control" ng-model="phone_number" placeholder="Phone Number">
+                                    <input type="text" id="form2" class="form-control" ng-model="phone_number" placeholder='{{user_data.phone_number}}' disabled>
 
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                         </div>
                         <div class="col-sm-6 flex-center">
                             
-                               <button type="button" class="btn btn-gplus"><i class="fa fa-google-plus left"></i>Gmail</button>
+                               <button type="button" class="btn btn-gplus" ng-click="g_login()"><i class="fa fa-google-plus left"></i>Gmail</button>
                             
                         </div>
                     </div>

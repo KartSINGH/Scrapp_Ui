@@ -10,7 +10,7 @@ app.config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
 app.service('googleService', ['$http', '$rootScope', '$q', function ($http, $rootScope, $q) {
     var clientId = '252254374353-5tolseqkeou96a31n293rlc3v9kkerbs.apps.googleusercontent.com',
         apiKey = 'AIzaSyDaIMGUUN9CO0UvkX13nH3lj6nTNB7qUhM',
-        scopes = 'profile',
+        scopes = 'email',
 
         deferred = $q.defer();
 
@@ -48,9 +48,9 @@ app.service('googleService', ['$http', '$rootScope', '$q', function ($http, $roo
                 request.execute(function (resp) {
                     console.log(resp);
                     data.email = resp.email;
-                    data.name=resp.name;
-                    data.image=resp.picture;
-                    
+                    data.name = resp.name;
+                    data.image = resp.picture;
+
                     deferred.resolve(data);
                 });
             });
@@ -69,6 +69,11 @@ app.service('googleService', ['$http', '$rootScope', '$q', function ($http, $roo
         }, this.handleAuthResult);
         return false;
     };
+    this.signout = function () {
+        gapi.auth.setToken(null);
+        gapi.auth.signOut();
+        $rootScope.user.loggedIn = "false";
+    }
 
 }]);
 
@@ -160,12 +165,13 @@ app.run(function ($rootScope, $state, $timeout) {
 });
 //otp Controller
 app.controller('otpCtrl', function ($scope, $http, $rootScope, $state) {
-    $rootScope.user = {};
-    $state.go('login');
+    $rootScope.user_data = {};
+     $rootScope.user = {};
+    
     $scope.signup = function () {
         console.log("otp controller called");
-        console.log($rootScope.user);
-        var user_number = $rootScope.user.user_number;
+        console.log($rootScope.user_data);
+        var user_number = $rootScope.user_data.phone_number;
 
         $http({
             method: 'POST',
@@ -209,9 +215,7 @@ app.controller('otpCtrl', function ($scope, $http, $rootScope, $state) {
 //login Controller
 app.controller('loginCtrl', function ($scope, $state, $http, $rootScope, googleService) {
     console.log('loginController called');
-    $rootScope.user_data = {
-        email: ''
-    };
+  
     $scope.go_signup = function () {
         console.log("going to register page");
         $state.go('register');
@@ -220,7 +224,7 @@ app.controller('loginCtrl', function ($scope, $state, $http, $rootScope, googleS
     $scope.g_login = function () {
         googleService.login().then(function (data) {
             // do something with returned data
-           
+
             $rootScope.user.loggedIn = "true";
             $rootScope.user_data.user_email = data.email;
             $rootScope.user_data.user_name = data.name;
@@ -270,11 +274,26 @@ app.controller('loginCtrl', function ($scope, $state, $http, $rootScope, googleS
 
 //register Controller
 
-app.controller('registerCtrl', function ($scope, $http, $rootScope, $state) {
+app.controller('registerCtrl', function ($scope, $http, $rootScope, $state, googleService) {
     console.log("register controller called")
     $rootScope.user.loggedIn = "false";
+       $scope.g_login = function () {
+        googleService.login().then(function (data) {
+            // do something with returned data
+
+            $rootScope.user.loggedIn = "true";
+            $rootScope.user_data.user_email = data.email;
+            $rootScope.user_data.user_name = data.name;
+            $rootScope.user_data.user_image = data.image;
+            console.log($rootScope.user_data);
+            $state.go('userMain');
+        }, function (err) {
+            console.log('Failed: ' + err);
+        });
+    };
     $scope.signup = function () {
         console.log("before sign up  " + $rootScope.user);
+
         $http({
             method: 'POST',
             url: 'http://localhost:8886/register/submit_user',
@@ -310,6 +329,8 @@ app.controller('userCtrl', function ($scope, $rootScope, $state, $http, $window)
         $scope.logout = function () {
             $rootScope.user.loggedIn = false;
             $window.localStorage.clear();
+            gapi.auth.setToken(null);
+            gapi.auth.signOut();
             $state.go('register');
         }
 

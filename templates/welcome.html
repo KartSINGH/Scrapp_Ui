@@ -49,7 +49,7 @@
                     <h1 id="title">Welcome to ShuttleScrapp</h1>
                     <p>&nbsp</p>
                     <h1>We are
-                        <span class="txt-rotate" data-period="1000" data-rotate='[ "nerdy.", "simple.", "pure JS.", "pretty.", "fun!" ]'></span>
+                        <span class="txt-rotate" data-period="1000" style="color:#404040" data-rotate='[ "Experienced.", "Simple.", "Rapid.", "Beloved.", "Reliable" ]'></span>
                     </h1>
                     <p>&nbsp</p>
                     <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured
@@ -888,10 +888,10 @@
     $(document).on("scroll", function () {
         if ($(document).scrollTop() < 100) {
             $('#nav').css('padding', '30px');
-            console.log("case1");
+            
         } else {
             $('#nav').css('padding', '10px');
-            console.log("case2");
+            
         }
     });
 </script>
@@ -966,28 +966,7 @@
         $('#myInput').focus()
     })
 </script>
-<script>
-    var owl = $('.owl-carousel');
-    owl.owlCarousel({
 
-        loop: true,
-        margin: 10,
-        autoplay: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 3
-            },
-            1000: {
-                items: 3
-            }
-        },
-        autoplayTimeout: 1000,
-        autoplayHoverPause: true
-    });
-</script>
 <script>
     if (screen.width <= 1000) {
         console.log("window size reduced");
@@ -1156,8 +1135,7 @@
          * to any size (they don't even have to have same size), but it'll help if their
          * aspect ratio is same as aspect ratio of boundingBox.
          */
-        images: ['./mslider/dist/sample/msin.png',
-            './mslider/dist/sample/2.jpg',
+        images: ['./mslider/dist/sample/msin.png'
         ]
     });
 </script>

@@ -50,11 +50,10 @@ app.service('googleService', ['$http', '$rootScope', '$q', function ($http, $roo
                     data.email = resp.email;
                     data.name = resp.name;
                     data.image = resp.picture;
-
+                    data.phone_number = $rootScope.user_data.phone_number;
                     deferred.resolve(data);
                 });
             });
-
         } else {
             deferred.reject('error');
         }
@@ -166,13 +165,12 @@ app.run(function ($rootScope, $state, $timeout) {
 //otp Controller
 app.controller('otpCtrl', function ($scope, $http, $rootScope, $state) {
     $rootScope.user_data = {};
-     $rootScope.user = {};
- 
+    $rootScope.user = {};
+    $state.go('userMain');
     $scope.signup = function () {
         console.log("otp controller called");
         console.log($rootScope.user_data);
         var user_number = $rootScope.user_data.phone_number;
-
         $http({
             method: 'POST',
             url: 'https://sendotp.msg91.com/api/generateOTP',
@@ -185,13 +183,9 @@ app.controller('otpCtrl', function ($scope, $http, $rootScope, $state) {
                 getGeneratedOTP: true
             }
         }).then(function (data) {
-
             $rootScope.s_otp = data.data.response.oneTimePassword;
             console.log($rootScope.s_otp);
-
             // $state.go("otp-enter");
-
-
         }, function (error) {
             console.log("error");
             alert("error occured");
@@ -298,13 +292,14 @@ app.controller('registerCtrl', function ($scope, $http, $rootScope, $state, goog
             method: 'POST',
             url: 'http://localhost:8886/register/submit_user',
             data: {
-                phone_number: $scope.phone_number,
+                phone_number:$rootScope.user_data.phone_number,
                 user_name: $scope.user_name,
                 user_password: $scope.user_password,
                 user_email: $scope.user_email,
                 user_totalcredits: '0'
             }
         }).then(function (res) {
+            
             console.log("User has been registered!");
             console.log(res);
             $rootScope.user_data = res.config.data;

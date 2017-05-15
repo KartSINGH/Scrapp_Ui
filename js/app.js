@@ -166,7 +166,7 @@ app.run(function ($rootScope, $state, $timeout) {
 app.controller('otpCtrl', function ($scope, $http, $rootScope, $state) {
     $rootScope.user_data = {};
     $rootScope.user = {};
-    $state.go('userMain');
+ 
     $scope.signup = function () {
         console.log("otp controller called");
         console.log($rootScope.user_data);

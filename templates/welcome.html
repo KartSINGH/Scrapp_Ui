@@ -45,34 +45,41 @@
         <div class="row">
             <div class="col-md-8" id="form" style="width:100%">
                 <!--Jumbotron-->
-                <div class="jumbotron typewriter animated wowo slideInLeft">
+                <div class="jumbotron typewriter animated wow slideInLeft">
                     <h1 id="title">Welcome to ShuttleScrap</h1>
                     <p>&nbsp</p>
                     <h1>We are
                         <span class="txt-rotate" data-period="1000" style="color:#404040" data-rotate='[ "Experienced.", "Simple.", "Rapid.", "Beloved.", "Reliable" ]'></span>
                     </h1>
                     <p>&nbsp</p>
-                    <p class="lead">We manage your scrap disposal and help you earn from it Scrap recycling and collection includes activities
-                        from collection, monitoring, dsimantling to smelting and recycling. Just give us a call or web schedule
-                        a pickup and we will reach your doorstep within 24 hours. Recycle, Reduce and Reuse with SHuttlscrap.</p>
+                    <p class="lead">ShuttleScrap India is an on demand waste pickup service, catering to safe disposal of Dry and E-waste
+                        disposal and its safe recycling. We are a cleantech startup in the waste management domain. We’re
+                        working to be the most customer-centric com- pany on earth.</p>
                     <div class="md-form" ng-controller="otpCtrl">
-                        <div class="r_otp">
-                            <i class="fa fa-phone prefix"></i>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="r_otp">
+                                    <i class="fa fa-phone prefix"></i>
 
-                            <input type="text" class="form-control" ng-model="user_data.phone_number">
-                            <label for="form2">Your Phone Number</label>
-                            <button class="btn btn-primary btn-lg" ng-click="signup()" id="r_otp1">Request OTP</button>
-                        </div>
-                        <div class="v_otp">
-                            <input type="text" class="form-control" ng-model="user_otp">
-                            <label for="form3">Enter Your Otp</label>
-                            <button class="btn btn-primary btn-lg" ng-click="verify_otp()" id="v_otp1">Verify OTP</button>
-                        </div>
-                        <div class="signup">
-                            <p class="lead">
-                                <p>Your mobile number has been verified</p>
-                                <a class="btn btn-success btn-lg " role="button" data-toggle="modal" data-target="#modal-register">Sign Up to Continue</a>
-                            </p>
+                                    <input type="text" class="form-control" ng-model="user_data.phone_number">
+                                    <label for="form2">Your Phone Number</label>
+                                    <button class="btn btn-primary btn-lg" ng-click="signup()" id="r_otp1">Request OTP</button>
+                                </div>
+                                <div class="v_otp">
+                                    <input type="text" class="form-control" ng-model="user_otp">
+                                    <label for="form3">Enter Your Otp</label>
+                                    <button class="btn btn-primary btn-lg" ng-click="verify_otp()" id="v_otp1">Verify OTP</button>
+                                </div>
+                                <div class="signup">
+                                    <p class="lead">
+                                        <p>Your mobile number has been verified</p>
+                                        <a class="btn btn-success btn-lg " role="button" data-toggle="modal" data-target="#modal-register">Sign Up to Continue</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <p>&nbsp</p>
+                            </div>
                         </div>
                     </div>
 
@@ -130,8 +137,9 @@
         <p>&nbsp</p>
         <h1 class="mb-1"><span style="color:#404040">How We</span> Work</h1>
         <hr />
-        <h5 class="mb-1" style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa ligula, aliquet euismod eleifend vitae, interdum
-            ut mi. Praesent fringilla pharetra sapien sit amet semper. Nunc id massa ut mi tempus mattis ac eu lectus.</h5>
+        <h5 class="mb-1" style="text-align: center">Recycling can prevent the waste of potentially useful ma- terials and reduce the con- sumption of fresh raw material,
+            thereby reducing: energy usage, air pollution and water pollution.
+        </h5>
         <div class="container" style="margin-top:4%">
             <div class="container" style="margin-top:20px;">
                 <div class="row">
@@ -243,11 +251,12 @@
     <div class="container flex-center flex-column ">
         <h1 class="mb-1"><span style="color:#404040">Services & </span> Features</h1>
         <hr style="color:#404040" />
-        <h5 class="mb-1" style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa ligula, aliquet euismod eleifend vitae, interdum
-            ut mi. Praesent fringilla pharetra sapien sit amet semper. Nunc id massa ut mi tempus mattis ac eu lectus.</h5>
+        <h5 class="mb-1" style="text-align: center">Recycling is a key component of modern waste reduction and is the third component of “Reduce, Reuse and Recycle”
+            waste hierarchy. Recyclable materials include many kind of glass, paper and cardboard, metal, plastic, tires,
+            textiles and electronics..</h5>
         <div class="container" style="margin-top:4%">
             <div class="row ">
-                <div class="col-md-4 flex-center flex-column feature1  animated wow zoomIn">
+                <div class="col-md-4 flex-center flex-column feature1  animated wow slideInLeft">
                     <div class="row">
                         <div class="col-md-12 flex-center">
                             <img src="./img/waste_icon.png" style="height:64px;width:64px">
@@ -275,7 +284,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 feature1  animated wow zoomIn">
+                <div class="col-md-4 feature1  animated wow slideInRight">
                     <div class="row">
                         <div class="col-md-12 flex-center">
                             <img src="./img/quality.png" style="height:64px;width:64px">
@@ -289,7 +298,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 feature yellow  animated wow zoomIn">
+                <div class="col-md-4 feature yellow  animated wow slideInLeft">
                     <div class="row">
                         <div class="col-md-12 flex-center">
                             <img src="./img/bio_icon.png" style="height:64px;width:64px">
@@ -317,7 +326,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 feature yellow  animated wow zoomIn">
+                <div class="col-md-4 feature yellow  animated wow slideInRight">
                     <div class="row">
                         <div class="col-md-12 flex-center">
                             <img src="./img/env_icon.png" style="height:64px;width:64px">
@@ -335,7 +344,7 @@
         </div>
     </div>
 </div>
-<div style="background-color:white" class="slides" data-wow-delay="0.4s">
+<div style="background-color:#f2f4f4" class="slides">
     <div class="container flex-center flex-column ">
         <section class="section feature-box">
             <!--Section heading-->
@@ -361,9 +370,9 @@
             <p>&nbsp</p>
             <p>&nbsp</p>
             <div class="row features-small">
-                <div class="col-md-4">
+                <div class="col-md-4 ">
                     <!--First row-->
-                    <div class="row  animated wow zoomIn" data-delay=0.6>
+                    <div class="row  animated wow zoomIn">
                         <div class="col-2">
                             <i class="fa fa-flag-checkered indigo-text"></i>
                         </div>
@@ -405,7 +414,7 @@
                 <!--/First column-->
                 <!--Second column-->
                 <div class="col-md-4 mb-r center-on-small-only flex-center">
-                    <img src="https://mdbootstrap.com/img/Mockups/Transparent/Small/iphone3.jpg" alt="" class="z-depth-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/IPhone_6S_Rose_Gold.png/243px-IPhone_6S_Rose_Gold.png" alt="" class="z-depth-0">
                 </div>
                 <!--/Second column-->
                 <!--Third column-->
@@ -552,53 +561,11 @@
         </div>
     </div>
 </div>
-<div style="background-color:white" class="slides">
+<div style="background-color:#f2f4f4" class="slides">
     <div class="container  flex-center flex-column ">
         <div class="row">
             <div class="col-md-6 animated wow slideInLeft">
-                <!--Naked Form-->
-                <div class="card-block">
-                    <!--Header-->
-                    <div class="text-left">
-                        <h3 style="color:#22aa86"><i class="fa fa-envelope"></i> <span style="color:#404040">Contact</span> Us </h3>
-                        <hr style="margin-right:88%">
-                    </div>
-                    <!--Body-->
-                    <br>
-                    <!--Body-->
-                    <div class="md-form">
-                        <i class="fa fa-user prefix"></i>
-                        <input type="text" id="form3" class="form-control">
-                        <label for="form3">Your name</label>
-                    </div>
-                    <div class="md-form">
-                        <i class="fa fa-envelope prefix"></i>
-                        <input type="text" id="form2" class="form-control">
-                        <label for="form2">Your email</label>
-                    </div>
-                    <div class="md-form">
-                        <i class="fa fa-tag prefix"></i>
-                        <input type="text" id="form32" class="form-control">
-                        <label for="form34">Subject</label>
-                    </div>
-                    <div class="md-form">
-                        <i class="fa fa-pencil prefix"></i>
-                        <textarea type="text" id="form8" class="md-textarea"></textarea>
-                        <label for="form8">Icon Prefix</label>
-                    </div>
-                    <div class="text-center">
-                        <button class="btn btn-default">Submit</button>
-                        <div class="call">
-                            <br>
-                            <p>Or would you prefer to call?
-                                <br>
-                                <span><i class="fa fa-phone"> </i></span> + 01 234 565 280</p>
-                        </div>
-                    </div>
-                </div>
-                <!--Naked Form-->
-            </div>
-            <div class="col-md-6 animated wow slideInRight">
+
                 <h2><span style="color:#404040">Client</span> Testimonials</h2>
                 <hr style="margin-right:88%" />
                 <div class="testimonials">
@@ -636,18 +603,63 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-6 animated wow slideInRight">
+                <div class="text-left">
+                    <h3 style="color:#22aa86;margin-left:40px"><i class="fa fa-envelope"></i> <span style="color:#404040">Contact</span> Us </h3>
+                    <hr style="margin-right:88%;margin-left:40px">
+                </div>
+                <!--Naked Form-->
+                <div class="card-block">
+                    <!--Header-->
+                    <!--Body-->
+
+                    <!--Body-->
+                    <div class="md-form">
+                        <i class="fa fa-user prefix"></i>
+                        <input type="text" id="form3" class="form-control">
+                        <label for="form3">Your name</label>
+                    </div>
+                    <div class="md-form">
+                        <i class="fa fa-envelope prefix"></i>
+                        <input type="text" id="form2" class="form-control">
+                        <label for="form2">Your email</label>
+                    </div>
+                    <div class="md-form">
+                        <i class="fa fa-tag prefix"></i>
+                        <input type="text" id="form32" class="form-control">
+                        <label for="form34">Subject</label>
+                    </div>
+                    <div class="md-form">
+                        <i class="fa fa-pencil prefix"></i>
+                        <textarea type="text" id="form8" class="md-textarea"></textarea>
+                        <label for="form8">Icon Prefix</label>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-default">Submit</button>
+                        <div class="call">
+                            <br>
+                            <p>Or would you prefer to call?
+                                <br>
+                                <span><i class="fa fa-phone"> </i></span> + 01 234 565 280</p>
+                        </div>
+                    </div>
+                </div>
+                <!--Naked Form-->
+
+
+            </div>
         </div>
     </div>
 </div>
-<div class="flex-center flex-column hiring" style="background-color: #f2f4f4">
-    <div class="container">
+<div class="flex-center flex-column hiring" style="background-color: white;">
+    <div class="container" >
         <h1 style="text-align: center"><span style="color:#404040">We are</span> HIRING</h1>
         <p>&nbsp</p>
         <div class="row">
             <div class="col-md-4 hoverable">
                 <div class="openings">
                     <div class="row flex-center" style="margin-bottom:10px">
-                        <i class="fa fa-code" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
+                        <i class="fa fa-code" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
 
                     </div>
 
@@ -663,7 +675,7 @@
             <div class="col-md-4 hoverable">
                 <div class="openings">
                     <div class="row flex-center" style="margin-bottom:10px">
-                        <i class="fa fa-sign-language" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
+                        <i class="fa fa-sign-language" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
                         <p>&nbsp</p>
                     </div>
                     <div class="row flex-center" style="margin-bottom:10px">
@@ -675,10 +687,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 hoverable">
+            <div class="col-md-4 hoverable" >
                 <div class="openings">
                     <div class="row flex-center" style="margin-bottom:10px">
-                        <i class="fa fa-envira" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
+                        <i class="fa fa-envira" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
                         <p>&nbsp</p>
                     </div>
                     <div class="row flex-center" style="margin-bottom:10px">
@@ -693,7 +705,7 @@
             <div class="col-md-4 hoverable">
                 <div class="openings">
                     <div class="row flex-center" style="margin-bottom:10px">
-                        <i class="fa fa-cubes" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
+                        <i class="fa fa-cubes" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
                         <p>&nbsp</p>
                     </div>
                     <div class="row flex-center" style="margin-bottom:10px">
@@ -708,7 +720,7 @@
             <div class="col-md-4 hoverable">
                 <div class="openings">
                     <div class="row flex-center" style="margin-bottom:10px">
-                        <i class="fa fa-desktop" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
+                        <i class="fa fa-desktop" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
                         <p>&nbsp</p>
                     </div>
                     <div class="row flex-center" style="margin-bottom:10px">
@@ -720,10 +732,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 hoverable">
+            <div class="col-md-4 hoverable" >
                 <div class="openings">
                     <div class="row flex-center" style="margin-bottom:10px">
-                        <i class="fa fa-pie-chart" aria-hidden="true" style="color:#22aa86;font-size: 80px;"></i>
+                        <i class="fa fa-pie-chart" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
                         <p>&nbsp</p>
                     </div>
                     <div class="row flex-center" style="margin-bottom:10px">
@@ -736,8 +748,6 @@
                 </div>
             </div>
             <div class="col-md-12 flex-center flex-column">
-                <p>&nbsp</p>
-                <p>&nbsp</p>
                 <button type="button" class="btn btn-outline-default waves-effect">Apply Now</button>
             </div>
         </div>
@@ -1127,55 +1137,57 @@
             width: '86.8%',
             height: '75.3%'
         },
-        animate:true,
+        animate: true,
 
         /**
          * An array of image links to be rendered within frame. Images don't have to adhere
          * to any size (they don't even have to have same size), but it'll help if their
          * aspect ratio is same as aspect ratio of boundingBox.
          */
-        images: ['./img/1.png','./img/2.png','./img/3.png','./img/4.png','./img/5.png','./img/6.png']
+        images: ['./img/1.png', './img/2.png', './img/3.png', './img/4.png', './img/5.png', './img/6.png',
+            './img/1.png'
+        ]
     });
 </script>
 
 <script>
     $('.host-element')
 
-  // Triggers when a frameCarousel instance is ready.
-  .on('fc-ready', function( e ){
-      console.log("hello1");
-  var frameCarousel = $('.host-element').data('frameCarousel');
+        // Triggers when a frameCarousel instance is ready.
+        .on('fc-ready', function (e) {
+            console.log("hello1");
+            var frameCarousel = $('.host-element').data('frameCarousel');
 
-    // The argument 'options' is optional in all of the following functions.
-    // It is a hash/map with following possible properties (and defaults):
-    // animate: true (determines if you want transition immediate or with animation)
+            // The argument 'options' is optional in all of the following functions.
+            // It is a hash/map with following possible properties (and defaults):
+            // animate: true (determines if you want transition immediate or with animation)
 
-    // Goes to next screen. If user is already at last screen,
-    // it'll stay intact.
-    var options ={
-        animate:true
-    }
-    for(i=0;i<5;i++){
-    console.log("hello2");
-    setInterval(function(){
-frameCarousel.next(options);
-    },2000);
-    }
-  })
+            // Goes to next screen. If user is already at last screen,
+            // it'll stay intact.
+            var options = {
+                animate: true
+            }
+            for (i = 0; i < 6; i++) {
+                console.log("hello2");
+                setInterval(function () {
+                    frameCarousel.next(options);
+                }, 2000);
+            }
+        })
 
-  // Triggers when a frameCarousel instance is destroyed.
-  .on('fc-destroy', function( e ){
+        // Triggers when a frameCarousel instance is destroyed.
+        .on('fc-destroy', function (e) {
 
-  })
+        })
 
-  // Triggers when a screen transition begins.
-  .on('fc-transition-start', function( e ){
-     e.from = 1;
-     e.to   = 5;
-  })
-  // Triggers when a screen transition ends.
-  .on('fc-transition-end', function( e ){
-    // e.from => screen index from where transition begun
-    // e.to   => screen index to where transition ended
-  });
+        // Triggers when a screen transition begins.
+        .on('fc-transition-start', function (e) {
+            e.from = 1;
+            e.to = 5;
+        })
+        // Triggers when a screen transition ends.
+        .on('fc-transition-end', function (e) {
+            // e.from => screen index from where transition begun
+            // e.to   => screen index to where transition ended
+        });
 </script>

@@ -323,13 +323,13 @@ h3 {
     color: #404040;
 }
 .hoverable{
-   
+   padding:20px;
     transition:background-color 1s linear;
     cursor:crosshair;
 }
 .hoverable:hover {
     background-color: white;
-    padding:5px;
+   
 }
 
 .sidebar {
@@ -385,6 +385,13 @@ h3 {
     background-color:rgb(225, 95, 79) ;
     color:white;
 }
+
+
+
+
+
+
+
 
 @media (min-width:600px) {
     .sidebar {

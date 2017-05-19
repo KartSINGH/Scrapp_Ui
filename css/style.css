@@ -310,6 +310,7 @@ h2 {
     color: white;
     text-align: center;
     background-color: #aaa;
+    backface-visibility: hidden;
 }
 
 .openings {

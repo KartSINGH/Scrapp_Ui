@@ -322,9 +322,14 @@ h2 {
 h3 {
     color: #404040;
 }
-
+.hoverable{
+   
+    transition:background-color 1s linear;
+    cursor:crosshair;
+}
 .hoverable:hover {
     background-color: white;
+    padding:5px;
 }
 
 .sidebar {

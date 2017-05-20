@@ -48,30 +48,31 @@
         <div class="row">
             <div class="col-md-8" id="form" style="width:100%">
                 <!--Jumbotron-->
-                <div class="jumbotron typewriter animated wow slideInLeft">
-                    <h1 id="title" class="white-text">Welcome to <span style="color:#22aa86">ShuttleScrap</span></h1>
+                <div class="jumbotron typewriter">
+                    <h1 id="title" class="white-text animated wow fadeInUp">Welcome to <span style="color:#22aa86">ShuttleScrap</span></h1>
+                   
                     <p>&nbsp</p>
-                    <h1>We are
+                    <h1 class="animated wow fadeInUp" data-wow-delay="1s">We are
                         <span class="txt-rotate" data-period="1000" style="color:white" data-rotate='[ "Experienced.", "Simple.", "Rapid.", "Beloved.", "Reliable" ]'></span>
                     </h1>
                     <p>&nbsp</p>
-                    <p class="lead white-text">ShuttleScrap India is an on demand waste pickup service, catering to safe disposal of Dry and E-waste
+                    <p class="lead white-text animated wow fadeInUp" data-wow-delay="2s">ShuttleScrap India is an on demand waste pickup service, catering to safe disposal of Dry and E-waste
                         disposal and its safe recycling. We are a cleantech startup in the waste management domain. We’re
                         working to be the most customer-centric com- pany on earth.</p>
                     <div class="md-form" ng-controller="otpCtrl">
                         <div class="row">
                             <div class="col-md-5">
                                 <div class="r_otp">
-                                    <i class="fa fa-phone prefix" style="color:#22aa86"></i>
+                                   
 
-                                    <input type="text" class="form-control white-text" ng-model="user_data.phone_number">
-                                    <label for="form2" class="white-text">Your Phone Number</label>
+                                    <input type="text" class="form-control" ng-model="user_data.phone_number" placeholder="Enter Your Phone number" style="background-color:white;border-radius:3px;color:#22aa86;font-size:20px;padding:5px">
+      
                                     <button class="btn btn-default btn-lg" ng-click="signup()" id="r_otp1">Request OTP</button>
                                 </div>
                                 <div class="v_otp">
                                     <input type="text" class="form-control" ng-model="user_otp">
                                     <label for="form3">Enter Your Otp</label>
-                                    <button class="btn btn-primary btn-lg" ng-click="verify_otp()" id="v_otp1">Verify OTP</button>
+                                    <button class="btn btn-primary btn-lg" ng-click="verify_otp()" id="v_otp1" style="cursor:hand">Verify OTP</button>
                                 </div>
                                 <div class="signup">
                                     <p class="lead">
@@ -89,16 +90,19 @@
                 </div>
                 <!--/.Jumbotron-->
             </div>
-            <div class="col-md-4 animated wow slideInRight flex-center flex-column" style="padding:0px">
+            <div class="col-md-4 animated wow fadeInUp flex-center flex-column" style="padding:0px" data-wow-delay="1.5s">
                 <div class="row flex-center flex-coloumn">
                     <div class="md-col-12">
                         <!--
                             <img src="http://www.pompom.in/img/device-slider/phone.png" class="phone_img img-fluid" style="z-index:1;margin-top:25%;position:absolute; margin-right: 20vh;">
                             <img src="./templates/msin.png" class="phone_img1 img-fluid" style="z-index:3;position:relative;margin-top:65%;margin-left:35px">
                             -->
-                        <div class="host-element" style="margin-top:50%;transform:scale(0.8)"></div>
+                        <div class="host-element" style="margin-top:35%;transform:scale(0.85);  "></div>
                     </div>
                 </div>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
+                <p>&nbsp</p>
             </div>
         </div>
     </div>
@@ -1107,7 +1111,7 @@
          * The default value points to a phone frame included within
          * dist/sample directory.
          */
-        frame: './mslider/phone.png',
+        frame: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/IPhone_6S_Rose_Gold.png/243px-IPhone_6S_Rose_Gold.png',
 
         /**
          * Width/height of the frame in pixels you'd like to apply in relation to different
@@ -1185,7 +1189,7 @@
                 console.log("hello2");
                 setInterval(function () {
                     frameCarousel.next(options);
-                }, 2000);
+                }, 4000);
             }
         })
 
@@ -1205,7 +1209,5 @@
             // e.to   => screen index to where transition ended
         });
 
-    $('body').scrollspy({
-        target: '#nav123'
-    })
+   
 </script>

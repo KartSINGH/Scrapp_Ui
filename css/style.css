@@ -129,18 +129,13 @@ h2 {
 .phone_img {
     height: 500px;
     width: 280px;
-    
-    
     padding: 0px;
-    
 }
+
 .phone_img1 {
     height: 345px;
     width: 210px;
-    
-    
     padding: 0px;
-    
 }
 
 #form {
@@ -150,6 +145,7 @@ h2 {
 
 .jumbotron {
     font-family: 'Arvo', serif;
+    background: transparent;
 }
 
 .process_box1 {
@@ -205,7 +201,7 @@ h2 {
 }
 
 .overlay {
-    background: linear-gradient(rgba(255, 255, 0, 0.5), rgba(0, 200, 81, 0.5)), url('https://countryhomesdelhi.files.wordpress.com/2013/05/greenery.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://countryhomesdelhi.files.wordpress.com/2013/05/greenery.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 45vh;
@@ -228,8 +224,9 @@ h2 {
 }
 
 .slide1 {
-    background: linear-gradient(rgba(255, 255, 0, 0.4), rgba(0, 200, 81, 0.4)),
-    url('https://image.freepik.com/free-vector/green-environmental-icons-collection_1152-14.jpg');
+    /*background: linear-gradient(rgba(255, 255, 0, 0.4), rgba(0, 200, 81, 0.4)),*/
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://2.bp.blogspot.com/-UxmovzvzXiI/Tq7JLXvkhOI/AAAAAAAAAUA/4iRb1Bv2qbE/s1600/Recycle.jpg');
+    /*;https://image.freepik.com/free-vector/green-environmental-icons-collection_1152-14.jpg */
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -322,14 +319,15 @@ h2 {
 h3 {
     color: #404040;
 }
-.hoverable{
-   padding:20px;
-    transition:background-color 1s linear;
-    cursor:crosshair;
+
+.hoverable {
+    padding: 20px;
+    transition: background-color 1s linear;
+    cursor: crosshair;
 }
+
 .hoverable:hover {
     background-color: white;
-   
 }
 
 .sidebar {
@@ -372,26 +370,20 @@ h3 {
     color: white;
 }
 
-.pred{
-    font-size:90px;
+.pred {
+    font-size: 90px;
     line-height: 1.5em;
-    
-}
-.btn-fb{
-    background-color: rgb(59,89,152);
-    color:white;
-}
-.btn-gplus{
-    background-color:rgb(225, 95, 79) ;
-    color:white;
 }
 
+.btn-fb {
+    background-color: rgb(59, 89, 152);
+    color: white;
+}
 
-
-
-
-
-
+.btn-gplus {
+    background-color: rgb(225, 95, 79);
+    color: white;
+}
 
 @media (min-width:600px) {
     .sidebar {

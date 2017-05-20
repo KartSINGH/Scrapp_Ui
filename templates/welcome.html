@@ -1,916 +1,909 @@
 <!-- Start your project here-->
 <!--Navbar-->
 
-    <nav class="navbar fixed-top navbar-toggleable-md" id="nav">
-        <div class="container" style="padding-right:0px">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1"
-                aria-expanded="false" aria-label="Toggle navigation" style="background-color:#22aa86">
+<nav class="navbar fixed-top navbar-toggleable-md" id="nav">
+    <div class="container" style="padding-right:0px">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1"
+            aria-expanded="false" aria-label="Toggle navigation" style="background-color:#22aa86">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-            <a class="navbar-brand" href="#">
-                <strong>ShuttleScrap</strong>
-            </a>
-            <div class="collapse navbar-collapse">
+        <a class="navbar-brand" href="#">
+            <strong>ShuttleScrap</strong>
+        </a>
+        <div class="collapse navbar-collapse">
 
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#section1">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#section2">Features</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" data-toggle="tab" role="tab" href="#section3">Process</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#section4">Stats</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">What We Buy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#section6">Testimonials</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#section7">About us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link animated fadeIn" style="background-color:#22aa86;color:white;cursor: pointer;">Request Scrap Pickup</a>
-                    </li>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#section1">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section2">Features</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" data-toggle="tab" role="tab" href="#section3">Process</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#section4">Stats</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">What We Buy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section6">Testimonials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section7">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link animated fadeIn" style="background-color:#22aa86;color:white;cursor: pointer;">Request Scrap Pickup</a>
+                </li>
 
-                </ul>
-            </div>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <div class="slide1 slides ">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8" id="form" style="width:100%">
-                    <!--Jumbotron-->
-                    <div class="jumbotron typewriter animated wow slideInLeft">
-                        <h1 id="title">Welcome to ShuttleScrap</h1>
-                        <p>&nbsp</p>
-                        <h1>We are
-                            <span class="txt-rotate" data-period="1000" style="color:#404040" data-rotate='[ "Experienced.", "Simple.", "Rapid.", "Beloved.", "Reliable" ]'></span>
-                        </h1>
-                        <p>&nbsp</p>
-                        <p class="lead">ShuttleScrap India is an on demand waste pickup service, catering to safe disposal of Dry and E-waste
-                            disposal and its safe recycling. We are a cleantech startup in the waste management domain. We’re
-                            working to be the most customer-centric com- pany on earth.</p>
-                        <div class="md-form" ng-controller="otpCtrl">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="r_otp">
-                                        <i class="fa fa-phone prefix"></i>
+<div class="slide1 slides ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8" id="form" style="width:100%">
+                <!--Jumbotron-->
+                <div class="jumbotron typewriter animated wow slideInLeft">
+                    <h1 id="title" class="white-text">Welcome to <span style="color:#22aa86">ShuttleScrap</span></h1>
+                    <p>&nbsp</p>
+                    <h1>We are
+                        <span class="txt-rotate" data-period="1000" style="color:white" data-rotate='[ "Experienced.", "Simple.", "Rapid.", "Beloved.", "Reliable" ]'></span>
+                    </h1>
+                    <p>&nbsp</p>
+                    <p class="lead white-text">ShuttleScrap India is an on demand waste pickup service, catering to safe disposal of Dry and E-waste
+                        disposal and its safe recycling. We are a cleantech startup in the waste management domain. We’re
+                        working to be the most customer-centric com- pany on earth.</p>
+                    <div class="md-form" ng-controller="otpCtrl">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="r_otp">
+                                    <i class="fa fa-phone prefix" style="color:#22aa86"></i>
 
-                                        <input type="text" class="form-control" ng-model="user_data.phone_number">
-                                        <label for="form2">Your Phone Number</label>
-                                        <button class="btn btn-primary btn-lg" ng-click="signup()" id="r_otp1">Request OTP</button>
-                                    </div>
-                                    <div class="v_otp">
-                                        <input type="text" class="form-control" ng-model="user_otp">
-                                        <label for="form3">Enter Your Otp</label>
-                                        <button class="btn btn-primary btn-lg" ng-click="verify_otp()" id="v_otp1">Verify OTP</button>
-                                    </div>
-                                    <div class="signup">
-                                        <p class="lead">
-                                            <p>Your mobile number has been verified</p>
-                                            <a class="btn btn-success btn-lg " role="button" data-toggle="modal" data-target="#modal-register">Sign Up to Continue</a>
-                                        </p>
-                                    </div>
+                                    <input type="text" class="form-control white-text" ng-model="user_data.phone_number">
+                                    <label for="form2" class="white-text">Your Phone Number</label>
+                                    <button class="btn btn-default btn-lg" ng-click="signup()" id="r_otp1">Request OTP</button>
                                 </div>
-                                <div class="col-md-7">
-                                    <p>&nbsp</p>
+                                <div class="v_otp">
+                                    <input type="text" class="form-control" ng-model="user_otp">
+                                    <label for="form3">Enter Your Otp</label>
+                                    <button class="btn btn-primary btn-lg" ng-click="verify_otp()" id="v_otp1">Verify OTP</button>
+                                </div>
+                                <div class="signup">
+                                    <p class="lead">
+                                        <p>Your mobile number has been verified</p>
+                                        <a class="btn btn-success btn-lg " role="button" data-toggle="modal" data-target="#modal-register">Sign Up to Continue</a>
+                                    </p>
                                 </div>
                             </div>
+                            <div class="col-md-7">
+                                <p>&nbsp</p>
+                            </div>
                         </div>
-
                     </div>
-                    <!--/.Jumbotron-->
+
                 </div>
-                <div class="col-md-4 animated wow slideInRight flex-center flex-column" style="padding:0px">
-                    <div class="row flex-center flex-coloumn">
-                        <div class="md-col-12">
-                            <!--
+                <!--/.Jumbotron-->
+            </div>
+            <div class="col-md-4 animated wow slideInRight flex-center flex-column" style="padding:0px">
+                <div class="row flex-center flex-coloumn">
+                    <div class="md-col-12">
+                        <!--
                             <img src="http://www.pompom.in/img/device-slider/phone.png" class="phone_img img-fluid" style="z-index:1;margin-top:25%;position:absolute; margin-right: 20vh;">
                             <img src="./templates/msin.png" class="phone_img1 img-fluid" style="z-index:3;position:relative;margin-top:65%;margin-left:35px">
                             -->
-                            <div class="host-element" style="margin-top:50%;transform:scale(0.8)"></div>
-                        </div>
+                        <div class="host-element" style="margin-top:50%;transform:scale(0.8)"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="container">
-        <div class="row flex-center flex-coloumn" id="f_box">
-            <div class="col-sm-4" id="f_box_col1">
-                <h1>Value Your Waste</h1>
-                <h4>Waste Value Predictor</h4>
-                <p>Use our special value predictor to analyse total return value of your waste. Know hidden potential your scrap
-                    holds
-                </p>
-                <button type="button" class="btn btn-dark-green">Calculate Scrap Value</button>
-            </div>
-            <div class="col-sm-4" id="f_box_col2">
-                <h1>Encash Your Trash</h1>
-                <h4>Scrap Pickup Request</h4>
-                <p>Our booking process will help you earn from your scrapp in few easy steps. You are just a few clicks away!
-                </p>
-                <button type="button" class="btn btn-outline-default waves-effect">Book a Request</button>
-            </div>
-            <div class="col-sm-4" id="f_box_col3">
-                <h1>Your Own Page</h1>
-                <h4>Dedicated User Profile</h4>
-                <p>You get your own personal profile where you can track your credit points and status of your scrap disposal
-                </p>
-                <button type="button" class="btn btn-outline-default waves-effect">Login</button>
-            </div>
+<div class="container">
+    <div class="row flex-center flex-coloumn" id="f_box">
+        <div class="col-sm-4" id="f_box_col1">
+            <h1>Value Your Waste</h1>
+            <h4>Waste Value Predictor</h4>
+            <p>Use our special value predictor to analyse total return value of your waste. Know hidden potential your scrap
+                holds
+            </p>
+            <button type="button" class="btn btn-dark-green">Calculate Scrap Value</button>
+        </div>
+        <div class="col-sm-4" id="f_box_col2">
+            <h1>Encash Your Trash</h1>
+            <h4>Scrap Pickup Request</h4>
+            <p>Our booking process will help you earn from your scrapp in few easy steps. You are just a few clicks away!
+            </p>
+            <button type="button" class="btn btn-outline-default waves-effect">Book a Request</button>
+        </div>
+        <div class="col-sm-4" id="f_box_col3">
+            <h1>Your Own Page</h1>
+            <h4>Dedicated User Profile</h4>
+            <p>You get your own personal profile where you can track your credit points and status of your scrap disposal
+            </p>
+            <button type="button" class="btn btn-outline-default waves-effect">Login</button>
         </div>
     </div>
-    <div id="section3">
-        <div style="background-color:#f2f4f4;display: block;clear: both" class="slides">
-            <div class="container  flex-center flex-column">
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <h1 class="mb-1"><span style="color:#404040">How We</span> Work</h1>
-                <hr />
-                <h5 class="mb-1" style="text-align: center">Recycling can prevent the waste of potentially useful ma- terials and reduce the con- sumption of fresh raw
-                    material, thereby reducing: energy usage, air pollution and water pollution.
-                </h5>
-                <div class="container" style="margin-top:4%;margin-bottom:6%">
-                    <div class="container" style="margin-top:20px;">
-                        <div class="row">
-                            <div class="col-md-4 animated wow slideInLeft">
-                                <div id="f1_container">
-                                    <div id="f1_card" class="shadow">
-                                        <div class="front face">
-                                            <div class="view hm-green-strong">
-                                                <img src="https://image.freepik.com/free-vector/mobile-phone-background-design_1270-22.jpg" class=" img-fluid" style="height:100%;width:100%"
-                                                />
-                                                <div class="mask flex-coloumn">
-                                                    <div style="margin-top:30%">
-                                                        <h2 class="white-text text-center">STEP 1</h2>
-                                                        <hr style="border-color:white;margin-left:25%;margin-right:25%">
-                                                        <p class="white-text text-center">Raising Pickup Request</p>
+</div>
+<div id="section3">
+    <div style="background-color:#f2f4f4;display: block;clear: both" class="slides">
+        <div class="container  flex-center flex-column">
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <h1 class="mb-1"><span style="color:#404040">How We</span> Work</h1>
+            <hr />
+            <h5 class="mb-1" style="text-align: center">Recycling can prevent the waste of potentially useful ma- terials and reduce the con- sumption of fresh raw material,
+                thereby reducing: energy usage, air pollution and water pollution.
+            </h5>
+            <div class="container" style="margin-top:4%;margin-bottom:6%">
+                <div class="container" style="margin-top:20px;">
+                    <div class="row">
+                        <div class="col-md-4 animated wow slideInLeft">
+                            <div id="f1_container">
+                                <div id="f1_card" class="shadow">
+                                    <div class="front face">
+                                        <div class="view hm-black-strong">
+                                            <img src="https://image.freepik.com/free-vector/mobile-phone-background-design_1270-22.jpg" class=" img-fluid" style="height:100%;width:100%"
+                                            />
+                                            <div class="mask flex-coloumn">
+                                                <div style="margin-top:30%">
+                                                    <h2 class="white-text text-center">STEP 1</h2>
+                                                    <hr style="border-color:white;margin-left:25%;margin-right:25%">
+                                                    <p class="white-text text-center">Raising Pickup Request</p>
 
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="back face center">
-                                            <p>This is nice for exposing more information about an image.</p>
-                                            <p>Any content can go here.</p>
-                                        </div>
+                                    </div>
+                                    <div class="back face center">
+                                        <p>This is nice for exposing more information about an image.</p>
+                                        <p>Any content can go here.</p>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
 
-                            <div class="col-md-4 animated wow zoomIn">
-                                <div id="f1_container">
-                                    <div id="f1_card" class="shadow">
-                                        <div class="front face">
-                                            <div class="view hm-yellow-strong">
-                                                <img src="https://image.freepik.com/free-vector/delivery-man-background-design_1212-470.jpg" class=" img-fluid" style="height:auto;width:100%"
-                                                />
-                                                <div class="mask flex-coloumn">
-                                                    <div style="margin-top:30%">
-                                                        <h2 class="white-text text-center">STEP 2</h2>
-                                                        <hr style="border-color:white;margin-left:25%;margin-right:25%">
-                                                        <p class="white-text text-center">Onsite Inspection and Secure carry to Recycler</p>
+                        <div class="col-md-4 animated wow zoomIn">
+                            <div id="f1_container">
+                                <div id="f1_card" class="shadow">
+                                    <div class="front face">
+                                        <div class="view hm-green-light">
+                                            <img src="https://image.freepik.com/free-vector/delivery-man-background-design_1212-470.jpg" class=" img-fluid" style="height:auto;width:100%"
+                                            />
+                                            <div class="mask flex-coloumn">
+                                                <div style="margin-top:30%">
+                                                    <h2 class="white-text text-center">STEP 2</h2>
+                                                    <hr style="border-color:white;margin-left:25%;margin-right:25%">
+                                                    <p class="white-text text-center">Onsite Inspection and Secure carry to Recycler</p>
 
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="back face center">
-                                            <p>This is nice for exposing more information about an image.</p>
-                                            <p>Any content can go here.</p>
-                                        </div>
+                                    </div>
+                                    <div class="back face center">
+                                        <p>This is nice for exposing more information about an image.</p>
+                                        <p>Any content can go here.</p>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="col-md-4 animated wow slideInRight">
-                                <div id="f1_container">
-                                    <div id="f1_card" class="shadow">
-                                        <div class="front face">
-                                            <div class="view hm-green-strong">
-                                                <img src="https://image.freepik.com/free-vector/isometric-factory_1344-5.jpg" class=" img-fluid" style="height:auto;width:100%"
-                                                />
-                                                <div class="mask flex-coloumn">
-                                                    <div style="margin-top:30%">
-                                                        <h2 class="white-text text-center">STEP 3</h2>
-                                                        <hr style="border-color:white;margin-left:25%;margin-right:25%">
-                                                        <p class="white-text text-center">Recycling of products with our certified recyclers</p>
-                                                    </div>
+                        <div class="col-md-4 animated wow slideInRight">
+                            <div id="f1_container">
+                                <div id="f1_card" class="shadow">
+                                    <div class="front face">
+                                        <div class="view hm-black-strong">
+                                            <img src="https://image.freepik.com/free-vector/isometric-factory_1344-5.jpg" class=" img-fluid" style="height:auto;width:100%"
+                                            />
+                                            <div class="mask flex-coloumn">
+                                                <div style="margin-top:30%">
+                                                    <h2 class="white-text text-center">STEP 3</h2>
+                                                    <hr style="border-color:white;margin-left:25%;margin-right:25%">
+                                                    <p class="white-text text-center">Recycling of products with our certified recyclers</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="back face center">
-                                            <p>This is nice for exposing more information about an image.</p>
-                                            <p>Any content can go here.</p>
-                                        </div>
+                                    </div>
+                                    <div class="back face center">
+                                        <p>This is nice for exposing more information about an image.</p>
+                                        <p>Any content can go here.</p>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="col-md-4 animated wow zoomIn">
-                                <div id="f1_container">
-                                    <div id="f1_card" class="shadow">
-                                        <div class="front face">
-                                            <div class="view hm-yellow-strong">
-                                                <img src="https://image.freepik.com/free-vector/payment-background-design_1223-72.jpg" style="height:auto;width:100%" />
-                                                <div class="mask flex-coloumn">
-                                                    <div style="margin-top:30%">
-                                                        <h2 class="white-text text-center">STEP 4</h2>
-                                                        <hr style="border-color:white;margin-left:25%;margin-right:25%">
-                                                        <p class="white-text text-center">Payment to User</p>
-                                                        <p class="text-center white-text">CASH|Paytm|IMPS</p>
+                        <div class="col-md-4 animated wow zoomIn">
+                            <div id="f1_container">
+                                <div id="f1_card" class="shadow">
+                                    <div class="front face">
+                                        <div class="view hm-green-light">
+                                            <img src="https://image.freepik.com/free-vector/payment-background-design_1223-72.jpg" style="height:auto;width:100%" />
+                                            <div class="mask flex-coloumn">
+                                                <div style="margin-top:30%">
+                                                    <h2 class="white-text text-center">STEP 4</h2>
+                                                    <hr style="border-color:white;margin-left:25%;margin-right:25%">
+                                                    <p class="white-text text-center">Payment to User</p>
+                                                    <p class="text-center white-text">CASH|Paytm|IMPS</p>
 
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
 
-                                        <div class="back face center">
-                                            <p>This is nice for exposing more information about an image.</p>
-                                            <p>Any content can go here.</p>
-                                        </div>
+                                    <div class="back face center">
+                                        <p>This is nice for exposing more information about an image.</p>
+                                        <p>Any content can go here.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 animated wow zoomIn">
-                                <div id="f1_container">
-                                    <div id="f1_card" class="shadow">
-                                        <div class="front face">
-                                            <div class="view hm-green-strong">
-                                                <img src="https://image.freepik.com/free-vector/shopping-online-background_1156-96.jpg" style="height:auto;width:100%" />
-                                                <div class="mask flex-coloumn">
-                                                    <div style="margin-top:30%">
-                                                        <h2 class="white-text text-center">STEP 5</h2>
-                                                        <hr style="border-color:white;margin-left:25%;margin-right:25%">
-                                                        <p class="white-text text-center">Recycled Products Resold</p>
+                        </div>
+                        <div class="col-md-4 animated wow zoomIn">
+                            <div id="f1_container">
+                                <div id="f1_card" class="shadow">
+                                    <div class="front face">
+                                        <div class="view hm-black-strong">
+                                            <img src="https://image.freepik.com/free-vector/shopping-online-background_1156-96.jpg" style="height:auto;width:100%" />
+                                            <div class="mask flex-coloumn">
+                                                <div style="margin-top:30%">
+                                                    <h2 class="white-text text-center">STEP 5</h2>
+                                                    <hr style="border-color:white;margin-left:25%;margin-right:25%">
+                                                    <p class="white-text text-center">Recycled Products Resold</p>
 
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="back face center">
-                                            <p>This is nice for exposing more information about an image.</p>
-                                            <p>Any content can go here.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 animated wow zoomIn">
-                                <div id="f1_container">
-                                    <div id="f1_card" class="shadow">
-                                        <div class="front face">
-                                            <div class="view hm-yellow-strong">
-                                                <img src="https://image.freepik.com/free-photo/grassy-landscape-with-a-tree-and-raincloud_1048-2904.jpg" style="height:auto;width:100%"
-                                                />
-                                                <div class="mask flex-coloumn">
-                                                    <div style="margin-top:30%">
-                                                        <h2 class="white-text text-center">STEP 6</h2>
-                                                        <hr style="border-color:white;margin-left:25%;margin-right:25%">
-                                                        <p class="white-text text-center">A new Tree with every Recycled Product</p>
-
-                                                    </div>
                                                 </div>
                                             </div>
+
                                         </div>
+                                    </div>
 
-
-                                        <div class="back face center">
-                                            <p>This is nice for exposing more information about an image.</p>
-                                            <p>Any content can go here.</p>
-                                        </div>
-
+                                    <div class="back face center">
+                                        <p>This is nice for exposing more information about an image.</p>
+                                        <p>Any content can go here.</p>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
+                        <div class="col-md-4 animated wow zoomIn">
+                            <div id="f1_container">
+                                <div id="f1_card" class="shadow">
+                                    <div class="front face">
+                                        <div class="view hm-green-light">
+                                            <img src="https://image.freepik.com/free-photo/grassy-landscape-with-a-tree-and-raincloud_1048-2904.jpg" style="height:auto;width:100%"
+                                            />
+                                            <div class="mask flex-coloumn">
+                                                <div style="margin-top:30%">
+                                                    <h2 class="white-text text-center">STEP 6</h2>
+                                                    <hr style="border-color:white;margin-left:25%;margin-right:25%">
+                                                    <p class="white-text text-center">A new Tree with every Recycled Product</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="back face center">
+                                        <p>This is nice for exposing more information about an image.</p>
+                                        <p>Any content can go here.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="background-color:white" class="slides">
+    <div class="container flex-center flex-column " style="margin-top:6%;margin-bottom:10%">
+        <h1 class="mb-1"><span style="color:#404040">Services & </span> Features</h1>
+        <hr style="color:#404040" />
+        <h5 class="mb-1" style="text-align: center">Recycling is a key component of modern waste reduction and is the third component of “Reduce, Reuse and Recycle”
+            waste hierarchy. Recyclable materials include many kind of glass, paper and cardboard, metal, plastic, tires,
+            textiles and electronics..</h5>
+        <div class="container" style="margin-top:4%">
+            <div class="row ">
+                <div class="col-md-4 flex-center flex-column feature1  animated wow slideInLeft">
+                    <div class="row">
+                        <div class="col-md-12 flex-center">
+                            <img src="./img/waste_icon.png" style="height:64px;width:64px">
+                        </div>
+                        <div class="col-md-12 flex-center">
+                            <h4 class="feature_heading ">Waste Collection</h4>
+                        </div>
+                        <div class="col-md-12 flex-center">
+                            <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 feature yellow  animated wow zoomIn">
+                    <div class="row">
+                        <div class="col-md-12 flex-center">
+                            <img src="./img/recycle_icon.png" style="height:64px;width:64px">
+                        </div>
+                        <div class="col-md-12 flex-center">
+                            <h4 class="feature_heading">Environmental</h4>
+                        </div>
+                        <div class="col-md-12 flex-center">
+                            <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 feature1  animated wow slideInRight">
+                    <div class="row">
+                        <div class="col-md-12 flex-center">
+                            <img src="./img/quality.png" style="height:64px;width:64px">
+                        </div>
+                        <div class="col-md-12 flex-center">
+                            <h4 class="feature_heading">Recycling Services</h4>
+                        </div>
+                        <div class="col-md-12 flex-center">
+                            <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 feature yellow  animated wow slideInLeft">
+                    <div class="row">
+                        <div class="col-md-12 flex-center">
+                            <img src="./img/bio_icon.png" style="height:64px;width:64px">
+                        </div>
+                        <div class="col-md-12">
+                            <h4 class="feature_heading flex-center">Quality Audits</h4>
+                        </div>
+                        <div class="col-md-12 flex-center">
+                            <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 feature1  animated wow zoomIn">
+                    <div class="row">
+                        <div class="col-md-12 flex-center">
+                            <img src="./img/sus_icon.png" style="height:64px;width:64px">
+                        </div>
+                        <div class="col-md-12 flex-center">
+                            <h4 class="feature_heading">BioFuel PRoduction</h4>
+                        </div>
+                        <div class="col-md-12 flex-center">
+                            <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 feature yellow  animated wow slideInRight">
+                    <div class="row">
+                        <div class="col-md-12 flex-center">
+                            <img src="./img/env_icon.png" style="height:64px;width:64px">
+                        </div>
+                        <div class="col-md-12 flex-center">
+                            <h4 class="feature_heading">Sustainability</h4>
+                        </div>
+                        <div class="col-md-12">
+                            <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div style="background-color:white" class="slides">
-        <div class="container flex-center flex-column " style="margin-top:6%;margin-bottom:10%">
-            <h1 class="mb-1"><span style="color:#404040">Services & </span> Features</h1>
-            <hr style="color:#404040" />
-            <h5 class="mb-1" style="text-align: center">Recycling is a key component of modern waste reduction and is the third component of “Reduce, Reuse and Recycle”
-                waste hierarchy. Recyclable materials include many kind of glass, paper and cardboard, metal, plastic, tires,
-                textiles and electronics..</h5>
-            <div class="container" style="margin-top:4%">
-                <div class="row ">
-                    <div class="col-md-4 flex-center flex-column feature1  animated wow slideInLeft">
-                        <div class="row">
-                            <div class="col-md-12 flex-center">
-                                <img src="./img/waste_icon.png" style="height:64px;width:64px">
-                            </div>
-                            <div class="col-md-12 flex-center">
-                                <h4 class="feature_heading ">Waste Collection</h4>
-                            </div>
-                            <div class="col-md-12 flex-center">
-                                <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                    ut labore et dolore.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 feature yellow  animated wow zoomIn">
-                        <div class="row">
-                            <div class="col-md-12 flex-center">
-                                <img src="./img/recycle_icon.png" style="height:64px;width:64px">
-                            </div>
-                            <div class="col-md-12 flex-center">
-                                <h4 class="feature_heading">Environmental</h4>
-                            </div>
-                            <div class="col-md-12 flex-center">
-                                <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                    ut labore et dolore.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 feature1  animated wow slideInRight">
-                        <div class="row">
-                            <div class="col-md-12 flex-center">
-                                <img src="./img/quality.png" style="height:64px;width:64px">
-                            </div>
-                            <div class="col-md-12 flex-center">
-                                <h4 class="feature_heading">Recycling Services</h4>
-                            </div>
-                            <div class="col-md-12 flex-center">
-                                <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                    ut labore et dolore.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 feature yellow  animated wow slideInLeft">
-                        <div class="row">
-                            <div class="col-md-12 flex-center">
-                                <img src="./img/bio_icon.png" style="height:64px;width:64px">
-                            </div>
-                            <div class="col-md-12">
-                                <h4 class="feature_heading flex-center">Quality Audits</h4>
-                            </div>
-                            <div class="col-md-12 flex-center">
-                                <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                    ut labore et dolore.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 feature1  animated wow zoomIn">
-                        <div class="row">
-                            <div class="col-md-12 flex-center">
-                                <img src="./img/sus_icon.png" style="height:64px;width:64px">
-                            </div>
-                            <div class="col-md-12 flex-center">
-                                <h4 class="feature_heading">BioFuel PRoduction</h4>
-                            </div>
-                            <div class="col-md-12 flex-center">
-                                <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                    ut labore et dolore.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 feature yellow  animated wow slideInRight">
-                        <div class="row">
-                            <div class="col-md-12 flex-center">
-                                <img src="./img/env_icon.png" style="height:64px;width:64px">
-                            </div>
-                            <div class="col-md-12 flex-center">
-                                <h4 class="feature_heading">Sustainability</h4>
-                            </div>
-                            <div class="col-md-12">
-                                <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                    ut labore et dolore.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div style="background-color:#f2f4f4" class="slides">
-        <div class="container flex-center flex-column ">
-            <section class="section feature-box">
-                <!--Section heading-->
-                <!--First row-->
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <div class="row">
-                    <div class="col-md-3">
-                        <p>&nbsp</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h1 style="text-align: center"><span style="color:#404040">Why</span> ShuttleScrapp</h1>
-                        <!--Section sescription-->
-                        <!--First column-->
-                    </div>
-                    <div class="col-md-3">
-                        <p>&nbsp</p>
-                    </div>
-                </div>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <p>&nbsp</p>
-                <div class="row features-small">
-                    <div class="col-md-4 ">
-                        <!--First row-->
-                        <div class="row  animated wow zoomIn hoverable">
-                            <div class="col-2">
-                                <i class="fa fa-flag-checkered indigo-text"></i>
-                            </div>
-                            <div class="col-10">
-                                <h4 class="feature-title">International</h4>
-                                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
-                                    minima assumenda deleniti hic.</p>
-                                <div style="height:30px"></div>
-                            </div>
-                        </div>
-                        <!--/First row-->
-                        <!--Second row-->
-
-                        <div class="row  animated wow zoomIn hoverable ">
-                            <div class="col-2">
-                                <i class="fa fa-flask blue-text"></i>
-                            </div>
-                            <div class="col-10">
-                                <h4 class="feature-title">Experimental</h4>
-                                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
-                                    minima assumenda deleniti hic.</p>
-                                <div style="height:30px"></div>
-                            </div>
-                        </div>
-                        <!--/Second row-->
-                        <!--Third row-->
-
-                        <div class="row animated wow zoomIn hoverable ">
-                            <div class="col-2">
-                                <i class="fa fa-glass cyan-text"></i>
-                            </div>
-                            <div class="col-10">
-                                <h4 class="feature-title">Relaxing</h4>
-                                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
-                                    minima assumenda deleniti hic.</p>
-                                <div style="height:30px"></div>
-                            </div>
-                        </div>
-                        <!--/Third row-->
-                    </div>
-                    <!--/First column-->
-                    <!--Second column-->
-                    <div class="col-md-4 mb-r center-on-small-only flex-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/IPhone_6S_Rose_Gold.png/243px-IPhone_6S_Rose_Gold.png"
-                            alt="" class="z-depth-0">
-                    </div>
-                    <!--/Second column-->
-                    <!--Third column-->
-                    <div class="col-md-4">
-                        <!--First row-->
-
-                        <div class="row animated wow zoomIn hoverable">
-                            <div class="col-2">
-                                <i class="fa fa-heart red-text"></i>
-                            </div>
-                            <div class="col-10">
-                                <h4 class="feature-title">Beloved</h4>
-                                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
-                                    minima assumenda deleniti hic.</p>
-                                <div style="height:30px"></div>
-                            </div>
-                        </div>
-                        <!--/First row-->
-                        <!--Second row-->
-
-                        <div class="row animated wow zoomIn hoverable">
-                            <div class="col-2">
-                                <i class="fa fa-flash orange-text"></i>
-                            </div>
-                            <div class="col-10">
-                                <h4 class="feature-title">Rapid</h4>
-                                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
-                                    minima assumenda deleniti hic.</p>
-                                <div style="height:30px"></div>
-                            </div>
-                        </div>
-                        <!--/Second row-->
-                        <!--Third row-->
-                        <div class="row animated wow zoomIn hoverable">
-                            <div class="col-2">
-                                <i class="fa fa-magic lime-text"></i>
-                            </div>
-                            <div class="col-10">
-                                <h4 class="feature-title">Magical</h4>
-                                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
-                                    minima assumenda deleniti hic.</p>
-                                <div style="height:30px"></div>
-                            </div>
-                        </div>
-                        <!--/Third row-->
-                    </div>
-                    <!--/Third column-->
-                </div>
-                <!--/First row-->
-            </section>
-            <!--/Section: Features v.4-->
-        </div>
-    </div>
-    <div class="flex-center flex-column overlay ">
-        <div class="container">
-            <div class="row stats">
-                <div class="col-md-4 ">
-                    <i class="fa fa-calendar" aria-hidden="true" style="color:white;font-size:4em"></i>
-                    <p>&nbsp</p>
-                    <h1 style="color:white">5 Years of Experience</h1>
-                </div>
-                <div class="col-md-4">
-                    <i class="fa fa-user-plus" aria-hidden="true" style="color:white;font-size:4em"></i>
-                    <p>&nbsp</p>
-                    <h1 style="color:white">100+ Clients Served</h1>
-                </div>
-                <div class="col-md-4">
-                    <i class="fa fa-check-square" aria-hidden="true" style="color:white;font-size:4em"></i>
-                    <p>&nbsp</p>
-                    <h1 style="color:white">200 Tons Scrap Handled</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div style="background-color:white;font-family:'Arvo', serif;padding:90px" class="flex-center slides ">
-        <div class="container-fluid">
-            <div class="container">
-                <h1 class="flex-center"><span style="color:#404040">Meet Our</span> Experts</h1>
-                <p>&nbsp</p>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card animated wow zoomIn" style="transform:scale(0.8)">
-                            <!--Card image-->
-                            <div class="view overlay hm-white-slight">
-                                <img src="./img/rohan.jpeg" class="img-fluid" alt="" style="width:100%;height:100%">
-                                <a href="#">
-                                    <div class="mask waves-effect waves-light"></div>
-                                </a>
-                            </div>
-                            <!--/.Card image-->
-                            <!--Card content-->
-                            <div class="card-block">
-                                <!--Title-->
-                                <h4 class="card-title">Mr Rohan Singh Bais</h4>
-                                <!--Text-->
-                                <p class="card-text">CEO and Co-Founder</p>
-                            </div>
-                            <!--/.Card content-->
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card animated wow zoomIn" style="transform:scale(0.8)">
-                            <!--Card image-->
-                            <div class="view overlay hm-white-slight">
-                                <img src="./img/ashwini.png" class="img-fluid" alt="" style="width:100%;height:100%">
-                                <a href="#">
-                                    <div class="mask waves-effect waves-light"></div>
-                                </a>
-                            </div>
-                            <!--/.Card image-->
-                            <!--Card content-->
-                            <div class="card-block">
-                                <!--Title-->
-                                <h4 class="card-title">Mr Ashwani Yadav</h4>
-                                <!--Text-->
-                                <p class="card-text">Co-Founder</p>
-                            </div>
-                            <!--/.Card content-->
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card animated wow zoomIn" style="transform:scale(0.8)">
-                            <!--Card image-->
-                            <div class="view overlay hm-white-slight">
-                                <img src="./img/raj.png" class="img-fluid" alt="" style="width:100%;height:100%">
-                                <a href="#">
-                                    <div class="mask waves-effect waves-light"></div>
-                                </a>
-                            </div>
-                            <!--/.Card image-->
-                            <!--Card content-->
-                            <div class="card-block">
-                                <!--Title-->
-                                <h4 class="card-title">Mr Raj Kumar</h4>
-                                <!--Text-->
-                                <p class="card-text">Advisor</p>
-                            </div>
-                            <!--/.Card content-->
-                        </div>
-                    </div>
-                    <div class="col-md-12 flex-center flex-column">
-                        <button class="btn btn-success">Meet Our Full Team</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div style="background-color:#f2f4f4" class="slides">
-        <div class="container  flex-center flex-column ">
-            <div class="row" style="margin-top:5%;">
-                <div class="col-md-6 animated wow slideInLeft">
-
-                    <h2><span style="color:#404040">Client</span> Testimonials</h2>
-                    <hr style="margin-right:88%" />
-                    <div class="testimonials">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p>Lorem ipsum dolor sit amet, consectetuer. Proin gravida nibh vel velit auctor aliquet. Aenean
-                                    sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                                    nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Quisque
-                                    rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</p>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="image">
-                                    <img src="http://recycle.orionthemes.com/demo-1/wp-content/uploads/2016/12/teammember3-150x150.jpg" id="testi_image">
-                                    <p style="padding:10px;">John Doe</p>
-                                </div>
-                                <div class="client"></div>
-                            </div>
-                        </div>
-                        <p>&nbsp</p>
-                        <p>&nbsp</p>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p>Lorem ipsum dolor sit amet, consectetuer. Proin gravida nibh vel velit auctor aliquet. Aenean
-                                    sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                                    nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Quisque
-                                    rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</p>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="image">
-                                    <img src="http://recycle.orionthemes.com/demo-1/wp-content/uploads/2016/12/teammember3-150x150.jpg" id="testi_image">
-                                    <p style="padding:10px;">John Doe</p>
-                                </div>
-                                <div class="client"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 animated wow slideInRight">
-                    <div class="text-left">
-                        <h3 style="color:#22aa86;margin-left:40px"><i class="fa fa-envelope"></i> <span style="color:#404040">Contact</span> Us </h3>
-                        <hr style="margin-right:88%;margin-left:40px">
-                    </div>
-                    <!--Naked Form-->
-                    <div class="card-block">
-                        <!--Header-->
-                        <!--Body-->
-
-                        <!--Body-->
-                        <div class="md-form">
-                            <i class="fa fa-user prefix"></i>
-                            <input type="text" id="form3" class="form-control">
-                            <label for="form3">Your name</label>
-                        </div>
-                        <div class="md-form">
-                            <i class="fa fa-envelope prefix"></i>
-                            <input type="text" id="form2" class="form-control">
-                            <label for="form2">Your email</label>
-                        </div>
-                        <div class="md-form">
-                            <i class="fa fa-tag prefix"></i>
-                            <input type="text" id="form32" class="form-control">
-                            <label for="form34">Subject</label>
-                        </div>
-                        <div class="md-form">
-                            <i class="fa fa-pencil prefix"></i>
-                            <textarea type="text" id="form8" class="md-textarea"></textarea>
-                            <label for="form8">Icon Prefix</label>
-                        </div>
-                        <div class="text-center">
-                            <button class="btn btn-default">Submit</button>
-                            <div class="call">
-                                <br>
-                                <p>Or would you prefer to call?
-                                    <br>
-                                    <span><i class="fa fa-phone"> </i></span> + 01 234 565 280</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Naked Form-->
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="flex-center flex-column hiring" style="background-color: white;">
-        <div class="container">
-            <h1 style="text-align: center"><span style="color:#404040">We are</span> HIRING</h1>
+</div>
+<div style="background-color:#f2f4f4" class="slides">
+    <div class="container flex-center flex-column ">
+        <section class="section feature-box">
+            <!--Section heading-->
+            <!--First row-->
+            <p>&nbsp</p>
+            <p>&nbsp</p>
             <p>&nbsp</p>
             <div class="row">
-                <div class="col-md-4 hoverable">
-                    <div class="openings">
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <i class="fa fa-code" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
+                <div class="col-md-3">
+                    <p>&nbsp</p>
+                </div>
+                <div class="col-md-6">
+                    <h1 style="text-align: center"><span style="color:#404040">Why</span> ShuttleScrapp</h1>
+                    <!--Section sescription-->
+                    <!--First column-->
+                </div>
+                <div class="col-md-3">
+                    <p>&nbsp</p>
+                </div>
+            </div>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+            <div class="row features-small">
+                <div class="col-md-4 ">
+                    <!--First row-->
+                    <div class="row  animated wow zoomIn hoverable">
+                        <div class="col-2">
+                            <i class="fa fa-flag-checkered indigo-text"></i>
+                        </div>
+                        <div class="col-10">
+                            <h4 class="feature-title">International</h4>
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
+                                minima assumenda deleniti hic.</p>
+                            <div style="height:30px"></div>
+                        </div>
+                    </div>
+                    <!--/First row-->
+                    <!--Second row-->
 
+                    <div class="row  animated wow zoomIn hoverable ">
+                        <div class="col-2">
+                            <i class="fa fa-flask blue-text"></i>
                         </div>
+                        <div class="col-10">
+                            <h4 class="feature-title">Experimental</h4>
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
+                                minima assumenda deleniti hic.</p>
+                            <div style="height:30px"></div>
+                        </div>
+                    </div>
+                    <!--/Second row-->
+                    <!--Third row-->
 
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <h3> TECHNICAL LEAD</h3>
+                    <div class="row animated wow zoomIn hoverable ">
+                        <div class="col-2">
+                            <i class="fa fa-glass cyan-text"></i>
                         </div>
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <p>If you think you can crunch numbers, analyse models, perform market research all in a single
-                                day and come up with the next action plan. We need you.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 hoverable">
-                    <div class="openings">
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <i class="fa fa-sign-language" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
-                            <p>&nbsp</p>
-                        </div>
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <h3> BUSINESS DEVELOPMENT </h3>
-                        </div>
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <p>If you think you can crunch numbers, analyse models, perform market research all in a single
-                                day and come up with the next action plan. We need you.</p>
+                        <div class="col-10">
+                            <h4 class="feature-title">Relaxing</h4>
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
+                                minima assumenda deleniti hic.</p>
+                            <div style="height:30px"></div>
                         </div>
                     </div>
+                    <!--/Third row-->
                 </div>
-                <div class="col-md-4 hoverable">
-                    <div class="openings">
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <i class="fa fa-envira" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
-                            <p>&nbsp</p>
+                <!--/First column-->
+                <!--Second column-->
+                <div class="col-md-4 mb-r center-on-small-only flex-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/IPhone_6S_Rose_Gold.png/243px-IPhone_6S_Rose_Gold.png"
+                        alt="" class="z-depth-0">
+                </div>
+                <!--/Second column-->
+                <!--Third column-->
+                <div class="col-md-4">
+                    <!--First row-->
+
+                    <div class="row animated wow zoomIn hoverable">
+                        <div class="col-2">
+                            <i class="fa fa-heart red-text"></i>
                         </div>
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <h3> DESIGN </h3>
-                        </div>
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <p>If you like to play with colors, fanatic about kerning, line heights and love Deiter Rams. You
-                                should join us.</p>
+                        <div class="col-10">
+                            <h4 class="feature-title">Beloved</h4>
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
+                                minima assumenda deleniti hic.</p>
+                            <div style="height:30px"></div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 hoverable">
-                    <div class="openings">
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <i class="fa fa-cubes" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
-                            <p>&nbsp</p>
+                    <!--/First row-->
+                    <!--Second row-->
+
+                    <div class="row animated wow zoomIn hoverable">
+                        <div class="col-2">
+                            <i class="fa fa-flash orange-text"></i>
                         </div>
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <h3> MARKETING </h3>
-                        </div>
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <p>Content marketing, SEO, SEM, Facebook ads, Organic marketing, Offline marketing, emails. We do
-                                them all and you would do them too if you join.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 hoverable">
-                    <div class="openings">
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <i class="fa fa-desktop" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
-                            <p>&nbsp</p>
-                        </div>
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <h3> THE HUSTLER / HACKER </h3>
-                        </div>
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <p>If you think you know stuff and can get anything done one way or the other. If you are the Godfather
-                                of this world and a unicorn in the making. We need you.</p>
+                        <div class="col-10">
+                            <h4 class="feature-title">Rapid</h4>
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
+                                minima assumenda deleniti hic.</p>
+                            <div style="height:30px"></div>
                         </div>
                     </div>
+                    <!--/Second row-->
+                    <!--Third row-->
+                    <div class="row animated wow zoomIn hoverable">
+                        <div class="col-2">
+                            <i class="fa fa-magic lime-text"></i>
+                        </div>
+                        <div class="col-10">
+                            <h4 class="feature-title">Magical</h4>
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
+                                minima assumenda deleniti hic.</p>
+                            <div style="height:30px"></div>
+                        </div>
+                    </div>
+                    <!--/Third row-->
                 </div>
-                <div class="col-md-4 hoverable">
-                    <div class="openings">
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <i class="fa fa-pie-chart" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
-                            <p>&nbsp</p>
+                <!--/Third column-->
+            </div>
+            <!--/First row-->
+        </section>
+        <!--/Section: Features v.4-->
+    </div>
+</div>
+<div class="flex-center flex-column overlay ">
+    <div class="container">
+        <div class="row stats">
+            <div class="col-md-4 ">
+                <i class="fa fa-calendar" aria-hidden="true" style="color:white;font-size:4em"></i>
+                <p>&nbsp</p>
+                <h1 style="color:white">5 Years of Experience</h1>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-user-plus" aria-hidden="true" style="color:white;font-size:4em"></i>
+                <p>&nbsp</p>
+                <h1 style="color:white">100+ Clients Served</h1>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-check-square" aria-hidden="true" style="color:white;font-size:4em"></i>
+                <p>&nbsp</p>
+                <h1 style="color:white">200 Tons Scrap Handled</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="background-color:white;font-family:'Arvo', serif;padding:90px" class="flex-center slides ">
+    <div class="container-fluid">
+        <div class="container">
+            <h1 class="flex-center"><span style="color:#404040">Meet Our</span> Experts</h1>
+            <p>&nbsp</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card animated wow zoomIn" style="transform:scale(0.8)">
+                        <!--Card image-->
+                        <div class="view overlay hm-white-slight">
+                            <img src="./img/rohan.jpeg" class="img-fluid" alt="" style="width:100%;height:100%">
+                            <a href="#">
+                                <div class="mask waves-effect waves-light"></div>
+                            </a>
                         </div>
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <h3> SALES </h3>
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <!--Title-->
+                            <h4 class="card-title">Mr Rohan Singh Bais</h4>
+                            <!--Text-->
+                            <p class="card-text">CEO and Co-Founder</p>
                         </div>
-                        <div class="row flex-center" style="margin-bottom:10px">
-                            <p>We need people who can be smart, understand the consumer, and come from a background in real
-                                estate.
-                            </p>
+                        <!--/.Card content-->
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card animated wow zoomIn" style="transform:scale(0.8)">
+                        <!--Card image-->
+                        <div class="view overlay hm-white-slight">
+                            <img src="./img/ashwini.png" class="img-fluid" alt="" style="width:100%;height:100%">
+                            <a href="#">
+                                <div class="mask waves-effect waves-light"></div>
+                            </a>
                         </div>
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <!--Title-->
+                            <h4 class="card-title">Mr Ashwani Yadav</h4>
+                            <!--Text-->
+                            <p class="card-text">Co-Founder</p>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card animated wow zoomIn" style="transform:scale(0.8)">
+                        <!--Card image-->
+                        <div class="view overlay hm-white-slight">
+                            <img src="./img/raj.png" class="img-fluid" alt="" style="width:100%;height:100%">
+                            <a href="#">
+                                <div class="mask waves-effect waves-light"></div>
+                            </a>
+                        </div>
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <!--Title-->
+                            <h4 class="card-title">Mr Raj Kumar</h4>
+                            <!--Text-->
+                            <p class="card-text">Advisor</p>
+                        </div>
+                        <!--/.Card content-->
                     </div>
                 </div>
                 <div class="col-md-12 flex-center flex-column">
-                    <button type="button" class="btn btn-outline-default waves-effect">Apply Now</button>
+                    <button class="btn btn-success">Meet Our Full Team</button>
                 </div>
             </div>
-
         </div>
     </div>
-    <!--Footer-->
-    <footer class="page-footer center-on-small-only" style="background-color:#22aa86">
-        <!--Footer Links-->
-        <div class="container-fluid">
-            <div class="container">
-                <div class="row">
-                    <!--First column-->
-                    <div class="col-md-4 ">
-                        <h5 class="title">ShuttleScrap India</h5>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                            type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                            but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+</div>
+<div style="background-color:#f2f4f4" class="slides">
+    <div class="container  flex-center flex-column ">
+        <div class="row" style="margin-top:5%;">
+            <div class="col-md-6 animated wow slideInLeft">
+
+                <h2><span style="color:#404040">Client</span> Testimonials</h2>
+                <hr style="margin-right:88%" />
+                <div class="testimonials">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Lorem ipsum dolor sit amet, consectetuer. Proin gravida nibh vel velit auctor aliquet. Aenean
+                                sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh
+                                id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Quisque rutrum.
+                                Aenean imperdiet. Etiam ultricies nisi vel augue.</p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="image">
+                                <img src="http://recycle.orionthemes.com/demo-1/wp-content/uploads/2016/12/teammember3-150x150.jpg" id="testi_image">
+                                <p style="padding:10px;">John Doe</p>
+                            </div>
+                            <div class="client"></div>
+                        </div>
                     </div>
-                    <div class="col-md-1">
-                        <p>&nbsp</p>
+                    <p>&nbsp</p>
+                    <p>&nbsp</p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Lorem ipsum dolor sit amet, consectetuer. Proin gravida nibh vel velit auctor aliquet. Aenean
+                                sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh
+                                id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Quisque rutrum.
+                                Aenean imperdiet. Etiam ultricies nisi vel augue.</p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="image">
+                                <img src="http://recycle.orionthemes.com/demo-1/wp-content/uploads/2016/12/teammember3-150x150.jpg" id="testi_image">
+                                <p style="padding:10px;">John Doe</p>
+                            </div>
+                            <div class="client"></div>
+                        </div>
                     </div>
-                    <!--/.First column-->
-                    <hr class="hidden-md-up">
-                    <!--Second column-->
-                    <div class="col-md-3 ">
-                        <h5 class="title">Compnay Profile</h5>
-                        <ul>
-                            <li><a href="#!">595 Commonwealth Avenue Boston, Massachusetts 02215</a></li>
-                            <li><a href="#!">info@scrapp.in</a></li>
-                        </ul>
-                    </div>
-                    <!--/.Second column-->
-                    <hr class="hidden-md-up">
-                    <!--Third column-->
-                    <div class="col-md-4">
-                        <h5 class="title">Latest News</h5>
-                        <ul>
-                            <li><a href="#!">How to Recycle Paper</a></li>
-                            <li><a href="#!">The Evolution of Recycling</a></li>
-                            <li><a href="#!">Global Warming Facts</a></li>
-                            <li><a href="#!">Quote Post</a></li>
-                        </ul>
-                    </div>
-                    <!--/.Third column-->
-                    <hr class="hidden-md-up">
-                    <!--Fourth column-->
-                    <!--/.Fourth column-->
                 </div>
             </div>
-        </div>
-        <!--/.Footer Links-->
-        <hr>
-        <!--Call to action-->
-        <div class="call-to-action">
-            <ul>
-                <li>
-                    <h5>Raise Scrap Pick up Request</h5>
-                </li>
-                <li><a href="" class="btn btn-teal">Schedule a Pickup</a></li>
-            </ul>
-        </div>
-        <!--/.Call to action-->
-        <hr>
-        <!--Social buttons-->
-        <div class="social-section">
-            <ul>
-                <button type="button" class="btn btn-lg btn-fb" style="background-color:rgb(59, 89, 182)"><i class="fa fa-facebook"></i></button>
-                <button type="button" class="btn btn-lg btn-tw" style="background-color:rgb(85, 172, 238)"><i class="fa fa-twitter"></i></button>
-                <button type="button" class="btn btn-lg btn-ins" style="background-color:rgb(63, 114, 155)"><i class="fa fa-instagram"></i></button>
-                <button type="button" class="btn btn-lg btn-gplus" style="background-color:rgb(221, 75, 57)"><i class="fa fa-google-plus"></i></button>
-            </ul>
-        </div>
-        <!--/.Social buttons-->
-        <!--Copyright-->
-        <div class="footer-copyright">
-            <div class="container-fluid">
-                © 2017 Copyright: <a href="https://scrapp.in"> Scrapp.in </a>
+            <div class="col-md-6 animated wow slideInRight">
+                <div class="text-left">
+                    <h3 style="color:#22aa86;margin-left:40px"><i class="fa fa-envelope"></i> <span style="color:#404040">Contact</span> Us </h3>
+                    <hr style="margin-right:88%;margin-left:40px">
+                </div>
+                <!--Naked Form-->
+                <div class="card-block">
+                    <!--Header-->
+                    <!--Body-->
+
+                    <!--Body-->
+                    <div class="md-form">
+                        <i class="fa fa-user prefix"></i>
+                        <input type="text" id="form3" class="form-control">
+                        <label for="form3">Your name</label>
+                    </div>
+                    <div class="md-form">
+                        <i class="fa fa-envelope prefix"></i>
+                        <input type="text" id="form2" class="form-control">
+                        <label for="form2">Your email</label>
+                    </div>
+                    <div class="md-form">
+                        <i class="fa fa-tag prefix"></i>
+                        <input type="text" id="form32" class="form-control">
+                        <label for="form34">Subject</label>
+                    </div>
+                    <div class="md-form">
+                        <i class="fa fa-pencil prefix"></i>
+                        <textarea type="text" id="form8" class="md-textarea"></textarea>
+                        <label for="form8">Icon Prefix</label>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-default">Submit</button>
+                        <div class="call">
+                            <br>
+                            <p>Or would you prefer to call?
+                                <br>
+                                <span><i class="fa fa-phone"> </i></span> + 01 234 565 280</p>
+                        </div>
+                    </div>
+                </div>
+                <!--Naked Form-->
+
+
             </div>
         </div>
-        <!--/.Copyright-->
-    </footer>
-    <!-- Modal Register -->
+    </div>
+</div>
+<div class="flex-center flex-column hiring" style="background-color: white;">
+    <div class="container">
+        <h1 style="text-align: center"><span style="color:#404040">We are</span> HIRING</h1>
+        <p>&nbsp</p>
+        <div class="row">
+            <div class="col-md-4 hoverable">
+                <div class="openings">
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <i class="fa fa-code" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
+
+                    </div>
+
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <h3> TECHNICAL LEAD</h3>
+                    </div>
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <p>If you think you can crunch numbers, analyse models, perform market research all in a single day
+                            and come up with the next action plan. We need you.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 hoverable">
+                <div class="openings">
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <i class="fa fa-sign-language" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
+                        <p>&nbsp</p>
+                    </div>
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <h3> BUSINESS DEVELOPMENT </h3>
+                    </div>
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <p>If you think you can crunch numbers, analyse models, perform market research all in a single day
+                            and come up with the next action plan. We need you.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 hoverable">
+                <div class="openings">
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <i class="fa fa-envira" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
+                        <p>&nbsp</p>
+                    </div>
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <h3> DESIGN </h3>
+                    </div>
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <p>If you like to play with colors, fanatic about kerning, line heights and love Deiter Rams. You should
+                            join us.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 hoverable">
+                <div class="openings">
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <i class="fa fa-cubes" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
+                        <p>&nbsp</p>
+                    </div>
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <h3> MARKETING </h3>
+                    </div>
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <p>Content marketing, SEO, SEM, Facebook ads, Organic marketing, Offline marketing, emails. We do them
+                            all and you would do them too if you join.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 hoverable">
+                <div class="openings">
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <i class="fa fa-desktop" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
+                        <p>&nbsp</p>
+                    </div>
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <h3> THE HUSTLER / HACKER </h3>
+                    </div>
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <p>If you think you know stuff and can get anything done one way or the other. If you are the Godfather
+                            of this world and a unicorn in the making. We need you.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 hoverable">
+                <div class="openings">
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <i class="fa fa-pie-chart" aria-hidden="true" style="color:#22aa86;font-size: 40px;"></i>
+                        <p>&nbsp</p>
+                    </div>
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <h3> SALES </h3>
+                    </div>
+                    <div class="row flex-center" style="margin-bottom:10px">
+                        <p>We need people who can be smart, understand the consumer, and come from a background in real estate.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 flex-center flex-column">
+                <button type="button" class="btn btn-outline-default waves-effect">Apply Now</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--Footer-->
+<footer class="page-footer center-on-small-only" style="background-color:#22aa86">
+    <!--Footer Links-->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <!--First column-->
+                <div class="col-md-4 ">
+                    <h5 class="title">ShuttleScrap India</h5>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+                        it to make a type specimen book. It has survived not only five centuries, but also the leap into
+                        electronic typesetting, remaining essentially unchanged.</p>
+                </div>
+                <div class="col-md-1">
+                    <p>&nbsp</p>
+                </div>
+                <!--/.First column-->
+                <hr class="hidden-md-up">
+                <!--Second column-->
+                <div class="col-md-3 ">
+                    <h5 class="title">Compnay Profile</h5>
+                    <ul>
+                        <li><a href="#!">595 Commonwealth Avenue Boston, Massachusetts 02215</a></li>
+                        <li><a href="#!">info@scrapp.in</a></li>
+                    </ul>
+                </div>
+                <!--/.Second column-->
+                <hr class="hidden-md-up">
+                <!--Third column-->
+                <div class="col-md-4">
+                    <h5 class="title">Latest News</h5>
+                    <ul>
+                        <li><a href="#!">How to Recycle Paper</a></li>
+                        <li><a href="#!">The Evolution of Recycling</a></li>
+                        <li><a href="#!">Global Warming Facts</a></li>
+                        <li><a href="#!">Quote Post</a></li>
+                    </ul>
+                </div>
+                <!--/.Third column-->
+                <hr class="hidden-md-up">
+                <!--Fourth column-->
+                <!--/.Fourth column-->
+            </div>
+        </div>
+    </div>
+    <!--/.Footer Links-->
+    <hr>
+    <!--Call to action-->
+    <div class="call-to-action">
+        <ul>
+            <li>
+                <h5>Raise Scrap Pick up Request</h5>
+            </li>
+            <li><a href="" class="btn btn-teal">Schedule a Pickup</a></li>
+        </ul>
+    </div>
+    <!--/.Call to action-->
+    <hr>
+    <!--Social buttons-->
+    <div class="social-section">
+        <ul>
+            <button type="button" class="btn btn-lg btn-fb" style="background-color:rgb(59, 89, 182)"><i class="fa fa-facebook"></i></button>
+            <button type="button" class="btn btn-lg btn-tw" style="background-color:rgb(85, 172, 238)"><i class="fa fa-twitter"></i></button>
+            <button type="button" class="btn btn-lg btn-ins" style="background-color:rgb(63, 114, 155)"><i class="fa fa-instagram"></i></button>
+            <button type="button" class="btn btn-lg btn-gplus" style="background-color:rgb(221, 75, 57)"><i class="fa fa-google-plus"></i></button>
+        </ul>
+    </div>
+    <!--/.Social buttons-->
+    <!--Copyright-->
+    <div class="footer-copyright">
+        <div class="container-fluid">
+            © 2017 Copyright: <a href="https://scrapp.in"> Scrapp.in </a>
+        </div>
+    </div>
+    <!--/.Copyright-->
+</footer>
+<!-- Modal Register -->
 
 <!--/.Footer-->
 <!-- /Start your project here-->
 <!-- SCRIPTS -->
 <!-- JQuery -->
 <!-- Bootstrap tooltips -->
-<script>
-    var spy = new ScrollSpy('#js-scrollspy', {
-        nav: '.js-scrollspy-nav > li > a',
-        className: 'is-inview'
-    });
-</script>
 <script>
     $(document).on("scroll", function () {
         if ($(document).scrollTop() < 100) {

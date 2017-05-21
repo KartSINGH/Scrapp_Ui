@@ -148,6 +148,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
             templateUrl: "../templates/elect_questions.html",
             controller: "pre_electquesCtrl",
         })
+        .state('userMain.user_profile', {
+            url: '/user_profile',
+            templateUrl: "../templates/user_profile.html",
+            controller: "user_profileCtrl",
+        })
 });
 app.run(function ($rootScope, $state, $timeout) {
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
@@ -166,7 +171,7 @@ app.run(function ($rootScope, $state, $timeout) {
 app.controller('otpCtrl', function ($scope, $http, $rootScope, $state) {
     $rootScope.user_data = {};
     $rootScope.user = {};
-    $state.go('login');
+    
     $scope.signup = function () {
         console.log("otp controller called");
         console.log($rootScope.user_data);
@@ -224,7 +229,7 @@ app.controller('loginCtrl', function ($scope, $state, $http, $rootScope, googleS
             $rootScope.user_data.user_name = data.name;
             $rootScope.user_data.user_image = data.image;
             console.log($rootScope.user_data);
-            $state.go('userMain');
+            $state.go('userMain.user_profile');
         }, function (err) {
             console.log('Failed: ' + err);
         });
@@ -573,4 +578,7 @@ app.controller('pre_electquesCtrl', function ($scope, $state, $rootScope) {
     $scope.back = function () {
         $state.go('userMain.predictor.pre_electitems')
     }
+});
+app.controller('user_profileCtrl', function ($scope, $state, $rootScope) {
+    console.log("User Profile Page");
 })

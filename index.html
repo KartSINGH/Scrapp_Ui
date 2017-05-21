@@ -27,6 +27,9 @@
 </head>
 
 <body>
+   <div id="preloader">
+	<div id="status">&nbsp;</div>
+</div>
     <ui-view></ui-view>
    
     <script type="text/javascript" src="js/tether.min.js"></script>
@@ -45,7 +48,16 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
      <script type="text/javascript" src="./mslider/dist/jquery.frame-carousel.js"></script>
      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-591586e40c63edc3"></script> 
-
+     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+      <script type="text/javascript">
+    //<![CDATA[
+        $(window).on('load', function() { // makes sure the whole site is loaded 
+            $('#status').fadeOut(); // will first fade out the loading animation 
+            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+            $('body').delay(350).css({'overflow':'visible'});
+          })
+    //]]>
+</script>
 </body>
 
 </html>

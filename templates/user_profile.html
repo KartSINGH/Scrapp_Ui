@@ -1,55 +1,89 @@
-  <div class="container">
-            <p>&nbsp</p>
-            <div class="row">
-                <div class="col-md-6">
+<div class="edge-header" style="background:url('https://ak6.picdn.net/shutterstock/videos/12713990/thumb/12.jpg?i10c=img.resize(height:160)');background-size:cover;background-repeat:no-repeat">
 
-                    <div class="card text-center">
-                        <div class="card-header default-color-dark white-text">
-                            Featured
-                        </div>
-                        <div class="card-block">
-                            <div class="row">
-                                <!--Avatar-->
-                                <div class="col-12 col-sm-2" style="display:block;margin:auto">
-                                    <img src='{{user_data.user_image}}' class="img-fluid">
-                                </div>
-                            </div>
-                            <hr>
-                            <h4 class="card-title">Welcome {{user_data.user_name}} to ShuttleScrap</h4>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <p style="color:deeppink">Credit Points : {{user_data.user_totalcredits}}</p>
-                            <a class="btn btn-default">Update Your Profile</a>
-                        </div>
+</div>
+<div class="container free-bird">
+    <p>&nbsp</p>
+    <div class="row">
+        <div class="col-md-7">
 
-                    </div>
+            <div class="card text-center">
+                <div class="card-header default-color-dark white-text">
+                    Featured
                 </div>
-                <div class="col-md-6">
-                    <!--Card Primary-->
-                    <div class="card card-primary text-center z-depth-2">
-                        <div class="card-block">
-                            <p class="white-text">FEATURE 1</p>
+                <div class="card-block">
+                    <div class="row">
+                        <!--Avatar-->
+                        <div class="col-12 col-sm-2" style="display:block;margin:auto">
+                            <img src='{{user_data.user_image}}' class="img-fluid">
                         </div>
                     </div>
-                    <!--/.Card Primary-->
-
-                    <!--Card Danger-->
-                    <div class="card card-danger text-center z-depth-2">
-                        <div class="card-block">
-                            <p class="white-text">FEATURE 2</p>
-                        </div>
-                    </div>
-                    <!--/.Card Danger-->
-
-                    <!--Card Success-->
-                    <div class="card card-success text-center z-depth-2">
-                        <div class="card-block">
-                            <p class="white-text">FEATURE 3</p>
-                        </div>
-                    </div>
-                    <!--/.Card Success-->
+                    <hr>
+                    <h4 class="card-title">Welcome {{user_data.user_name}} to ShuttleScrap</h4>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <p style="color:deeppink">Credit Points : {{user_data.user_totalcredits}}</p>
+                    <a class="btn btn-default">Update Your Profile</a>
                 </div>
 
-                <!--/.Author box-->
             </div>
+            <p>&nbsp;</p>
+            <blockquote class="blockquote bq-success">
+                <p class="bq-title">Success notification</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores quibusdam dignissimos itaque harum illo!
+                    Quidem, corporis at quae tempore nisi impedit cupiditate perferendis nesciunt, ex dolores doloremque!
+                    Sit, rem, in?</p>
+            </blockquote>
+            <p>&nbsp;</p>
+            <blockquote class="blockquote bq-danger">
+                <p class="bq-title">Success notification</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores quibusdam dignissimos itaque harum illo!
+                    Quidem, corporis at quae tempore nisi impedit cupiditate perferendis nesciunt, ex dolores doloremque!
+                    Sit, rem, in?</p>
+            </blockquote>
 
         </div>
+        <div class="col-md-5">
+            <!--Card Primary-->
+            <div class="card card-primary text-center z-depth-2">
+                <div class="card-block">
+                    <h1> <i class="fa fa-money white-text" aria-hidden="true" style="font-size:30px"></i></h1>
+                    <a ui-sref="userMain.predictor" class="white-text">Waste Value Predictor</a>
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
+                        Latin literature from 45 BC, making it over 2000 years old.</p>
+                    <button type="button" class="btn btn-outline-primary waves-effect" style="background-color:white">Estimate Scrap Value</button>
+                </div>
+            </div>
+            <!--/.Card Primary-->
+
+            <!--Card Danger-->
+            <div class="card card-danger text-center z-depth-2">
+                <div class="card-block">
+                    <h1> <i class="fa fa-truck white-text" aria-hidden="true" style="font-size:30px"></i></h1>
+                    <a ui-sref="userMain.booking" class="white-text">Pickup Booking History</a>
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
+                        Latin literature from 45 BC, making it over 2000 years old.</p>
+                    <button type="button" class="btn btn-outline-danger waves-effect" style="background-color:white">Check Booking History</button>
+                </div>
+            </div>
+            <!--/.Card Danger-->
+
+            <!--Card Success-->
+            <div class="card card-success text-center z-depth-2">
+                <div class="card-block">
+                    <h1> <i class="fa fa-bars white-text" aria-hidden="true" style="font-size:30px"></i></h1>
+                    <a ui-sref="userMain.newbooking" class="white-text">Book Pickup Request</a>
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
+                        Latin literature from 45 BC, making it over 2000 years old.</p>
+                    <button type="button" class="btn btn-outline-success waves-effect" style="background-color:white">Raise Collection Request</button>
+                </div>
+            </div>
+            <!--/.Card Success-->
+        </div>
+
+        <!--/.Author box-->
+    </div>
+
+</div>
+</div>
+<script>
+    $('.carousel').carousel();
+</script>

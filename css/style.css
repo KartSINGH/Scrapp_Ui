@@ -17,6 +17,7 @@ body {
 .nav-item>a {
     font-family: 'Arvo', serif;
     font-size: 14px;
+     color: rgb(251, 118, 27);
 }
 
 #nav {
@@ -25,8 +26,8 @@ body {
     transition: padding 1s;
 }
 
-.nav-item:hover {
-    color: teal;
+.nav-item>a:hover {
+    color: #22aa86;
     font-weight: bolder;
 }
 
@@ -66,7 +67,7 @@ body {
 }
 
 #f_box_col1 {
-    background-color: teal;
+    background-color: rgb(251, 118, 27);
     color: white;
     padding: 20px;
 }
@@ -258,11 +259,10 @@ h2 {
     border: 0px;
     padding: 10px;
     align-content: center;
+    background-color: rgb(251, 118, 27);
 }
 
-.yellow {
-    background-color: yellow;
-}
+
 
 .feature1:hover {
     background-color: #22aa86;

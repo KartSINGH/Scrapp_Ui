@@ -75,18 +75,19 @@ app.service('googleService', ['$http', '$rootScope', '$q', function ($http, $roo
     }
 
 }]);
-app.service('anchorSmoothScroll', function(){
-    
-    this.scrollTo = function(eID) {
+app.service('anchorSmoothScroll', function () {
+
+    this.scrollTo = function (eID) {
 
         // This scrolling function 
         // is from http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
-        
+
         var startY = currentYPosition();
         var stopY = elmYPosition(eID);
         var distance = stopY > startY ? stopY - startY : startY - stopY;
         if (distance < 100) {
-            scrollTo(0, stopY); return;
+            scrollTo(0, stopY);
+            return;
         }
         var speed = Math.round(distance / 100);
         if (speed >= 20) speed = 20;
@@ -94,16 +95,21 @@ app.service('anchorSmoothScroll', function(){
         var leapY = stopY > startY ? startY + step : startY - step;
         var timer = 0;
         if (stopY > startY) {
-            for ( var i=startY; i<stopY; i+=step ) {
-                setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
-                leapY += step; if (leapY > stopY) leapY = stopY; timer++;
-            } return;
+            for (var i = startY; i < stopY; i += step) {
+                setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+                leapY += step;
+                if (leapY > stopY) leapY = stopY;
+                timer++;
+            }
+            return;
         }
-        for ( var i=startY; i>stopY; i-=step ) {
-            setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
-            leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+        for (var i = startY; i > stopY; i -= step) {
+            setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+            leapY -= step;
+            if (leapY < stopY) leapY = stopY;
+            timer++;
         }
-        
+
         function currentYPosition() {
             // Firefox, Chrome, Opera, Safari
             if (self.pageYOffset) return self.pageYOffset;
@@ -114,7 +120,7 @@ app.service('anchorSmoothScroll', function(){
             if (document.body.scrollTop) return document.body.scrollTop;
             return 0;
         }
-        
+
         function elmYPosition(eID) {
             var elm = document.getElementById(eID);
             var y = elm.offsetTop;
@@ -122,11 +128,12 @@ app.service('anchorSmoothScroll', function(){
             while (node.offsetParent && node.offsetParent != document.body) {
                 node = node.offsetParent;
                 y += node.offsetTop;
-            } return y;
+            }
+            return y;
         }
 
     };
-    
+
 });
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $localStorageProvider) {
@@ -137,7 +144,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
         .state('landingPage', {
             url: "/",
             templateUrl: "../templates/welcome.html",
-            controller:"otpCtrl"
+            controller: "otpCtrl"
 
         })
         .state('register', {
@@ -207,7 +214,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
             templateUrl: "../templates/user_profile.html",
             controller: "user_profileCtrl",
         })
-        $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise("/");
 });
 app.run(function ($rootScope, $state, $timeout) {
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
@@ -223,18 +230,18 @@ app.run(function ($rootScope, $state, $timeout) {
     })
 });
 //otp Controller
-app.controller('otpCtrl', function ($scope, $http, $rootScope, $state,$location,anchorSmoothScroll) {
+app.controller('otpCtrl', function ($scope, $http, $rootScope, $state, $location, anchorSmoothScroll) {
     $rootScope.user_data = {};
     $rootScope.user = {};
     //$state.go('login');
-    $scope.gotoElement = function (eID){
-      // set the location.hash to the id of
-      // the element you wish to scroll to.
-     
- 
-      // call $anchorScroll()
-      anchorSmoothScroll.scrollTo(eID);
-      
+    $scope.gotoElement = function (eID) {
+        // set the location.hash to the id of
+        // the element you wish to scroll to.
+
+
+        // call $anchorScroll()
+        anchorSmoothScroll.scrollTo(eID);
+
     };
     $scope.signup = function () {
         console.log("otp controller called");
@@ -278,7 +285,7 @@ app.controller('otpCtrl', function ($scope, $http, $rootScope, $state,$location,
 //login Controller
 app.controller('loginCtrl', function ($scope, $state, $http, $rootScope, googleService) {
     console.log('loginController called');
-  
+
     $scope.go_signup = function () {
         console.log("going to register page");
         $state.go('register');
@@ -340,7 +347,7 @@ app.controller('loginCtrl', function ($scope, $state, $http, $rootScope, googleS
 app.controller('registerCtrl', function ($scope, $http, $rootScope, $state, googleService) {
     console.log("register controller called")
     $rootScope.user.loggedIn = "false";
-       $scope.g_login = function () {
+    $scope.g_login = function () {
         googleService.login().then(function (data) {
             // do something with returned data
 
@@ -361,14 +368,14 @@ app.controller('registerCtrl', function ($scope, $http, $rootScope, $state, goog
             method: 'POST',
             url: 'http://localhost:8886/register/submit_user',
             data: {
-                phone_number:$rootScope.user_data.phone_number,
+                phone_number: $rootScope.user_data.phone_number,
                 user_name: $scope.user_name,
                 user_password: $scope.user_password,
                 user_email: $scope.user_email,
                 user_totalcredits: '0'
             }
         }).then(function (res) {
-            
+
             console.log("User has been registered!");
             console.log(res);
             $rootScope.user_data = res.config.data;

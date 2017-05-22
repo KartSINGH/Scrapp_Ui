@@ -17,7 +17,7 @@ body {
 .nav-item>a {
     font-family: 'Arvo', serif;
     font-size: 14px;
-     color: rgb(251, 118, 27);
+    color: rgb(251, 118, 27);
 }
 
 #nav {
@@ -262,8 +262,6 @@ h2 {
     background-color: rgb(251, 118, 27);
 }
 
-
-
 .feature1:hover {
     background-color: #22aa86;
     color: white;
@@ -339,9 +337,9 @@ h3 {
     background: linear-gradient(rgba(255, 212, 91, 1), rgba(34, 170, 134, 0.4)), url('https://c1.staticflickr.com/9/8712/17048901779_1317051983_b.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-   box-shadow: 4px 2px 22px -1px rgba(13,13,13,1);
+    box-shadow: 4px 2px 22px -1px rgba(13, 13, 13, 1);
     color: white;
-    box-shadow: (1,1);
+    box-shadow: (1, 1);
     margin: 0px;
 }
 
@@ -360,8 +358,7 @@ h3 {
     height: 120px;
     width: 150px;
     display: block;
-    margin:auto ;
-    
+    margin: auto;
 }
 
 .credits {
@@ -393,27 +390,32 @@ h3 {
 }
 
 #preloader {
-	position: fixed;
-	top:0;
-	left:0;
-	right:0;
-	bottom:0;
-	background-color:#fff; /* change if the mask should have another color then white */
-	z-index:99; /* makes sure it stays on top */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    /* change if the mask should have another color then white */
+    z-index: 99;
+    /* makes sure it stays on top */
 }
 
 #status {
-	width:200px;
-	height:200px;
-	position:absolute;
-	left:50%; /* centers the loading animation horizontally one the screen */
-	top:50%; /* centers the loading animation vertically one the screen */
-	background-image:url(../img/loader.gif); /* path to your loading animation */
-	background-repeat:no-repeat;
-	background-position:center;
-	margin:-100px 0 0 -100px; /* is width and height divided by two */
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    /* centers the loading animation horizontally one the screen */
+    top: 50%;
+    /* centers the loading animation vertically one the screen */
+    background-image: url(../img/loader.gif);
+    /* path to your loading animation */
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: -100px 0 0 -100px;
+    /* is width and height divided by two */
 }
-
 
 @media (min-width:600px) {
     .sidebar {

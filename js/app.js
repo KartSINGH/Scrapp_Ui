@@ -207,6 +207,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
             templateUrl: "../templates/user_profile.html",
             controller: "user_profileCtrl",
         })
+        $urlRouterProvider.otherwise("/");
 });
 app.run(function ($rootScope, $state, $timeout) {
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
@@ -229,7 +230,7 @@ app.controller('otpCtrl', function ($scope, $http, $rootScope, $state,$location,
     $scope.gotoElement = function (eID){
       // set the location.hash to the id of
       // the element you wish to scroll to.
-      $location.hash('bottom');
+     
  
       // call $anchorScroll()
       anchorSmoothScroll.scrollTo(eID);

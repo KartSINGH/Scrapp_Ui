@@ -201,7 +201,26 @@ h2 {
 .image {
     margin-top: 30px;
 }
-
+.overlay2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('http://www.edmdroid.com/wp-content/gallery/green-wallpaper/green-background-hd-wallpapers.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 45vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.overlay1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://cdn.shutterstock.com/shutterstock/videos/8474200/thumb/10.jpg?i10c=img.resize(height:160)');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 45vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .overlay {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://countryhomesdelhi.files.wordpress.com/2013/05/greenery.jpg');
     background-size: cover;

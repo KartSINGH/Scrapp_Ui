@@ -1,0 +1,87 @@
+<div class="row">
+    <div class="col-md-8" style="display:block;margin:auto">
+        <div id="ram_block">
+            <h3>Select RAM Size</h3>
+            <select ng-model="laptop.ram_size" class="myList">
+            <option disabled selected >Select RAM size</option>
+            <option ng-repeat="ram in rams.data" value='{{ram.ram_size}}'>{{ram.ram_size}}GB</option>
+        </select>
+            <p>&nbsp;</p>
+            <button type="button" class="btn btn-outline-secondary waves-effect" id="next_ram">Next</button>
+        </div>
+
+         <div id="processor_block">
+            <h3>Select Processor</h3>
+            <select ng-model="laptop.processor_name" class="myList">
+            <option disabled selected>Select Processor</option>
+            <option ng-repeat="processor in processor.data" value='{{processor.processor_name}}'>{{processor.processor_name}}</option>
+        </select>
+            <p>&nbsp;</p>
+            <button type="button" class="btn btn-outline-secondary waves-effect" id="next_processor">Next</button>
+        </div>
+         <div id="hard_drive_block">
+            <h3>Select Hard Drive</h3>
+            <select ng-model="laptop.hard_drive_name" class="myList">
+            <option disabled selected>Select Hard Drive</option>
+            <option ng-repeat="drive in hard_drive.data" value='{{drive.drive_size}}'>{{drive.drive_size}}</option>
+        </select>
+            <p>&nbsp;</p>
+            <button type="button" class="btn btn-outline-secondary waves-effect" id="next_drive">Next</button>
+        </div>
+         <div id="graphic_card_block">
+            <h3>Select Graphic Card</h3>
+            <select ng-model="laptop.graphic_card_name" class="myList">
+            <option disabled selected class="myList">Select Graphic Card</option>
+            <option ng-repeat="card in graphic_card.data" value='{{card.card_size}}' class="myList">{{card.card_size}}</option>
+        </select>
+            <p>&nbsp;</p>
+            <button type="button" class="btn btn-outline-secondary waves-effect" id="next_graphic">Next</button>
+        </div>
+         <div id="accessory_block">
+            <h3>Select Available Accessories</h3>
+           
+           <p>Battery Status</p>
+            <input type="radio" value="Working Battery" name="battery" ng-model='laptop.battery'>Working Battery
+             <input type="radio" value="Not Working Battery" name="battery" ng-model='laptop.battery'>Working Battery
+            <p>&nbsp;</p>
+              <p>Screen Status</p>
+            <input type="radio" value="Damaged Screen" name="screen" ng-model='laptop.screen'>Damaged Screen
+             <input type="radio" value="Not Working Battery" name="screen" ng-model='laptop.screen'>Undamaged Screen
+            <p>&nbsp;</p>
+            <button type="button" class="btn btn-outline-secondary waves-effect" ng-click="calculate()">Evaluate</button>
+        </div>
+    </div>
+    <div class="col-md-4" id="spec_list">
+        <p>RAM : {{laptop.ram_size}}</p>
+        <p>Processor : {{laptop.processor_name}}</p>
+        <p>Hard Drive : {{laptop.hard_drive_name}}</p>
+        <p>Graphic Card : {{laptop.graphic_card_name}}</p>
+        <p>Battery:{{laptop.battery}}</p>
+        <p>Screen :{{laptop.screen}}</p>
+    </div>
+</div>
+
+<script>
+    $('#processor_block').hide();
+    $('#hard_drive_block').hide();
+    $('#graphic_card_block').hide();
+     $('#accessory_block').hide();
+
+    $('#next_ram').on('click',function(){
+        $('#ram_block').hide();
+        $('#processor_block').fadeIn(1000);
+    })
+     $('#next_processor').on('click',function(){
+        $('#processor_block').hide();
+        $('#hard_drive_block').fadeIn(1000);
+    })
+    $('#next_drive').on('click',function(){
+        $('#hard_drive_block').hide();
+        $('#graphic_card_block').fadeIn(1000);
+    })
+    $('#next_graphic').on('click',function(){
+        $('#graphic_card_block').hide();
+        $('#accessory_block').fadeIn(1000);
+    })
+    
+</script>

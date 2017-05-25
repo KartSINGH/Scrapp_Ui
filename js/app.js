@@ -209,6 +209,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
             templateUrl: "../templates/elect_questions.html",
             controller: "pre_electquesCtrl",
         })
+        .state('userMain.predictor.laptop', {
+            url: '/laptop',
+            templateUrl: "../templates/laptop.html",
+            controller: "pre_laptop",
+        })
         .state('userMain.user_profile', {
             url: '/user_profile',
             templateUrl: "../templates/user_profile.html",
@@ -233,7 +238,7 @@ app.run(function ($rootScope, $state, $timeout) {
 app.controller('otpCtrl', function ($scope, $http, $rootScope, $state, $location, anchorSmoothScroll) {
     $rootScope.user_data = {};
     $rootScope.user = {};
-    //$state.go('login');
+    $state.go('login');
     $scope.gotoElement = function (eID) {
         // set the location.hash to the id of
         // the element you wish to scroll to.
@@ -554,7 +559,7 @@ app.controller('pre_electitemsCtrl', function ($scope, $state, $rootScope) {
         $rootScope.predictor.prod_name = "laptop";
         $rootScope.predictor.price = 40;
         console.log($rootScope.predictor);
-        $state.go("userMain.predictor.elect_questions");
+        $state.go("userMain.predictor.laptop");
     }
     $scope.elect_5 = function () {
         $rootScope.predictor.prod_name = "desktop";
@@ -652,4 +657,121 @@ app.controller('pre_electquesCtrl', function ($scope, $state, $rootScope) {
 });
 app.controller('user_profileCtrl', function ($scope, $state, $rootScope) {
     console.log("User Profile Page");
+})
+app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
+    $rootScope.rams = {};
+    $scope.laptop = {};
+    $scope.total_price={};
+    console.log("Laptop prediction Controller Called");
+    $http({
+        method: 'GET',
+        url: 'http://localhost:8886/laptop/all_ram',
+
+    }).then(function (res) {
+        console.log(res);
+        $rootScope.rams = res;
+    }, function (error) {
+        console.log("error");
+
+
+    });
+    $http({
+        method: 'GET',
+        url: 'http://localhost:8886/laptop/all_processor',
+
+    }).then(function (res) {
+        console.log(res);
+        $rootScope.processor = res;
+    }, function (error) {
+        console.log("error");
+
+
+    })
+    $http({
+        method: 'GET',
+        url: 'http://localhost:8886/laptop/all_hard_drives',
+
+    }).then(function (res) {
+        console.log(res);
+        $rootScope.hard_drive = res;
+    }, function (error) {
+        console.log("error");
+
+
+    })
+    $http({
+        method: 'GET',
+        url: 'http://localhost:8886/laptop/all_cards',
+
+    }).then(function (res) {
+        console.log(res);
+        $rootScope.graphic_card = res;
+    }, function (error) {
+        console.log("error");
+
+
+    })
+    $scope.calculate=function(){
+        console.log($scope.laptop);
+        //fetching ram price
+        $http({
+        method: 'POST',
+        url: 'http://localhost:8886/laptop/get_mobiles',
+        data:{
+            ram_size:$scope.laptop.ram_size
+        }
+    }).then(function (res) {
+        console.log(res);
+        $scope.laptop.ram_price = res.data[0].ram_price;
+        console.log($scope.laptop.ram_price);
+    }, function (error) {
+        console.log("error");
+    })
+    //fetching processor price
+     $http({
+        method: 'POST',
+        url: 'http://localhost:8886/laptop/get_processor',
+        data:{
+            processor_name:$scope.laptop.processor_name
+        }
+    }).then(function (res) {
+        console.log(res);
+        $scope.laptop.processor_price = res.data[0].processor_price;
+        console.log($scope.laptop.processor_price);
+    }, function (error) {
+        console.log("error");
+    })
+
+    //hdd price
+      $http({
+        method: 'POST',
+        url: 'http://localhost:8886/laptop/get_hard_drive',
+        data:{
+            drive_size:$scope.laptop.hard_drive_name
+        }
+    }).then(function (res) {
+        console.log(res);
+        $scope.laptop.hard_drive_price = res.data[0].drive_price;
+        console.log($scope.laptop.hard_drive_price);
+    }, function (error) {
+        console.log("error");
+    })
+    //graphic price
+     //hdd price
+      $http({
+        method: 'POST',
+        url: 'http://localhost:8886/laptop/get_card',
+        data:{
+            card_size:$scope.laptop.graphic_card_name
+        }
+    }).then(function (res) {
+        console.log(res);
+        $scope.laptop.graphic_card_price = res.data[0].card_price;
+        console.log($scope.laptop.graphic_card_price);
+        $scope.total_price=parseInt($scope.laptop.ram_price) + parseInt($scope.laptop.hard_drive_price) + parseInt($scope.laptop.graphic_card_price) + parseInt($scope.laptop.processor_price);
+        alert("Rs"+" "+$scope.total_price);
+    }, function (error) {
+        console.log("error");
+    })
+    }
 })

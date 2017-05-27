@@ -23,7 +23,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <i class="fa fa-user prefix" style="color:#22aa86"></i>
-                                <input type="text" id="form2" class="form-control" ng-model="user_name" placeholder="Name">
+                                <input type="text" id="form2" class="form-control" ng-model="user_name" placeholder="Name" required>
 
                             </div>
                             <div class="col-md-6">
@@ -37,18 +37,18 @@
                     </div>
                     <div class="md-form">
                         <i class="fa fa-envelope prefix" style="color:#22aa86"></i>
-                        <input type="text" id="form2" class="form-control" ng-model="user_email" placeholder="Email">
+                        <input type="text" id="form2" class="form-control" ng-model="user_email" placeholder="Email" required>
 
                     </div>
 
 
                     <div class="md-form">
                         <i class="fa fa-lock prefix" style="color:#22aa86"></i>
-                        <input type="password" id="form4" class="form-control" ng-model="user_password" placeholder="Password">
+                        <input type="password" id="form4" class="form-control" ng-model="user_password" placeholder="Password" required>
 
                     </div>
                     <div class="text-center">
-                        <button class="btn" ng-click="signup()" style="background-color:rgb(86, 147, 0)">Register</button>
+                        <button class="btn" ng-click="signup()" type="submit" style="background-color:rgb(86, 147, 0)">Register</button>
                     </div>
 
                     <hr>
@@ -57,12 +57,7 @@
                         <h3>Or Login With</h3>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6 flex-center">
-                            
-                                <button type="button" class="btn btn-fb"><i class="fa fa-facebook left"></i>Facebook</button>
-                           
-                        </div>
-                        <div class="col-sm-6 flex-center">
+                        <div class="col-sm-12 flex-center">
                             
                                <button type="button" class="btn btn-gplus" ng-click="g_login()"><i class="fa fa-google-plus left"></i>Gmail</button>
                             

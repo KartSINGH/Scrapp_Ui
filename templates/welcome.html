@@ -33,7 +33,7 @@
                     <a class="nav-link" ng-click="gotoElement('section7')">About us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" ng-click="gotoElement('section8')" style="background-color:rgb(251, 118, 27);color:white">Request Scrap Pickup</a>
+                    <a class="nav-link" ng-click="gotoElement('section8')" style="background-color:rgb(251, 118, 27);color:white" ng-click="$state.go('login')">Request Scrap Pickup</a>
                 </li>
 
             </ul>
@@ -57,27 +57,24 @@
                         <p class="lead white-text animated wow fadeInUp" data-wow-delay="4s">ShuttleScrap India is an on demand waste pickup service, catering to safe disposal of Dry and E-waste
                             disposal and its safe recycling. We are a cleantech startup in the waste management domain. We’re
                             working to be the most customer-centric com- pany on earth.</p>
-                        <div class="md-form" ng-controller="otpCtrl">
+                        <div class="md-form" ng-controller="otpCtrl" ng-init="show_rotp=true;show_votp=false">
                             <div class="row">
                                 <div class="col-md-5">
-                                    <div class="r_otp">
+                                    <div class="r_otp" ng-show="show_rotp">
+                                        <form>
+                                            <input  class="form-control" ng-model="user_data.phone_number" placeholder="Enter Your Phone number" ng-maxlength="10" type="number" style="background-color:white;border-radius:3px;color:#22aa86;font-size:20px;padding:5px"
+                                                required id="mobile_no1">
 
-
-                                        <input type="text" class="form-control" ng-model="user_data.phone_number" placeholder="Enter Your Phone number" style="background-color:white;border-radius:3px;color:#22aa86;font-size:20px;padding:5px">
-
-                                        <button class="btn btn-lg" ng-click="signup()" id="r_otp1" style="background-color:#22aa86;">Request OTP</button>
+                                            <button class="btn btn-lg" type="submit" ng-click="signup()" id="r_otp1" style="background-color:#22aa86;">Request OTP</button>
+                                        </form>
                                     </div>
-                                    <div class="v_otp">
-                                        <input type="text" class="form-control" ng-model="user_otp">
-                                        <label for="form3">Enter Your Otp</label>
+                                    <div class="v_otp" ng-show="show_votp">
+                                        <input type="text" class="form-control" style="background-color:white;border-radius:3px;color:#22aa86;font-size:20px;padding:5px"
+                                            ng-model="user_otp" required>
+
                                         <button class="btn btn-warning btn-lg" ng-click="verify_otp()" id="v_otp1" style="cursor:hand">Verify OTP</button>
                                     </div>
-                                    <div class="signup">
-                                        <p class="lead">
-                                            <p>Your mobile number has been verified</p>
-                                            <a class="btn btn-success btn-lg " role="button" data-toggle="modal" data-target="#modal-register">Sign Up to Continue</a>
-                                        </p>
-                                    </div>
+                                    
                                 </div>
                                 <div class="col-md-7">
                                     <p>&nbsp</p>
@@ -416,12 +413,12 @@
                 <div class="col-md-12 flex-center ">
                     <img src="https://codeacious.com/application/files/6014/3710/2261/badges.png" class="img-responsive" style="transform:scale(0.6)">
                 </div>
-                
-                </div>
-                
+
             </div>
+
         </div>
     </div>
+</div>
 </div>
 <div style="background:linear-gradient(rgba(242, 244, 244, 0.5), rgba(242, 244, 244, 0.5)),url('http://www.webdesigndev.com/wp-content/uploads/2015/02/Subtle-Light-Tile-Pattern-Vol5.jpg');background-size:cover;background-repeat:no-repeat;"
     class="slides">
@@ -654,9 +651,9 @@
         <div class="container">
             <div class="row stats">
                 <div class="col-md-12 flex-center ">
-                   <button type="button" class="btn btn-deep-orange">Download Our Magzine!</button>
+                    <button type="button" class="btn btn-deep-orange">Download Our Magzine!</button>
                 </div>
-               
+
             </div>
         </div>
     </div>
@@ -1092,16 +1089,18 @@
     wow.init();
 </script>
 <script>
-    $('.v_otp').hide();
+  /*  $('.v_otp').hide();
     $('.signup').hide();
     $('#r_otp1').on('click', function () {
+        var no = document.getElementById('mobile_no1').value;
+        console.log(no);
         $('.r_otp').hide();
         $('.v_otp').fadeIn(1000);
     })
     $('#v_otp1').on('click', function () {
         $('.v_otp').hide();
         $('.signup').fadeIn(1000);
-    })
+    })*/
 </script>
 <script>
     $('.host-element').frameCarousel({

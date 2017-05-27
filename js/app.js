@@ -214,6 +214,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
             templateUrl: "../templates/laptop.html",
             controller: "pre_laptop",
         })
+        .state('userMain.predictor.fridge', {
+            url: '/fridge',
+            templateUrl: "../templates/fridge.html",
+            controller: "pre_fridge",
+        })
         .state('userMain.user_profile', {
             url: '/user_profile',
             templateUrl: "../templates/user_profile.html",
@@ -239,14 +244,12 @@ app.controller('otpCtrl', function ($scope, $http, $rootScope, $state, $location
     $rootScope.user_data = {};
     $rootScope.user = {};
     $state.go('login');
+    console.log($scope.show_rotp);
     $scope.gotoElement = function (eID) {
         // set the location.hash to the id of
         // the element you wish to scroll to.
-
-
         // call $anchorScroll()
         anchorSmoothScroll.scrollTo(eID);
-
     };
     $scope.signup = function () {
         console.log("otp controller called");
@@ -266,10 +269,12 @@ app.controller('otpCtrl', function ($scope, $http, $rootScope, $state, $location
         }).then(function (data) {
             $rootScope.s_otp = data.data.response.oneTimePassword;
             console.log($rootScope.s_otp);
+            $scope.show_rotp = false;
+            $scope.show_votp = true;
             // $state.go("otp-enter");
         }, function (error) {
-            console.log("error");
-            alert("error occured");
+            console.log(error);
+            alert("Retype Correct Phone Number");
         })
     }
     $scope.verify_otp = function () {
@@ -313,24 +318,25 @@ app.controller('loginCtrl', function ($scope, $state, $http, $rootScope, googleS
 
 
     $scope.login = function () {
-        console.log('login function called');
+        console.log($scope.user_email);
+        if($scope.user_email){
         $http({
             method: 'POST',
             url: 'http://localhost:8886/register/user',
             data: {
-                user_email: $scope.userlogin_email
+                user_email: $scope.user_email
             }
         }).then(function (res) {
 
             console.log(res);
             $rootScope.user_data = res.data;
             console.log($rootScope.user_data);
-            console.log("input password" + $scope.userlogin_password);
-            if ($scope.userlogin_password == res.data.user_password) {
+            console.log("input password" + $scope.user_password);
+            if ($scope.user_password == res.data.user_password) {
                 $rootScope.user.loggedIn = "true";
                 console.log($rootScope.user.loggedIn);
 
-                $state.go('userMain');
+                $state.go('userMain.user_profile');
             } else {
                 $rootScope.user.loggedIn = "false";
                 alert('Invalid Password');
@@ -340,7 +346,9 @@ app.controller('loginCtrl', function ($scope, $state, $http, $rootScope, googleS
             console.log(error);
             alert("error occured");
             $rootScope.user.loggedIn = "false";
-        })
+        })}else{
+            alert("Please fill correct details");
+        }
     }
 
 
@@ -367,35 +375,38 @@ app.controller('registerCtrl', function ($scope, $http, $rootScope, $state, goog
         });
     };
     $scope.signup = function () {
-        console.log("before sign up  " + $rootScope.user);
+        console.log("before sign up  " + $rootScope.user_data);
+        if ($scope.user_name && $scope.user_password && $scope.user_email) {
+            $http({
+                method: 'POST',
+                url: 'http://localhost:8886/register/submit_user',
+                data: {
+                    phone_number: $rootScope.user_data.phone_number,
+                    user_name: $scope.user_name,
+                    user_password: $scope.user_password,
+                    user_email: $scope.user_email,
+                    user_totalcredits: '0'
+                }
+            }).then(function (res) {
 
-        $http({
-            method: 'POST',
-            url: 'http://localhost:8886/register/submit_user',
-            data: {
-                phone_number: $rootScope.user_data.phone_number,
-                user_name: $scope.user_name,
-                user_password: $scope.user_password,
-                user_email: $scope.user_email,
-                user_totalcredits: '0'
-            }
-        }).then(function (res) {
+                console.log("User has been registered!");
+                console.log(res);
+                $rootScope.user_data = res.config.data;
+                console.log("user_data " + $rootScope.user_data);
+                $rootScope.user.loggedIn = "true";
 
-            console.log("User has been registered!");
-            console.log(res);
-            $rootScope.user_data = res.config.data;
-            console.log("user_data " + $rootScope.user_data);
-            $rootScope.user.loggedIn = "true";
+                $state.go('userMain');
+            }, function (error) {
+                console.log("error");
+                $rootScope.user.loggedIn = "false";
+                alert("Please fill Correct Details");
 
-            $state.go('userMain');
-        }, function (error) {
-            console.log("error");
-            $rootScope.user.loggedIn = "false";
-            console.log("After failed sign up user rootscope " + $rootScope.user);
-            alert("error occured");
-
-        })
+            })
+        } else {
+            alert("Please Fill all required fields");
+        }
     }
+
 
 });
 //UserMAIN CONtroller
@@ -453,6 +464,7 @@ app.controller('newbookingCtrl', function ($scope, $http, $rootScope, $state) {
     $scope.newbook = {};
 
     $scope.book_pickup = function () {
+        if($scope.newbook.res_address &&  $scope.newbook.date && $scope.newbook.payment_method){
         $http({
             method: 'POST',
             url: 'http://localhost:8886/register/submit_pickup',
@@ -478,7 +490,9 @@ app.controller('newbookingCtrl', function ($scope, $http, $rootScope, $state) {
             console.log("error");
 
 
-        })
+        })}else{
+            alert("Please fill all the required fields");
+        }
     }
     $scope.book = function () {
         console.log($scope.newbook)
@@ -581,7 +595,7 @@ app.controller('pre_electitemsCtrl', function ($scope, $state, $rootScope) {
     }
     $scope.elect_8 = function () {
         $rootScope.predictor.prod_name = "fridge";
-        $state.go("userMain.predictor.elect_questions");
+        $state.go("userMain.predictor.fridge");
     }
     $scope.elect_9 = function () {
         $rootScope.predictor.prod_name = "washing_machine";
@@ -661,7 +675,7 @@ app.controller('user_profileCtrl', function ($scope, $state, $rootScope) {
 app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
     $rootScope.rams = {};
     $scope.laptop = {};
-    $scope.total_price={};
+    $scope.total_price = {};
     console.log("Laptop prediction Controller Called");
     $http({
         method: 'GET',
@@ -711,67 +725,83 @@ app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
 
 
     })
-    $scope.calculate=function(){
+    $scope.calculate = function () {
         console.log($scope.laptop);
         //fetching ram price
         $http({
-        method: 'POST',
-        url: 'http://localhost:8886/laptop/get_mobiles',
-        data:{
-            ram_size:$scope.laptop.ram_size
-        }
-    }).then(function (res) {
-        console.log(res);
-        $scope.laptop.ram_price = res.data[0].ram_price;
-        console.log($scope.laptop.ram_price);
-    }, function (error) {
-        console.log("error");
-    })
-    //fetching processor price
-     $http({
-        method: 'POST',
-        url: 'http://localhost:8886/laptop/get_processor',
-        data:{
-            processor_name:$scope.laptop.processor_name
-        }
-    }).then(function (res) {
-        console.log(res);
-        $scope.laptop.processor_price = res.data[0].processor_price;
-        console.log($scope.laptop.processor_price);
-    }, function (error) {
-        console.log("error");
-    })
+            method: 'POST',
+            url: 'http://localhost:8886/laptop/get_mobiles',
+            data: {
+                ram_size: $scope.laptop.ram_size
+            }
+        }).then(function (res) {
+            console.log(res);
+            $scope.laptop.ram_price = res.data[0].ram_price;
+            console.log($scope.laptop.ram_price);
+        }, function (error) {
+            console.log("error");
+        })
+        //fetching processor price
+        $http({
+            method: 'POST',
+            url: 'http://localhost:8886/laptop/get_processor',
+            data: {
+                processor_name: $scope.laptop.processor_name
+            }
+        }).then(function (res) {
+            console.log(res);
+            $scope.laptop.processor_price = res.data[0].processor_price;
+            console.log($scope.laptop.processor_price);
+        }, function (error) {
+            console.log("error");
+        })
 
-    //hdd price
-      $http({
-        method: 'POST',
-        url: 'http://localhost:8886/laptop/get_hard_drive',
-        data:{
-            drive_size:$scope.laptop.hard_drive_name
-        }
-    }).then(function (res) {
-        console.log(res);
-        $scope.laptop.hard_drive_price = res.data[0].drive_price;
-        console.log($scope.laptop.hard_drive_price);
-    }, function (error) {
-        console.log("error");
-    })
-    //graphic price
-     //hdd price
-      $http({
-        method: 'POST',
-        url: 'http://localhost:8886/laptop/get_card',
-        data:{
-            card_size:$scope.laptop.graphic_card_name
-        }
-    }).then(function (res) {
-        console.log(res);
-        $scope.laptop.graphic_card_price = res.data[0].card_price;
-        console.log($scope.laptop.graphic_card_price);
-        $scope.total_price=parseInt($scope.laptop.ram_price) + parseInt($scope.laptop.hard_drive_price) + parseInt($scope.laptop.graphic_card_price) + parseInt($scope.laptop.processor_price);
-        alert("Rs"+" "+$scope.total_price);
-    }, function (error) {
-        console.log("error");
-    })
+        //hdd price
+        $http({
+            method: 'POST',
+            url: 'http://localhost:8886/laptop/get_hard_drive',
+            data: {
+                drive_size: $scope.laptop.hard_drive_name
+            }
+        }).then(function (res) {
+            console.log(res);
+            $scope.laptop.hard_drive_price = res.data[0].drive_price;
+            console.log($scope.laptop.hard_drive_price);
+        }, function (error) {
+            console.log("error");
+        })
+        //graphic price
+        //hdd price
+        $http({
+            method: 'POST',
+            url: 'http://localhost:8886/laptop/get_card',
+            data: {
+                card_size: $scope.laptop.graphic_card_name
+            }
+        }).then(function (res) {
+            console.log(res);
+            $scope.laptop.graphic_card_price = res.data[0].card_price;
+            console.log($scope.laptop.graphic_card_price);
+            $scope.total_price = parseInt($scope.laptop.ram_price) + parseInt($scope.laptop.hard_drive_price) + parseInt($scope.laptop.graphic_card_price) + parseInt($scope.laptop.processor_price);
+            alert("Rs" + " " + $scope.total_price);
+        }, function (error) {
+            console.log("error");
+        })
     }
 })
+
+app.controller('pre_fridge', function ($scope) {
+    $scope.fridge = {};
+    $scope.fridge.single_door_price = "3400";
+    $scope.fridge.double_door_price = "5000";
+    console.log('fridge controller called');
+    console.log($scope.fridge);
+
+    $scope.calculate_fridge = function () {
+        if ($scope.fridge.door_type == "single_door") {
+            alert("Rs" + " " + $scope.fridge.single_door_price);
+        } else {
+            alert("Rs" + " " + $scope.fridge.double_door_price);
+        }
+    }
+});

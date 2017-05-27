@@ -219,6 +219,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
             templateUrl: "../templates/fridge.html",
             controller: "pre_fridge",
         })
+        .state('userMain.predictor.phone', {
+            url: '/phone',
+            templateUrl: "../templates/mobile.html",
+            controller: "pre_phone",
+        })
         .state('userMain.user_profile', {
             url: '/user_profile',
             templateUrl: "../templates/user_profile.html",
@@ -319,34 +324,35 @@ app.controller('loginCtrl', function ($scope, $state, $http, $rootScope, googleS
 
     $scope.login = function () {
         console.log($scope.user_email);
-        if($scope.user_email){
-        $http({
-            method: 'POST',
-            url: 'http://localhost:8886/register/user',
-            data: {
-                user_email: $scope.user_email
-            }
-        }).then(function (res) {
+        if ($scope.user_email) {
+            $http({
+                method: 'POST',
+                url: 'http://localhost:8886/register/user',
+                data: {
+                    user_email: $scope.user_email
+                }
+            }).then(function (res) {
 
-            console.log(res);
-            $rootScope.user_data = res.data;
-            console.log($rootScope.user_data);
-            console.log("input password" + $scope.user_password);
-            if ($scope.user_password == res.data.user_password) {
-                $rootScope.user.loggedIn = "true";
-                console.log($rootScope.user.loggedIn);
+                console.log(res);
+                $rootScope.user_data = res.data;
+                console.log($rootScope.user_data);
+                console.log("input password" + $scope.user_password);
+                if ($scope.user_password == res.data.user_password) {
+                    $rootScope.user.loggedIn = "true";
+                    console.log($rootScope.user.loggedIn);
 
-                $state.go('userMain.user_profile');
-            } else {
+                    $state.go('userMain.user_profile');
+                } else {
+                    $rootScope.user.loggedIn = "false";
+                    alert('Invalid Password');
+                }
+
+            }, function (error) {
+                console.log(error);
+                alert("error occured");
                 $rootScope.user.loggedIn = "false";
-                alert('Invalid Password');
-            }
-
-        }, function (error) {
-            console.log(error);
-            alert("error occured");
-            $rootScope.user.loggedIn = "false";
-        })}else{
+            })
+        } else {
             alert("Please fill correct details");
         }
     }
@@ -464,33 +470,34 @@ app.controller('newbookingCtrl', function ($scope, $http, $rootScope, $state) {
     $scope.newbook = {};
 
     $scope.book_pickup = function () {
-        if($scope.newbook.res_address &&  $scope.newbook.date && $scope.newbook.payment_method){
-        $http({
-            method: 'POST',
-            url: 'http://localhost:8886/register/submit_pickup',
-            data: {
-                user_email: $rootScope.user_data.user_email,
-                user_name: $rootScope.user_data.user_email,
-                res_address: $scope.newbook.res_address,
-                time: $scope.newbook.date,
-                booking_credits: 'Processing',
-                payment_method: $scope.newbook.payment_method,
-                bankaccount_details: $scope.newbook.bankaccount_details,
-                ifsc_details: $scope.newbook.ifsc_details,
-                booking_status: 'Initiated',
-                scrap_amount: '50kg'
-            }
-        }).then(function (res) {
-            console.log("Request has been raised");
-            console.log(res);
+        if ($scope.newbook.res_address && $scope.newbook.date && $scope.newbook.payment_method) {
+            $http({
+                method: 'POST',
+                url: 'http://localhost:8886/register/submit_pickup',
+                data: {
+                    user_email: $rootScope.user_data.user_email,
+                    user_name: $rootScope.user_data.user_email,
+                    res_address: $scope.newbook.res_address,
+                    time: $scope.newbook.date,
+                    booking_credits: 'Processing',
+                    payment_method: $scope.newbook.payment_method,
+                    bankaccount_details: $scope.newbook.bankaccount_details,
+                    ifsc_details: $scope.newbook.ifsc_details,
+                    booking_status: 'Initiated',
+                    scrap_amount: '50kg'
+                }
+            }).then(function (res) {
+                console.log("Request has been raised");
+                console.log(res);
 
 
-            $state.go('userMain.booking');
-        }, function (error) {
-            console.log("error");
+                $state.go('userMain.booking');
+            }, function (error) {
+                console.log("error");
 
 
-        })}else{
+            })
+        } else {
             alert("Please fill all the required fields");
         }
     }
@@ -555,7 +562,7 @@ app.controller('pre_electitemsCtrl', function ($scope, $state, $rootScope) {
         $rootScope.predictor.prod_name = "smartphone";
         $rootScope.predictor.price = 10;
         console.log($rootScope.predictor);
-        $state.go("userMain.predictor.elect_questions");
+        $state.go("userMain.predictor.phone");
     }
     $scope.elect_2 = function () {
         $rootScope.predictor.prod_name = "tablet";
@@ -805,3 +812,77 @@ app.controller('pre_fridge', function ($scope) {
         }
     }
 });
+app.controller('pre_phone', function ($scope, $http, $state, $rootScope) {
+    $scope.phone = {};
+    $scope.nphone={};
+    console.log("Phone predictor called");
+    $scope.book = function () {
+        $state.go("userMain.newbooking");
+    }
+    $scope.phone_evaluate = function () {
+        console.log("final evaulation will take place");
+        console.log($scope.phone);
+        $scope.show_age = false;
+        $scope.show_final = true;
+        $http({
+            method: 'POST',
+            url: 'http://localhost:8886/register/get_mobile_by_name',
+            data: {
+                phone_name: $scope.phone.name
+            }
+        }).then(function (res) {
+            console.log(res);
+            $scope.nphone = res.data[0];
+            console.log($scope.nphone.phone_cprice);
+            alert("Final price is" + " " + $scope.nphone.phone_cprice);
+        }, function (error) {
+            alert("Invalid Phone Selected");
+        })
+
+        //algo for price deduction
+       $scope.phone.price=parseInt($scope.nphone.phone_cprice)/2;
+       console.log("final price is " + " " + $scope.phone.price);
+       
+
+    }
+    $scope.to_accessory = function () {
+        $scope.show_details = false;
+        $scope.show_accessory = true;
+        $scope.show_accessory_p1 = true;
+    }
+    $scope.power_yes = function () {
+        $scope.phone.power = "Device swtiches ON";
+        $scope.show_details = true;
+        $scope.show_details_p = true;
+        $scope.show_power = false;
+    };
+    $scope.power_no = function () {
+        $scope.phone.power = "Device does not swtich ON";
+    }
+    //fetching phones
+    $scope.load_phone = function () {
+        console.log($scope.phone);
+        if ($scope.phone.brand) {
+            $http({
+                method: 'POST',
+                url: 'http://localhost:8886/register/get_mobiles',
+                data: {
+                    phone_brand: $scope.phone.brand
+                }
+            }).then(function (res) {
+                console.log(res);
+                $scope.phones = res;
+                console.log($scope.phones);
+                $scope.show_brand = false;
+                $scope.show_phone = true;
+                $scope.show_phone_p = true;
+
+            }, function (error) {
+                alert("Select a brand ");
+            })
+        } else {
+            alert("Please Select a Brand");
+        }
+    }
+
+})

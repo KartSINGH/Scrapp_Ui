@@ -1,0 +1,126 @@
+<div class="row">
+    <div class="col-md-8" ng-init="show_brand=true;show_phone=false;show_phone_p=false;show_power=false;show_power_p=false;show_details=false;show_details_p=false;show_screen_p=false;show_body_p=false;show_accessory=false;show_accessory_p1=false;show_accessory_p2=false;show_accessory_p3=false;show_age=false;show_age_p=false;show_final=false">
+
+        <!-- Selecting Brand -->
+        <div ng-show="show_brand" style="background-color:blanchedalmond;padding:30px">
+            <h3>Select Your Brand</h3>
+            <select ng-model="phone.brand">
+            <option value="SAMSUNG">Samsung</option>
+            <option value="xiomi">Xiomi</option>
+            <option value="one_plus">One Plus</option>
+        </select>
+            <p>&nbsp;</p>
+            <button type="button" class="btn btn-outline-secondary waves-effect" id="next_brand" ng-click="load_phone()">Next</button>
+        </div>
+        <!-- Selecting Phone -->
+        <div ng-show="show_phone" style="background-color:blanchedalmond;padding:30px">
+            <h3>Select Phone</h3>
+            <select ng-model="phone.name">
+            <option disabled selected class="myList">Select Phone</option>
+            <option ng-repeat="phone in phones.data" value='{{phone.phone_name}}' class="myList">{{phone.phone_name}}</option>
+        </select>
+            <p>&nbsp;</p>
+            <button type="button" class="btn btn-outline-secondary waves-effect" ng-click="show_power=true;show_phone=false;show_power_p=true">Next</button>
+        </div>
+
+        <!-- Selecting On/Off -->
+        <div ng-show="show_power" style="background-color:blanchedalmond;padding:30px">
+            <h3>Does Device switch on?</h3>
+
+            <p>&nbsp;</p>
+            <button type="button" ng-click="power_yes()" class="btn btn-default">Yes</button>
+            <button type="button" ng-click="power_no()" class="btn btn-danger">No</button>
+        </div>
+
+        <!-- Selecting Details -->
+        <div ng-show="show_details" style="background-color:blanchedalmond;padding:30px">
+            <h3>Device Details</h3>
+            <p>&nbsp;</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <p>What is condition of phone screen ? </p>
+                    <select ng-model="phone.screen" ng-click="show_screen_p=true;">
+               <option value="scratchless">Scratchless</option>
+               <option value="minor">Minor Scratches</option>
+               <option value="broken">Completely Broken</option>
+           </select>
+                </div>
+                <div class="col-md-4">
+                    <p>Select condition of the phone body</p>
+                    <select ng-model="phone.body" ng-click="show_body_p=true">
+                        <option value="new">Completely scratchless body</option>
+                        <option value="few">Minor Scratches</option>
+                        <option value="major">Major Dents</option>
+                    </select>
+                </div>
+            </div>
+            <button type="button" class="btn btn-outline-secondary waves-effect" ng-show="show_body_p" ng-click="to_accessory()">Next</button>
+        </div>
+
+        <!-- Selecting Accessory -->
+        <div ng-show="show_accessory" style="background-color:blanchedalmond;padding:30px;margin-top:0px">
+            <div class="row">
+                <div class="col-md-4">
+                    <p>Are Earphones Available?</p>
+                    <p>&nbsp;</p>
+                    <input type="radio" name="earpphones" value="yes" ng-model="phone.earphones" ng-click="show_accessory_p1=true">Yes
+                    <input type="radio" name="earpphones" value="no" ng-model="phone.earphones" ng-click="show_accessory_p1=true">No
+                </div>
+                <div class="col-md-4">
+                    <p>Is original bill/box available?</p>
+                    <p>&nbsp;</p>
+                    <input type="radio" name="bill" value="yes" ng-model="phone.bill" ng-click="show_accessory_p2=true">Yes
+                    <input type="radio" name="bill" value="no" ng-model="phone.bill" ng-click="show_accessory_p2=true">No
+                </div>
+                <div class="col-md-4">
+                    <p>Is phone battery working?</p>
+                    <p>&nbsp;</p>
+                    <input type="radio" name="battery" value="yes" ng-model="phone.battery" ng-click="show_accessory_p3=true">Yes
+                    <input type="radio" name="battery" value="no" ng-model="phone.battery" ng-click="show_accessory_p3=true">No
+                </div>
+            </div>
+            <button type="button" class="btn btn-outline-secondary waves-effect" ng-show="show_accessory_p3" ng-click="show_age=true;show_accessory=false">Next</button>
+        </div>
+
+        <!-- Device Age -->
+        <div ng-show="show_age" style="background-color:blanchedalmond;padding:30px">
+
+            <p>Select Age of Device</p>
+            <select ng-model="phone.age" ng-click="show_age_p=true">
+                <option value="3">Below 3 Months</option>
+                <option value="6"> 3-6 Months</option>
+                <option value="12">Less than an Year</option>
+                <option value="24">1-2 Years</option>
+                <option value=">24">Greater Than 2 years</option>
+            </select>
+            <p>&nbsp;</p>
+            <button type="button" class="btn btn-outline-secondary waves-effect" ng-show="show_age_p" ng-click="phone_evaluate()">Evaluate Phone</button>
+        </div>
+        <!-- Final -->
+        <div ng-show="show_final" style="background-color:blanchedalmond;padding:30px">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="dp_g.png">
+                </div>
+                <div class="col-md-4" style="margin:0 auto;display:block">
+                   <h3>Estimated Value is <h1>{{phone.price}}</h1></h3>
+                    <hr style="border-color:white">
+                    <button type="button" class="btn btn-mdb" ng-click="book()">Book Pickup Request</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" id="spec_list">
+        <p class="myList">Phone Brand : {{phone.brand}}</p>
+        <p class="myList" ng-show="show_phone_p">Phone Model : {{phone.name}}</p>
+        <p class="myList" ng-show="show_power_p"> Device : {{phone.power}}</p>
+        <p class="myList" ng-show="show_screen_p"> Screen : {{phone.screen}}</p>
+        <p class="myList" ng-show="show_body_p"> Screen : {{phone.body}}</p>
+        <p class="myList" ng-show="show_accessory_p1"> Earphones : {{phone.earphones}}</p>
+        <p class="myList" ng-show="show_accessory_p2"> Bill/Box : {{phone.bill}}</p>
+        <p class="myList" ng-show="show_accessory_p3"> Battery Working : {{phone.battery}}</p>
+        <p class="myList" ng-show="show_age_p"> Device Age(Months) : {{phone.age}}</p>
+
+    </div>
+</div>

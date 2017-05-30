@@ -4,21 +4,25 @@
         <!-- Selecting Brand -->
         <div ng-show="show_brand" style="background-color:blanchedalmond;padding:30px">
             <h3>Select Your Brand</h3>
+            <div class="styled-select blue semi-square">
             <select ng-model="phone.brand">
-            <option value="SAMSUNG">Samsung</option>
+            <option value="SAMSUNG" selected>Samsung</option>
             <option value="xiomi">Xiomi</option>
             <option value="one_plus">One Plus</option>
         </select>
+            </div>
             <p>&nbsp;</p>
             <button type="button" class="btn btn-outline-secondary waves-effect" id="next_brand" ng-click="load_phone()">Next</button>
         </div>
         <!-- Selecting Phone -->
         <div ng-show="show_phone" style="background-color:blanchedalmond;padding:30px">
             <h3>Select Phone</h3>
+            <div class="styled-select blue semi-square">
             <select ng-model="phone.name">
-            <option disabled selected class="myList">Select Phone</option>
+            <option selected disabled>Select Phone</option>
             <option ng-repeat="phone in phones.data" value='{{phone.phone_name}}' class="myList">{{phone.phone_name}}</option>
         </select>
+            </div>
             <p>&nbsp;</p>
             <button type="button" class="btn btn-outline-secondary waves-effect" ng-click="show_power=true;show_phone=false;show_power_p=true">Next</button>
         </div>
@@ -28,7 +32,7 @@
             <h3>Does Device switch on?</h3>
 
             <p>&nbsp;</p>
-            <button type="button" ng-click="power_yes()" class="btn btn-default">Yes</button>
+            <button type="button" ng-click="power_yes()" class="btn btn-default" >Yes</button>
             <button type="button" ng-click="power_no()" class="btn btn-danger">No</button>
         </div>
 
@@ -37,21 +41,25 @@
             <h3>Device Details</h3>
             <p>&nbsp;</p>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <p>What is condition of phone screen ? </p>
+                    <div class="styled-select blue semi-square">
                     <select ng-model="phone.screen" ng-click="show_screen_p=true;">
-               <option value="scratchless">Scratchless</option>
+               <option value="scratchless" selected>Scratchless</option>
                <option value="minor">Minor Scratches</option>
                <option value="broken">Completely Broken</option>
            </select>
+                    </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <p>Select condition of the phone body</p>
+                    <div class="styled-select blue semi-square">
                     <select ng-model="phone.body" ng-click="show_body_p=true">
-                        <option value="new">Completely scratchless body</option>
+                        <option value="new" selected>Completely scratchless body</option>
                         <option value="few">Minor Scratches</option>
                         <option value="major">Major Dents</option>
                     </select>
+                    </div>
                 </div>
             </div>
             <button type="button" class="btn btn-outline-secondary waves-effect" ng-show="show_body_p" ng-click="to_accessory()">Next</button>
@@ -63,20 +71,20 @@
                 <div class="col-md-4">
                     <p>Are Earphones Available?</p>
                     <p>&nbsp;</p>
-                    <input type="radio" name="earpphones" value="yes" ng-model="phone.earphones" ng-click="show_accessory_p1=true">Yes
-                    <input type="radio" name="earpphones" value="no" ng-model="phone.earphones" ng-click="show_accessory_p1=true">No
+                    <input type="radio" class="option-input radio" name="earpphones" value="yes" ng-model="phone.earphones" ng-click="show_accessory_p1=true" checked>Yes
+                    <input type="radio" class="option-input radio" name="earpphones" value="no" ng-model="phone.earphones" ng-click="show_accessory_p1=true">No
                 </div>
                 <div class="col-md-4">
                     <p>Is original bill/box available?</p>
                     <p>&nbsp;</p>
-                    <input type="radio" name="bill" value="yes" ng-model="phone.bill" ng-click="show_accessory_p2=true">Yes
-                    <input type="radio" name="bill" value="no" ng-model="phone.bill" ng-click="show_accessory_p2=true">No
+                    <input type="radio" class="option-input radio" name="bill" value="yes" ng-model="phone.bill" ng-click="show_accessory_p2=true" checked>Yes
+                    <input type="radio" class="option-input radio" name="bill" value="no" ng-model="phone.bill" ng-click="show_accessory_p2=true">No
                 </div>
                 <div class="col-md-4">
                     <p>Is phone battery working?</p>
                     <p>&nbsp;</p>
-                    <input type="radio" name="battery" value="yes" ng-model="phone.battery" ng-click="show_accessory_p3=true">Yes
-                    <input type="radio" name="battery" value="no" ng-model="phone.battery" ng-click="show_accessory_p3=true">No
+                    <input type="radio" class="option-input radio" name="battery" value="yes" ng-model="phone.battery" ng-click="show_accessory_p3=true" checked>Yes
+                    <input type="radio" class="option-input radio" name="battery" value="no" ng-model="phone.battery" ng-click="show_accessory_p3=true">No
                 </div>
             </div>
             <button type="button" class="btn btn-outline-secondary waves-effect" ng-show="show_accessory_p3" ng-click="show_age=true;show_accessory=false">Next</button>
@@ -86,13 +94,15 @@
         <div ng-show="show_age" style="background-color:blanchedalmond;padding:30px">
 
             <p>Select Age of Device</p>
+            <div class="styled-select blue semi-square">
             <select ng-model="phone.age" ng-click="show_age_p=true">
-                <option value="3">Below 3 Months</option>
+                <option value="3" selected>Below 3 Months</option>
                 <option value="6"> 3-6 Months</option>
                 <option value="12">Less than an Year</option>
                 <option value="24">1-2 Years</option>
                 <option value=">24">Greater Than 2 years</option>
             </select>
+            </div>
             <p>&nbsp;</p>
             <button type="button" class="btn btn-outline-secondary waves-effect" ng-show="show_age_p" ng-click="phone_evaluate()">Evaluate Phone</button>
         </div>

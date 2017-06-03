@@ -1,97 +1,71 @@
- <style>
-     .feature1{
-        transform:scale(0.6);
-        transition:background-color 1s;
-     }
- </style>
- <div class="dry_itmes">
-                <div class="card" style="padding:40px">
-                     <button type="button" class="btn btn-success" ng-click="back()">Back</button>
+<div class="dry_itmes">
+    <div class="card" style="padding:40px">
+        <button type="button" class="btn btn-success" ng-click="back()">Back</button>
 
-                    <div class="row">
-                        <div class="col-md-4 feature1">
-                            <p>&nbsp</p>
-                            <i class="fa fa-mobile pred" aria-hidden="true" ng-click="dry_1()"></i>
-                            <hr>
-                            <h4>Glass</h4>
-                           
-                        </div>
-                        <div class="col-md-4 feature1">
-                            <p>&nbsp</p>
+        <div class="row">
+            <div class="col-md-4 feature1">
+                <img src="./img/glass_predict.png" style="width:auto;height:200px" class="img-fluid mx-auto">
+                <p>&nbsp</p>
+                <h4 class="text-center">Glass</h4>
 
-                            <i class="fa fa-tablet pred" aria-hidden="true" ng-click="dry_2()"></i>
-                            <p>&nbsp</p>
-                            <h4>Metal</h4>
-                            
-                        </div>
-                        <div class="col-md-4 feature1">
-                            <p>&nbsp</p>
-
-                            <i class="fa fa-tablet pred" aria-hidden="true" ng-click="dry_3()"></i>
-                            
-                            <h4>Plastic</h4>
-                             
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 flex-coloumn feature1" ng-click="dry_4()">
-                            <i class="fa fa-laptop pred" aria-hidden="true"></i>
-                            <p>&nbsp</p>
-                            <h4>Tin Cans</h4>
-                             
-                        </div>
-                        <div class="col-md-4 flex-coloumn feature1" ng-click="dry_5()">
-                            <i class="fa fa-desktop pred" aria-hidden="true"></i>
-                            <p>&nbsp</p>
-                            <h4>Cardboard</h4>
-                             
-                        </div>
-                        <div class="col-md-4 flex-coloumn feature1" ng-click="dry_6()">
-                            <p>&nbsp</p>
-
-                            <i class="fa fa-gamepad pred" aria-hidden="true"></i>
-                           
-                            <h4>Batteries</h4>
-                            
-                        </div>
-
-
-                    </div>
-                    <div class="row">
-
-                        <div class="col-md-4 flex-coloumn feature1" ng-click="dry_7()">
-                            <p>&nbsp</p>
-
-                            <i class="fa fa-tv  pred" aria-hidden="true"></i>
-                            <p>&nbsp</p>
-                            <h4>Furniture</h4>
-                            
-                        </div>
-                        <div class="col-md-4 flex-coloumn feature1" ng-click="dry_8()">
-                            <p>&nbsp</p>
-
-                            <i class="fa fa-tv pred" aria-hidden="true"></i>
-                            <p>&nbsp</p>
-                            <h4>Books</h4>
-                             
-                        </div>
-                        <div class="col-md-4 flex-coloumn feature1" ng-click="dry_9()">
-                            <p>&nbsp</p>
-
-                            <i class="fa fa-tv  pred" aria-hidden="true"></i>
-                            <p>&nbsp</p>
-                            <h4>Paper</h4>
-                             <div class="row">
-                                <div class="col-md-12">
-                                    <fieldset class="form-group">
-                                        <input name="group1" type="radio" id="radio11" ng-click="predictor.price=180" ng-model="predictor.name" value="washing_machine">
-                                        <label for="radio11">Select</label>
-                                    </fieldset>
-                                </div>
-                            </div>
-                        </div>
-                         
-                    </div>
-                </div>
             </div>
-            <p>&nbsp</p>
+            <div class="col-md-4 feature1">
+                <img src="./img/metal_predict.png" style="width:auto;height:200px" class="img-fluid mx-auto">
+                <p>&nbsp</p>
+                <h4 class="text-center">Metal</h4>
+
+            </div>
+            <div class="col-md-4 feature1">
+                <img src="./img/plastic_predict.png" style="width:auto;height:200px" class="img-fluid mx-auto">
+                <p>&nbsp</p>
+                <h4 class="text-center">Plastic</h4>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 flex-coloumn feature1" ng-click="dry_4()">
+                <img src="./img/tincan_predict.png" style="width:auto;height:200px" class="img-fluid mx-auto">
+                <p>&nbsp</p>
+                <h4 class="text-center">Tin Cans</h4>
+
+            </div>
+            <div class="col-md-4 flex-coloumn feature1" ng-click="dry_5()">
+                <img src="./img/cardboard_predict.png" style="width:auto;height:200px" class="img-fluid mx-auto">
+                <p>&nbsp</p>
+                <h4 class="text-center">Cardboard</h4>
+
+            </div>
+            <div class="col-md-4 flex-coloumn feature1" ng-click="dry_6()">
+                <img src="./img/battery_predict.png" style="width:auto;height:200px" class="img-fluid mx-auto">
+                <p>&nbsp</p>
+                <h4 class="text-center">Batteries</h4>
+
+            </div>
+
+
+        </div>
+        <div class="row">
+
+            <div class="col-md-4 flex-coloumn feature1" ng-click="dry_7()">
+                <img src="./img/furniture_predict.png" style="width:auto;height:200px" class="img-fluid mx-auto">
+                <p>&nbsp</p>
+                <h4 class="text-center">Furniture</h4>
+
+            </div>
+            <div class="col-md-4 flex-coloumn feature1" ng-click="dry_8()">
+                <img src="./img/book_predict.png" style="width:auto;height:200px" class="img-fluid mx-auto">
+                <p>&nbsp</p>
+                <h4 class="text-center">Books</h4>
+
+            </div>
+            <div class="col-md-4 flex-coloumn feature1" ng-click="dry_9()">
+                <img src="./img/newspaper_predict.png" style="width:auto;height:200px" class="img-fluid mx-auto">
+                <p>&nbsp</p>
+                <h4 class="text-center">Newspaper</h4>
+               
+            </div>
+
+        </div>
+    </div>
+</div>
+<p>&nbsp</p>

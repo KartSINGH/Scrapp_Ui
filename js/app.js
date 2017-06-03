@@ -248,7 +248,7 @@ app.run(function ($rootScope, $state, $timeout) {
 app.controller('otpCtrl', function ($scope, $http, $rootScope, $state, $location, anchorSmoothScroll) {
     $rootScope.user_data = {};
     $rootScope.user = {};
-    //$state.go('login');
+    $state.go('login');
     console.log($scope.show_rotp);
     $scope.gotoElement = function (eID) {
         // set the location.hash to the id of
@@ -814,7 +814,7 @@ app.controller('pre_fridge', function ($scope) {
 });
 app.controller('pre_phone', function ($scope, $http, $state, $rootScope) {
     $scope.phone = {};
-    $scope.nphone={};
+    $scope.nphone = {};
     console.log("Phone predictor called");
     $scope.book = function () {
         $state.go("userMain.newbooking");
@@ -834,16 +834,11 @@ app.controller('pre_phone', function ($scope, $http, $state, $rootScope) {
             console.log(res);
             $scope.nphone = res.data[0];
             console.log($scope.nphone.phone_cprice);
-            alert("Final price is" + " " + $scope.nphone.phone_cprice);
+            $scope.phone.price = parseInt($scope.nphone.phone_cprice) / 2;
+            console.log("final price is " + " " + $scope.phone.price);
         }, function (error) {
             alert("Invalid Phone Selected");
         })
-
-        //algo for price deduction
-       $scope.phone.price=parseInt($scope.nphone.phone_cprice)/2;
-       console.log("final price is " + " " + $scope.phone.price);
-       
-
     }
     $scope.to_accessory = function () {
         $scope.show_details = false;

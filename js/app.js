@@ -254,7 +254,7 @@ app.run(function ($rootScope, $state, $timeout) {
 app.controller('otpCtrl', function ($scope, $http, $rootScope, $state, $location, anchorSmoothScroll) {
     $rootScope.user_data = {};
     $rootScope.user = {};
-    $state.go('login');
+   // $state.go('login');
     console.log($scope.show_rotp);
     $scope.gotoElement = function (eID) {
         // set the location.hash to the id of
@@ -687,8 +687,32 @@ app.controller('pre_electquesCtrl', function ($scope, $state, $rootScope) {
         $state.go('userMain.predictor.pre_electitems')
     }
 });
-app.controller('user_profileCtrl', function ($scope, $state, $rootScope) {
+app.controller('user_profileCtrl', function ($scope, $state, $rootScope,$http) {
     console.log("User Profile Page");
+    
+     
+    $scope.update=function(){
+        
+        $http({
+        method: 'POST',
+        url: 'http://localhost:8886/register/change_password',
+        data:{
+            user_email:$rootScope.user_data.user_email,
+            user_password:$scope.new_password
+        }
+
+    }).then(function (res) {
+        console.log(res);
+        $scope.update_show=false;
+        alert("Your Passoword has been changed");
+        
+    }, function (error) {
+        console.log("error");
+        alert("Error Occurred.Please try after sometime!")
+
+
+    });
+    }
 })
 app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
     $rootScope.rams = {};

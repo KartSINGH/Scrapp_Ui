@@ -18,10 +18,17 @@
                         </div>
                     </div>
                     <hr>
-                    <h4 class="card-title">Welcome {{user_data.user_name}} to ShuttleScrap</h4>
+                    <h4 class="card-title" ng-init="update_show=false">Welcome {{user_data.user_name}} to ShuttleScrap</h4>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                     <p style="color:deeppink">Credit Points : {{user_data.user_totalcredits}}</p>
-                    <a class="btn btn-default">Update Your Profile</a>
+                    <a class="btn btn-default" ng-click="update_show=true">Update Your Profile</a>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <div id="p_change" ng-show="update_show">
+                    <input type="text" placeholder="Enter Your New Password Here" style="background-color:white;border-radius:3px;color:#22aa86;font-size:20px;padding:5px;text-align:center" ng-model="new_password" class="mx-auto">
+                    <p>&nbsp;</p>
+                    <button type="button" class="btn btn-outline-primary waves-effect mx-auto" style="background-color:white" ng-click="update()">Update Password</button>
+                    </div>
                 </div>
             </div>
             <p>&nbsp;</p>
@@ -59,6 +66,7 @@
                 </div>
             </div>
         </div>
+      
         <div class="col-md-5">
             <!--Card Primary-->
             <blockquote class="blockquote bq-success">

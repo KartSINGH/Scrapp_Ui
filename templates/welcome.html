@@ -33,7 +33,7 @@
                     <a class="nav-link" ng-click="gotoElement('section7')">About us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" ng-click="gotoElement('section8')" style="background-color:rgb(251, 118, 27);color:white" ng-click="$state.go('login')">Request Scrap Pickup</a>
+                    <a class="nav-link"  style="background-color:rgb(251, 118, 27);color:white" ui-sref="login">Request Scrap Pickup</a>
                 </li>
 
             </ul>
@@ -113,21 +113,21 @@
             <p>Use our special value predictor to analyse total return value of your waste. Know hidden potential your scrap
                 holds
             </p>
-            <button type="button" class="btn" style="background-color:#22aa86">Calculate Scrap Value</button>
+           <a ui-sref="login"> <button type="button" class="btn btn-outline waves-effect" style="color:white;border-color:white;background-color:#22aa86">Book a Request</button></a>
         </div>
         <div class="col-sm-4" id="f_box_col2">
             <h1>Encash Your Trash</h1>
             <h4>Scrap Pickup Request</h4>
             <p>Our booking process will help you earn from your scrapp in few easy steps. You are just a few clicks away!
             </p>
-            <button type="button" class="btn btn-outline-default waves-effect">Book a Request</button>
+            <a ui-sref="login"> <button type="button" class="btn btn-outline-default waves-effect">Book a Request</button></a>
         </div>
         <div class="col-sm-4" id="f_box_col3">
             <h1>Your Own Page</h1>
             <h4>Dedicated User Profile</h4>
             <p>You get your own personal profile where you can track your credit points and status of your scrap disposal
             </p>
-            <button type="button" class="btn btn-outline-default waves-effect">Login</button>
+           <a ui-sref="login"> <button type="button" class="btn btn-outline-default waves-effect">Login</button></a>
         </div>
     </div>
 </div>

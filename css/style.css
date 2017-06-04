@@ -710,4 +710,7 @@ select#soflow-color {
     #f1_container {
         transform: scale(1.5);
     }
+    .sidebar{
+        display: none;
+    }
 }

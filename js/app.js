@@ -164,6 +164,12 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
             controller: "predictCtrl",
             authenticate: true
         })
+        .state('userMain.predictor.start', {
+            url: '/predictor_start',
+            templateUrl: "../templates/predictor_start.html",
+            controller: "predictStartCtrl",
+            authenticate: true
+        })
         .state('userMain.predictor.pre_1', {
             url: '/pre1',
             templateUrl: "../templates/select_prodtype.html",
@@ -248,7 +254,7 @@ app.run(function ($rootScope, $state, $timeout) {
 app.controller('otpCtrl', function ($scope, $http, $rootScope, $state, $location, anchorSmoothScroll) {
     $rootScope.user_data = {};
     $rootScope.user = {};
-    //$state.go('login');
+    $state.go('login');
     console.log($scope.show_rotp);
     $scope.gotoElement = function (eID) {
         // set the location.hash to the id of
@@ -356,9 +362,6 @@ app.controller('loginCtrl', function ($scope, $state, $http, $rootScope, googleS
             alert("Please fill correct details");
         }
     }
-
-
-
 })
 
 //register Controller
@@ -366,6 +369,10 @@ app.controller('loginCtrl', function ($scope, $state, $http, $rootScope, googleS
 app.controller('registerCtrl', function ($scope, $http, $rootScope, $state, googleService) {
     console.log("register controller called")
     $rootScope.user.loggedIn = "false";
+    if($rootScope.user_data.phone_number==undefined){
+            alert("Please Verify Your Mobile Number First")
+            $state.go("landingPage")
+        }
     $scope.g_login = function () {
         googleService.login().then(function (data) {
             // do something with returned data
@@ -382,6 +389,7 @@ app.controller('registerCtrl', function ($scope, $http, $rootScope, $state, goog
     };
     $scope.signup = function () {
         console.log("before sign up  " + $rootScope.user_data);
+        
         if ($scope.user_name && $scope.user_password && $scope.user_email) {
             $http({
                 method: 'POST',
@@ -424,7 +432,7 @@ app.controller('userCtrl', function ($scope, $rootScope, $state, $http, $window)
             $window.localStorage.clear();
             gapi.auth.setToken(null);
             gapi.auth.signOut();
-            $state.go('register');
+            $state.go('landingPage');
         }
 
         $scope.check = function () {
@@ -530,10 +538,13 @@ app.controller('predictCtrl', function ($scope, $rootScope, $state) {
             return false;
         }
     }
+
+});
+app.controller('predictStartCtrl', function ($scope, $state) {
     $scope.start = function () {
         $state.go('userMain.predictor.pre_1')
     }
-});
+})
 
 app.controller('pre_1Ctrl', function ($scope, $state, $rootScope) {
     console.log('pre1 controller called');

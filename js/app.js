@@ -248,7 +248,7 @@ app.run(function ($rootScope, $state, $timeout) {
 app.controller('otpCtrl', function ($scope, $http, $rootScope, $state, $location, anchorSmoothScroll) {
     $rootScope.user_data = {};
     $rootScope.user = {};
-    $state.go('login');
+    //$state.go('login');
     console.log($scope.show_rotp);
     $scope.gotoElement = function (eID) {
         // set the location.hash to the id of

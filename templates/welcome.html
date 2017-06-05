@@ -72,8 +72,8 @@
                                     <div class="v_otp" ng-show="show_votp">
                                         <input type="text" class="form-control" style="background-color:white;border-radius:3px;color:#22aa86;font-size:20px;padding:5px"
                                             ng-model="user_otp" required>
-
                                         <button class="btn btn-warning btn-lg" ng-click="verify_otp()" id="v_otp1" style="cursor:hand">Verify OTP</button>
+                                        <button class="btn btn-warning btn-lg"  id="v_otp2" style="cursor:hand" ng-click="show_votp=false;show_rotp=true">Resend OTP</button>
                                     </div>
 
                                 </div>

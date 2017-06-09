@@ -254,7 +254,7 @@ app.run(function ($rootScope, $state, $timeout) {
 app.controller('otpCtrl', function ($scope, $http, $rootScope, $state, $location, anchorSmoothScroll) {
     $rootScope.user_data = {};
     $rootScope.user = {};
-   // $state.go('login');
+    //$state.go('login');
     console.log($scope.show_rotp);
     $scope.gotoElement = function (eID) {
         // set the location.hash to the id of
@@ -315,7 +315,6 @@ app.controller('loginCtrl', function ($scope, $state, $http, $rootScope, googleS
     $scope.g_login = function () {
         googleService.login().then(function (data) {
             // do something with returned data
-
             $rootScope.user.loggedIn = "true";
             $rootScope.user_data.user_email = data.email;
             $rootScope.user_data.user_name = data.name;
@@ -333,7 +332,7 @@ app.controller('loginCtrl', function ($scope, $state, $http, $rootScope, googleS
         if ($scope.user_email) {
             $http({
                 method: 'POST',
-                url: 'http://localhost:8886/register/user',
+                url: 'http://api.shuttlescrap.com/register/user',
                 data: {
                     user_email: $scope.user_email
                 }
@@ -369,10 +368,10 @@ app.controller('loginCtrl', function ($scope, $state, $http, $rootScope, googleS
 app.controller('registerCtrl', function ($scope, $http, $rootScope, $state, googleService) {
     console.log("register controller called")
     $rootScope.user.loggedIn = "false";
-    if($rootScope.user_data.phone_number==undefined){
-            alert("Please Verify Your Mobile Number First")
-            $state.go("landingPage")
-        }
+    if ($rootScope.user_data.phone_number == undefined) {
+        alert("Please Verify Your Mobile Number First")
+        $state.go("landingPage")
+    }
     $scope.g_login = function () {
         googleService.login().then(function (data) {
             // do something with returned data
@@ -389,11 +388,11 @@ app.controller('registerCtrl', function ($scope, $http, $rootScope, $state, goog
     };
     $scope.signup = function () {
         console.log("before sign up  " + $rootScope.user_data);
-        
+
         if ($scope.user_name && $scope.user_password && $scope.user_email) {
             $http({
                 method: 'POST',
-                url: 'http://localhost:8886/register/submit_user',
+                url: 'http://api.shuttlescrap.com/register/submit_user',
                 data: {
                     phone_number: $rootScope.user_data.phone_number,
                     user_name: $scope.user_name,
@@ -454,7 +453,7 @@ app.controller('bookingCtrl', function ($scope, $http, $rootScope, $state) {
     console.log("get booking function called");
     $http({
         method: 'POST',
-        url: 'http://localhost:8886/register/booking_history',
+        url: 'http://api.shuttlescrap.com/register/booking_history',
         data: {
             user_email: $rootScope.user_data.user_email
         }
@@ -481,7 +480,7 @@ app.controller('newbookingCtrl', function ($scope, $http, $rootScope, $state) {
         if ($scope.newbook.res_address && $scope.newbook.date && $scope.newbook.payment_method) {
             $http({
                 method: 'POST',
-                url: 'http://localhost:8886/register/submit_pickup',
+                url: 'http://api.shuttlescrap.com/register/submit_pickup',
                 data: {
                     user_email: $rootScope.user_data.user_email,
                     user_name: $rootScope.user_data.user_email,
@@ -687,31 +686,31 @@ app.controller('pre_electquesCtrl', function ($scope, $state, $rootScope) {
         $state.go('userMain.predictor.pre_electitems')
     }
 });
-app.controller('user_profileCtrl', function ($scope, $state, $rootScope,$http) {
+app.controller('user_profileCtrl', function ($scope, $state, $rootScope, $http) {
     console.log("User Profile Page");
-    
-     
-    $scope.update=function(){
-        
+
+
+    $scope.update = function () {
+
         $http({
-        method: 'POST',
-        url: 'http://localhost:8886/register/change_password',
-        data:{
-            user_email:$rootScope.user_data.user_email,
-            user_password:$scope.new_password
-        }
+            method: 'POST',
+            url: 'http://api.shuttlescrap.com/register/change_password',
+            data: {
+                user_email: $rootScope.user_data.user_email,
+                user_password: $scope.new_password
+            }
 
-    }).then(function (res) {
-        console.log(res);
-        $scope.update_show=false;
-        alert("Your Passoword has been changed");
-        
-    }, function (error) {
-        console.log("error");
-        alert("Error Occurred.Please try after sometime!")
+        }).then(function (res) {
+            console.log(res);
+            $scope.update_show = false;
+            alert("Your Passoword has been changed");
+
+        }, function (error) {
+            console.log("error");
+            alert("Error Occurred.Please try after sometime!")
 
 
-    });
+        });
     }
 })
 app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
@@ -721,7 +720,7 @@ app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
     console.log("Laptop prediction Controller Called");
     $http({
         method: 'GET',
-        url: 'http://localhost:8886/laptop/all_ram',
+        url: 'http://api.shuttlescrap.com/laptop/all_ram',
 
     }).then(function (res) {
         console.log(res);
@@ -733,7 +732,7 @@ app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
     });
     $http({
         method: 'GET',
-        url: 'http://localhost:8886/laptop/all_processor',
+        url: 'http://api.shuttlescrap.com/laptop/all_processor',
 
     }).then(function (res) {
         console.log(res);
@@ -745,7 +744,7 @@ app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
     })
     $http({
         method: 'GET',
-        url: 'http://localhost:8886/laptop/all_hard_drives',
+        url: 'http://api.shuttlescrap.com/laptop/all_hard_drives',
 
     }).then(function (res) {
         console.log(res);
@@ -757,7 +756,7 @@ app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
     })
     $http({
         method: 'GET',
-        url: 'http://localhost:8886/laptop/all_cards',
+        url: 'http://api.shuttlescrap.com/laptop/all_cards',
 
     }).then(function (res) {
         console.log(res);
@@ -772,7 +771,7 @@ app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
         //fetching ram price
         $http({
             method: 'POST',
-            url: 'http://localhost:8886/laptop/get_mobiles',
+            url: 'http://api.shuttlescrap.com/laptop/get_mobiles',
             data: {
                 ram_size: $scope.laptop.ram_size
             }
@@ -786,7 +785,7 @@ app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
         //fetching processor price
         $http({
             method: 'POST',
-            url: 'http://localhost:8886/laptop/get_processor',
+            url: 'http://api.shuttlescrap.com/laptop/get_processor',
             data: {
                 processor_name: $scope.laptop.processor_name
             }
@@ -801,7 +800,7 @@ app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
         //hdd price
         $http({
             method: 'POST',
-            url: 'http://localhost:8886/laptop/get_hard_drive',
+            url: 'http://api.shuttlescrap.com/laptop/get_hard_drive',
             data: {
                 drive_size: $scope.laptop.hard_drive_name
             }
@@ -816,7 +815,7 @@ app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
         //hdd price
         $http({
             method: 'POST',
-            url: 'http://localhost:8886/laptop/get_card',
+            url: 'http://api.shuttlescrap.com/laptop/get_card',
             data: {
                 card_size: $scope.laptop.graphic_card_name
             }
@@ -861,7 +860,7 @@ app.controller('pre_phone', function ($scope, $http, $state, $rootScope) {
         $scope.show_final = true;
         $http({
             method: 'POST',
-            url: 'http://localhost:8886/register/get_mobile_by_name',
+            url: 'http://api.shuttlescrap.com/register/get_mobile_by_name',
             data: {
                 phone_name: $scope.phone.name
             }
@@ -895,7 +894,7 @@ app.controller('pre_phone', function ($scope, $http, $state, $rootScope) {
         if ($scope.phone.brand) {
             $http({
                 method: 'POST',
-                url: 'http://localhost:8886/register/get_mobiles',
+                url: 'http://api.shuttlescrap.com/register/get_mobiles',
                 data: {
                     phone_brand: $scope.phone.brand
                 }

@@ -6,7 +6,14 @@
 body {
     font-family: 'Arvo', serif;
     overflow: hidden;
+   
+   
 }
+html{
+    height:100%;
+
+}
+
 
 .nav-item {
     margin-left: 25px;
@@ -694,7 +701,7 @@ select#soflow-color {
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
     #form {
         transform: scale(1);
         padding-bottom: 0px;
@@ -712,5 +719,8 @@ select#soflow-color {
     }
     .sidebar{
         display: none;
+    }
+    .container{
+        overflow: hidden;
     }
 }

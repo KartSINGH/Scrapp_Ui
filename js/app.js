@@ -480,7 +480,7 @@ app.controller('newbookingCtrl', function ($scope, $http, $rootScope, $state) {
         if ($scope.newbook.res_address && $scope.newbook.date && $scope.newbook.payment_method) {
             $http({
                 method: 'POST',
-                url: 'http://api.shuttlescrap.com/register/submit_pickup',
+                url: 'http://localhost:8886/register/submit_pickup',
                 data: {
                     user_email: $rootScope.user_data.user_email,
                     user_name: $rootScope.user_data.user_email,

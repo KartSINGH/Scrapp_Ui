@@ -75,7 +75,6 @@
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script src="./node_modules/angular/angular.js"></script>
     <script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
     <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
     <script src="./js/app.js"></script>
     <script src='https://apis.google.com/js/client.js'></script>
@@ -85,14 +84,13 @@
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-591586e40c63edc3"></script>
     <script type="text/javascript" src="./mslider/dist/jquery.frame-carousel.js"></script>
     <script src="./bower_components/material-cards/js/jquery.material-cards.js"></script>
-    <script src="https://unpkg.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
     <script type="text/javascript">
         //<![CDATA[
         console.log("Width is " + "" + $(window).innerWidth());
         $(window).on('load', function () { // makes sure the whole site is loaded 
-            $('#status').delay(4000).fadeOut('slow'); // will first fade out the loading animation 
-            $('#preloader').delay(4350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
-            $('body').delay(350).css({
+            $('#status').delay(150).fadeOut('slow'); // will first fade out the loading animation 
+            $('#preloader').delay(200).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+            $('body').delay(250).css({
                 'overflow': 'visible'
             });
         })

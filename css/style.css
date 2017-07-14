@@ -353,10 +353,12 @@ h3 {
     padding: 20px;
     transition: background-color 1s linear;
     cursor: crosshair;
+    
 }
 
 .hoverable:hover {
-    background-color: white;
+   background-color:rgba(244,115,32,0.9);
+    color:white;
 }
 
 .sidebar {

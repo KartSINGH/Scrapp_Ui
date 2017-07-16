@@ -332,7 +332,7 @@ app.controller('loginCtrl', function ($scope, $state, $http, $rootScope, googleS
         if ($scope.user_email) {
             $http({
                 method: 'POST',
-                url: 'http://api.shuttlescrap.com/register/user',
+                url: 'https://api.shuttlescrap.com/register/user',
                 data: {
                     user_email: $scope.user_email
                 }
@@ -392,7 +392,7 @@ app.controller('registerCtrl', function ($scope, $http, $rootScope, $state, goog
         if ($scope.user_name && $scope.user_password && $scope.user_email) {
             $http({
                 method: 'POST',
-                url: 'http://api.shuttlescrap.com/register/submit_user',
+                url: 'https://api.shuttlescrap.com/register/submit_user',
                 data: {
                     phone_number: $rootScope.user_data.phone_number,
                     user_name: $scope.user_name,
@@ -453,7 +453,7 @@ app.controller('bookingCtrl', function ($scope, $http, $rootScope, $state) {
     console.log("get booking function called");
     $http({
         method: 'POST',
-        url: 'http://api.shuttlescrap.com/register/booking_history',
+        url: 'https://api.shuttlescrap.com/register/booking_history',
         data: {
             user_email: $rootScope.user_data.user_email
         }
@@ -480,7 +480,7 @@ app.controller('newbookingCtrl', function ($scope, $http, $rootScope, $state) {
         if ($scope.newbook.res_address && $scope.newbook.date && $scope.newbook.payment_method) {
             $http({
                 method: 'POST',
-                url: 'http://api.shuttlescrap.com/register/submit_pickup',
+                url: 'https://api.shuttlescrap.com/register/submit_pickup',
                 data: {
                     user_email: $rootScope.user_data.user_email,
                     user_name: $rootScope.user_data.user_email,
@@ -694,7 +694,7 @@ app.controller('user_profileCtrl', function ($scope, $state, $rootScope, $http) 
 
         $http({
             method: 'POST',
-            url: 'http://api.shuttlescrap.com/register/change_password',
+            url: 'https://api.shuttlescrap.com/register/change_password',
             data: {
                 user_email: $rootScope.user_data.user_email,
                 user_password: $scope.new_password
@@ -720,7 +720,7 @@ app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
     console.log("Laptop prediction Controller Called");
     $http({
         method: 'GET',
-        url: 'http://api.shuttlescrap.com/laptop/all_ram',
+        url: 'https://api.shuttlescrap.com/laptop/all_ram',
 
     }).then(function (res) {
         console.log(res);
@@ -732,7 +732,7 @@ app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
     });
     $http({
         method: 'GET',
-        url: 'http://api.shuttlescrap.com/laptop/all_processor',
+        url: 'https://api.shuttlescrap.com/laptop/all_processor',
 
     }).then(function (res) {
         console.log(res);
@@ -744,7 +744,7 @@ app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
     })
     $http({
         method: 'GET',
-        url: 'http://api.shuttlescrap.com/laptop/all_hard_drives',
+        url: 'https://api.shuttlescrap.com/laptop/all_hard_drives',
 
     }).then(function (res) {
         console.log(res);
@@ -756,7 +756,7 @@ app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
     })
     $http({
         method: 'GET',
-        url: 'http://api.shuttlescrap.com/laptop/all_cards',
+        url: 'https://api.shuttlescrap.com/laptop/all_cards',
 
     }).then(function (res) {
         console.log(res);
@@ -771,7 +771,7 @@ app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
         //fetching ram price
         $http({
             method: 'POST',
-            url: 'http://api.shuttlescrap.com/laptop/get_mobiles',
+            url: 'https://api.shuttlescrap.com/laptop/get_mobiles',
             data: {
                 ram_size: $scope.laptop.ram_size
             }
@@ -785,7 +785,7 @@ app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
         //fetching processor price
         $http({
             method: 'POST',
-            url: 'http://api.shuttlescrap.com/laptop/get_processor',
+            url: 'https://api.shuttlescrap.com/laptop/get_processor',
             data: {
                 processor_name: $scope.laptop.processor_name
             }
@@ -800,7 +800,7 @@ app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
         //hdd price
         $http({
             method: 'POST',
-            url: 'http://api.shuttlescrap.com/laptop/get_hard_drive',
+            url: 'https://api.shuttlescrap.com/laptop/get_hard_drive',
             data: {
                 drive_size: $scope.laptop.hard_drive_name
             }
@@ -815,7 +815,7 @@ app.controller('pre_laptop', function ($scope, $state, $rootScope, $http) {
         //hdd price
         $http({
             method: 'POST',
-            url: 'http://api.shuttlescrap.com/laptop/get_card',
+            url: 'https://api.shuttlescrap.com/laptop/get_card',
             data: {
                 card_size: $scope.laptop.graphic_card_name
             }
@@ -860,7 +860,7 @@ app.controller('pre_phone', function ($scope, $http, $state, $rootScope) {
         $scope.show_final = true;
         $http({
             method: 'POST',
-            url: 'http://api.shuttlescrap.com/register/get_mobile_by_name',
+            url: 'https://api.shuttlescrap.com/register/get_mobile_by_name',
             data: {
                 phone_name: $scope.phone.name
             }
@@ -894,7 +894,7 @@ app.controller('pre_phone', function ($scope, $http, $state, $rootScope) {
         if ($scope.phone.brand) {
             $http({
                 method: 'POST',
-                url: 'http://api.shuttlescrap.com/register/get_mobiles',
+                url: 'https://api.shuttlescrap.com/register/get_mobiles',
                 data: {
                     phone_brand: $scope.phone.brand
                 }

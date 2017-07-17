@@ -95,6 +95,11 @@ html{
     color: #404040;
 }
 
+.service button
+{
+    margin-left: -2px;
+}
+
 h1,
 h2 {
     color: #22aa86;
@@ -210,14 +215,21 @@ h2 {
 }
 
 .overlay2 {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('http://www.edmdroid.com/wp-content/gallery/green-wallpaper/green-background-hd-wallpapers.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://countryhomesdelhi.files.wordpress.com/2013/05/greenery.jpg');
+    background-size: cover;);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 45vh;
+    height: 100%;
+    padding-top: 30px;
+    padding-bottom: 60px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.experience
+{
+    text-align: center;
 }
 
 .overlay1 {
@@ -232,7 +244,7 @@ h2 {
 }
 
 .overlay {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://countryhomesdelhi.files.wordpress.com/2013/05/greenery.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('http://www.edmdroid.com/wp-content/gallery/green-wallpaper/green-background-hd-wallpapers.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 45vh;
@@ -694,6 +706,87 @@ select#soflow-color {
     padding: 15px;
 }
 
+/*--------------- CSS added by shourya (starts from here)--------------------------------------*/
+@media only screen and (min-width:320px) and (max-width:640px){
+    .overlay2
+    {
+        display: none;
+    }
+
+}
+@media (max-width: 360px){
+     .social-section ul
+    {
+        padding-right: 30px !important;
+        padding-left: 30px !important;
+    }
+    .social-section .fbIcon,.social-section .twitterIcon,.social-section .youtubeIcon,.social-section .linkedinIcon
+    {
+        font-size:30px !important;
+    }
+    .social-section button
+    {
+        background-color: transparent;
+        box-shadow: none;
+        width: 5px !important;
+        padding-left: 0px !important;
+    }
+
+
+    
+}
+
+
+@media (max-width:480px ){
+    .logo
+    {
+        padding-left: 10px !important;
+
+        padding-bottom: 20px;
+    }
+    iframe
+    {
+        width:250px;
+    }
+    .social-section .fbIcon,.social-section .twitterIcon,.social-section .youtubeIcon,.social-section .linkedinIcon
+    {
+        font-size:30px !important;
+    }
+    .social-section button
+    {
+        background-color: transparent;
+        box-shadow: none;
+        width: 5px !important;
+        padding-left: 10px !important;
+    }
+     .social-section ul
+    {
+        padding-right: 30px !important;
+        padding-left: 30px !important;
+    }
+}
+
+
+  @media(max-width: 580px){
+
+    .logo
+    {
+        padding-left: 0px !important;
+
+        padding-bottom: 20px;
+    }
+
+      .social-section ul
+    {
+        padding-right: 30px !important;
+        padding-left: 70px !important;
+    }
+  }  
+
+
+
+
+
 @media (min-width:600px) {
     .sidebar {
         width: 250px;
@@ -725,4 +818,254 @@ select#soflow-color {
     .container{
         overflow: hidden;
     }
+}
+
+
+/*Footer's CSS*/
+.title
+{
+    
+    font-size: 25px;
+
+}
+.social-section
+{
+    text-align: center;
+    
+}
+
+.social-section button
+{
+    background-color: transparent;
+    box-shadow: none;
+    width: 20px !important;
+    padding-left: 30px;
+}
+.social-section button:hover
+{
+    box-shadow: none;
+}
+
+
+.social-section .fbIcon
+{
+    font-size: 50px;
+}
+.social-section .fbIcon:hover
+{
+    color:#3b5998;
+}
+
+.social-section .twitterIcon
+{
+    font-size: 50px;
+}
+.social-section .twitterIcon:hover
+{
+    color:#55acee;
+}
+
+.social-section .youtubeIcon
+{
+    font-size: 50px;
+}
+.social-section .youtubeIcon:hover
+{
+    color:#bb0000;
+}
+
+.social-section .linkedinIcon
+{
+    font-size: 50px;
+}
+
+.social-section .linkedinIcon:hover
+{
+    color:#007bb5;
+}
+
+footer.page-footer .social-section
+{
+    text-align: left;
+}
+
+.footer_section
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+} 
+.footer_section ul
+{
+    text-align: center;
+}
+.footer_section ul a:hover
+{
+    text-decoration: none;
+    color:rgb(251, 118, 27);
+}
+
+.foot_link a:hover
+{
+    text-decoration: none;
+    color:rgb(251, 118, 27);
+}
+
+.logo img
+{
+    width:50%;
+    height:100%;
+}
+.logo
+{
+    padding-left: 25%;
+
+    padding-bottom: 20px;
+}
+.logoImg
+{
+    text-decoration: none;
+}
+.map
+{
+    padding-bottom: 20px;
+}
+
+
+.partners
+{
+    color:white;
+    text-align: center;
+    font-family: 'Arvo', serif;
+    padding-top: 20px;
+    padding-bottom:70px;
+    font-size: 3rem;
+    background-color: transparent;
+}
+
+.partner img
+{
+    width: 100%;
+    height:200px;
+}
+
+/*CSS for OUR PARTNERS Slider */
+
+.slick-slide {
+    margin: 0px 20px;
+}
+
+.slick-slide img {
+    width: 100%;
+    height: 100px;
+}
+
+.slick-slider
+{
+    position: relative;
+    display: block;
+    padding: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
 }

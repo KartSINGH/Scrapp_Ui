@@ -1,0 +1,29 @@
+@media only screen and (min-width:320px) and (max-width:480px){
+
+	#f_box 
+	{
+		margin-top: 5%;
+	}
+
+	#section2
+	{
+	    padding-top: 10%;
+	}
+
+	.meetSection
+	{
+	    background-color:white;
+	    font-family:'Arvo', serif;
+	    padding-top:10%;
+	    padding-bottom: 5%;
+	}
+	.testi
+	{
+	    padding-top: 10%;
+	    padding-bottom: 5%;
+	}
+	.contactUs
+{
+    padding-top:8%;
+}
+}

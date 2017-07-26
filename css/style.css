@@ -283,6 +283,7 @@ h2 {
 
 .slides {
     font-family: 'Arvo', serif;
+    
     /* height: 100vh;*/
 }
 
@@ -815,9 +816,6 @@ select#soflow-color {
     .sidebar{
         display: none;
     }
-    .container{
-        overflow: hidden;
-    }
 }
 
 
@@ -897,7 +895,7 @@ footer.page-footer .social-section
 } 
 .footer_section ul
 {
-    text-align: center;
+   
 }
 .footer_section ul a:hover
 {
@@ -1068,4 +1066,37 @@ footer.page-footer .social-section
 }
 .slick-arrow.slick-hidden {
     display: none;
+}
+
+.service_features
+{
+    padding-top: 15%;
+    padding-bottom:10%
+}
+#section2
+{
+    padding-top: 5%;
+}
+.whyShuttlesection
+{
+    padding-top: 5%;
+
+}
+.contentRow
+{
+    padding-top: 5%;
+}
+
+.meetSection
+{
+    background-color:white;
+    font-family:'Arvo', serif;
+    padding-top:5%;
+    padding-bottom: 5%;
+}
+
+.testi
+{
+    padding-top: 5%;
+    padding-bottom: 5%;
 }

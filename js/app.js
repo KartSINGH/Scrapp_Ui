@@ -235,6 +235,23 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
             templateUrl: "../templates/user_profile.html",
             controller: "user_profileCtrl",
         })
+
+        .state('privacy',{
+            url:'/privacypolicy',
+            templateUrl:"../templates/privacy.html",
+        })
+        .state('legal',{
+            url:'/legal',
+            templateUrl:'../templates/legal.html'
+        })
+        .state('faq',{
+            url:'/faq',
+            templateUrl:'../templates/faq.html'
+        })
+        .state('tnc',{
+            url:'/termsandconditions',
+            templateUrl:'../templates/tandc.html'
+        })
     $urlRouterProvider.otherwise("/");
 });
 app.run(function ($rootScope, $state, $timeout) {
